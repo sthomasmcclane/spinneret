@@ -2,11 +2,19 @@
 
 # Spinneret: An interactive project manager to spin story drafts from outlines.
 
+# --- Configuration ---
+# Set the Gemini model to use for all API calls.
+# Examples: "gemini-1.5-pro-latest", "gemini-1.5-flash-latest", "gemini-pro"
+GEMINI_MODEL="gemini-2.5-flash"
+
+
 # --- Main Menu Function ---
 main_menu() {
     clear
     echo "SPINNERET PROJECT MANAGER 🕷️🕸️"
     echo "-------------------------"
+    echo "Using Model: $GEMINI_MODEL"
+    echo ""
 
     echo "IN PROGRESS:"
     found_in_progress=0
@@ -67,20 +75,26 @@ create_new_project() {
     story_name=${story_name//_/ }
     story_name=$(echo "$story_name" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2); print}')
     story_dir="$story_name"
+    local moved_outline_file="$story_dir/${story_name} outline.txt"
 
     echo "--- INITIALIZING: $story_name ---"
     mkdir -p "$story_dir/synopses/drafts" "$story_dir/synopses/approved" "$story_dir/scenes/drafts" "$story_dir/scenes/approved"
-    mv "$outline_file" "$story_dir/${story_name} outline.txt"
+    mv "$outline_file" "$moved_outline_file"
     echo "Workspace created. Outline moved."
 
     echo "--- GENERATING SYNOPSES (AI) ---"
-    ai_prompt="You are a creative writing assistant. Your task is to expand a story outline into a set of scene synopses..."
-    # Write the prompt to a temporary file to avoid recursion issues
+    ai_prompt="You are a story processor. Your task is to read the following outline and break it down into distinct scene synopses. Each synopsis should be a concise paragraph describing the key events, characters, and setting.
+
+IMPORTANT: Do not include any introductory text, conversation, or summaries. Separate each synopsis with the exact string '---SCENE-BREAK---' on its own line.
+
+--- OUTLINE ---
+"
+    # Write the prompt to a temporary file
     tmp_prompt_file=$(mktemp)
     echo -e "$ai_prompt" > "$tmp_prompt_file"
 
-    # Call the Gemini CLI with the prompt file
-    cat "$tmp_prompt_file" | gemini -p - | awk -v dir="$story_dir/synopses/drafts" 'BEGIN {RS="---SCENE-BREAK---"; scene_num=1} {gsub(/^\s+|\s+$/, ""); if (length($0) > 10) { filename = sprintf("%s/scene-%02d.txt", dir, scene_num++); print $0 > filename}}'
+    # Concatenate the prompt and the outline file, then pipe to the Gemini CLI
+    (cat "$tmp_prompt_file"; cat "$moved_outline_file") | gemini -m "$GEMINI_MODEL" -p - | awk -v dir="$story_dir/synopses/drafts" 'BEGIN {RS="---SCENE-BREAK---"; scene_num=1} {gsub(/^\s+|\s+$/, ""); if (length($0) > 10) { filename = sprintf("%s/scene-%02d.txt", dir, scene_num++); print $0 > filename}}'
 
     # Clean up the temporary file
     rm "$tmp_prompt_file"
@@ -138,7 +152,15 @@ manage_existing_project() {
         project_menu_actions[$project_menu_item_count]="back"
 
         read -p "Choose an option: " project_choice
-        action="${project_menu_actions[$project_choice]}"
+
+        # === BUG FIX START ===
+        # Check for empty input before using it as an array key.
+        if [ -z "$project_choice" ]; then
+            action=""
+        else
+            action="${project_menu_actions[$project_choice]}"
+        fi
+        # === BUG FIX END ===
 
         case $action in
             "back") break ;; 
@@ -167,16 +189,25 @@ generate_drafts() {
     find "$synopsis_dir" -name "scene-*.txt" -print0 | sort -z | while IFS= read -r -d '' synopsis_file; do
         scene_name=$(basename "$synopsis_file")
         echo "Generating scene for $scene_name..."
-        ai_prompt=$(cat "Tools/StoryGrid_AI_Instructions.md")
-        ai_prompt+="\n\n--- CONTEXT ---"
-        ai_prompt+="\nStory Title: $story_name"
-        ai_prompt+="\nScene Synopsis to Expand:\n$(cat "$synopsis_file")"
-        ai_prompt+="\n--- END CONTEXT ---\\n\nBegin scene now:"
+        
+        # This prompt is more direct to prevent conversational replies.
+        ai_prompt="You are a story writing AI. Your task is to write a full scene based on the provided synopsis. The scene should be compelling, well-paced, and engaging.
+
+IMPORTANT: Do not write any introduction, summary, or conversational text. Begin writing the scene immediately and output only the text of the scene itself.
+
+--- CONTEXT ---
+Story Title: $story_name
+Scene Synopsis to Expand:
+$(cat "$synopsis_file")
+--- END CONTEXT ---
+
+Begin the scene now:"
+        
         tmp_prompt_file=$(mktemp)
         echo -e "$ai_prompt" > "$tmp_prompt_file"
 
-        # Call the Gemini CLI with the prompt file, redirecting stdin from /dev/null
-        cat "$tmp_prompt_file" | gemini -p - < /dev/null > "$drafts_dir/$scene_name"
+        # Call the Gemini CLI with the prompt file, referencing the model variable
+        cat "$tmp_prompt_file" | gemini -m "$GEMINI_MODEL" -p - > "$drafts_dir/$scene_name"
 
         rm "$tmp_prompt_file"
         sleep 10
@@ -206,7 +237,16 @@ while true; do
     main_menu
     read -p "Choose an option: " choice
     if [ "$choice" == "q" ]; then break; fi
-    action_target="${menu_actions[$choice]}"
+
+    # === BUG FIX START ===
+    # Check for empty input before using it as an array key.
+    if [ -z "$choice" ]; then
+        action_target=""
+    else
+        action_target="${menu_actions[$choice]}"
+    fi
+    # === BUG FIX END ===
+
     if [ -z "$action_target" ]; then echo "Invalid option."
 elif [ -f "$action_target" ]; then create_new_project "$action_target"
 elif [ -d "$action_target" ]; then manage_existing_project "$action_target"
