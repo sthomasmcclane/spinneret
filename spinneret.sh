@@ -128,7 +128,60 @@ manage_existing_project() {
         if [ -n "$(find "$project_dir/Phase_04_Short_Synopsis/draft" -type f 2>/dev/null)" ]; then
             short_synopsis_draft_exists=true
         fi
-        
+
+        short_synopsis_approved=false
+        if [ -n "$(find "$project_dir/Phase_04_Short_Synopsis/approved" -type f 2>/dev/null)" ]; then
+            short_synopsis_approved=true
+        fi
+
+        extended_synopsis_draft_exists=false
+        if [ -n "$(find "$project_dir/Phase_05_Extended_Synopsis/draft" -type f 2>/dev/null)" ]; then
+            extended_synopsis_draft_exists=true
+        fi
+
+        extended_synopsis_approved=false
+        if [ -n "$(find "$project_dir/Phase_05_Extended_Synopsis/approved" -type f 2>/dev/null)" ]; then
+            extended_synopsis_approved=true
+        fi
+
+        goal_to_decision_cycle_draft_exists=false
+        if [ -n "$(find "$project_dir/Phase_06_Goal_to_Decision_Cycle/draft" -type f 2>/dev/null)" ]; then
+            goal_to_decision_cycle_draft_exists=true
+        fi
+
+        goal_to_decision_cycle_approved=false
+        if [ -n "$(find "$project_dir/Phase_06_Goal_to_Decision_Cycle/approved" -type f 2>/dev/null)" ]; then
+            goal_to_decision_cycle_approved=true
+        fi
+
+        total_char_development_count=$(find "$project_dir/Phase_07_Character_Development/drafts" -type f 2>/dev/null | wc -l)
+        approved_char_development_count=$(find "$project_dir/Phase_07_Character_Development/approved" -type f 2>/dev/null | wc -l)
+        pending_char_development_count=$((total_char_development_count - approved_char_development_count))
+
+        character_development_draft_exists=false
+        if [ -n "$(find "$project_dir/Phase_07_Character_Development/drafts" -type f 2>/dev/null)" ]; then
+            character_development_draft_exists=true
+        fi
+
+        character_development_approved=false
+        if [ -n "$(find "$project_dir/Phase_07_Character_Development/approved" -type f 2>/dev/null)" ]; then
+            character_development_approved=true
+        fi
+
+        total_locations_count=$(find "$project_dir/Phase_08_Locations/drafts" -type f 2>/dev/null | wc -l)
+        approved_locations_count=$(find "$project_dir/Phase_08_Locations/approved" -type f 2>/dev/null | wc -l)
+        pending_locations_count=$((total_locations_count - approved_locations_count))
+
+        locations_draft_exists=false
+        if [ -n "$(find "$project_dir/Phase_08_Locations/drafts" -type f 2>/dev/null)" ]; then
+            locations_draft_exists=true
+        fi
+
+        locations_approved=false
+        if [ -n "$(find "$project_dir/Phase_08_Locations/approved" -type f 2>/dev/null)" ]; then
+            locations_approved=true
+        fi
+
         # This will be expanded as we add more phases
         if $premise_approved && ! $skeleton_approved; then
             current_phase="Story Skeleton"
@@ -136,8 +189,20 @@ manage_existing_project() {
             current_phase="Character Introductions"
         elif $skeleton_approved && [ "$pending_char_count" -gt 0 ]; then
             current_phase="Characters Pending Approval ($pending_char_count pending)"
-        elif $character_introductions_approved && ! $short_synopsis_draft_exists; then
+        elif $character_introductions_approved && ! $short_synopsis_approved; then
             current_phase="Short Synopsis"
+        elif $short_synopsis_approved && ! $extended_synopsis_draft_exists; then
+            current_phase="Extended Synopsis"
+        elif $extended_synopsis_approved && ! $goal_to_decision_cycle_draft_exists; then
+            current_phase="Goal to Decision Cycle"
+        elif $goal_to_decision_cycle_approved && ! $character_development_draft_exists; then
+            current_phase="Character Development"
+        elif $goal_to_decision_cycle_approved && [ "$pending_char_development_count" -gt 0 ]; then
+            current_phase="Character Development Pending Approval ($pending_char_development_count pending)"
+        elif $character_development_approved && ! $locations_draft_exists; then
+            current_phase="Locations"
+        elif $character_development_approved && [ "$pending_locations_count" -gt 0 ]; then
+            current_phase="Locations Pending Approval ($pending_locations_count pending)"
         fi
 
         echo "CURRENT PHASE: $current_phase"
@@ -159,9 +224,33 @@ manage_existing_project() {
             echo "  [$project_menu_item_count] Approve Characters ($pending_char_count pending)"
             project_menu_actions[$project_menu_item_count]="approve_characters"
             project_menu_item_count=$((project_menu_item_count + 1))
-        elif $character_introductions_approved && ! $short_synopsis_draft_exists; then
+        elif $character_introductions_approved && ! $short_synopsis_approved; then
             echo "  [$project_menu_item_count] Generate Short Synopsis (Phase 4)"
             project_menu_actions[$project_menu_item_count]="generate_short_synopsis"
+            project_menu_item_count=$((project_menu_item_count + 1))
+        elif $short_synopsis_approved && ! $extended_synopsis_draft_exists; then
+            echo "  [$project_menu_item_count] Generate Extended Synopsis (Phase 5)"
+            project_menu_actions[$project_menu_item_count]="generate_extended_synopsis"
+            project_menu_item_count=$((project_menu_item_count + 1))
+        elif $extended_synopsis_approved && ! $goal_to_decision_cycle_draft_exists; then
+            echo "  [$project_menu_item_count] Generate Goal to Decision Cycle (Phase 6)"
+            project_menu_actions[$project_menu_item_count]="generate_goal_to_decision_cycle"
+            project_menu_item_count=$((project_menu_item_count + 1))
+        elif $goal_to_decision_cycle_approved && ! $character_development_draft_exists; then
+            echo "  [$project_menu_item_count] Generate Character Development (Phase 7)"
+            project_menu_actions[$project_menu_item_count]="generate_character_development"
+            project_menu_item_count=$((project_menu_item_count + 1))
+        elif $goal_to_decision_cycle_approved && [ "$pending_char_development_count" -gt 0 ]; then
+            echo "  [$project_menu_item_count] Approve Character Development ($pending_char_development_count pending)"
+            project_menu_actions[$project_menu_item_count]="approve_character_development"
+            project_menu_item_count=$((project_menu_item_count + 1))
+        elif $character_development_approved && ! $locations_draft_exists; then
+            echo "  [$project_menu_item_count] Generate Locations (Phase 8)"
+            project_menu_actions[$project_menu_item_count]="generate_locations"
+            project_menu_item_count=$((project_menu_item_count + 1))
+        elif $character_development_approved && [ "$pending_locations_count" -gt 0 ]; then
+            echo "  [$project_menu_item_count] Approve Locations ($pending_locations_count pending)"
+            project_menu_actions[$project_menu_item_count]="approve_locations"
             project_menu_item_count=$((project_menu_item_count + 1))
         fi
 
@@ -194,12 +283,28 @@ manage_existing_project() {
             "generate_extended_synopsis")
                 generate_extended_synopsis "$project_dir"
                 ;;
+            "generate_goal_to_decision_cycle")
+                generate_goal_to_decision_cycle "$project_dir"
+                ;;
+            "generate_character_development")
+                generate_character_development "$project_dir"
+                ;;
+            "approve_character_development")
+                echo "Please review the generated character development files in $project_dir/Phase_07_Character_Development/drafts/"
+                echo "Edit them as needed, and then move the approved files to $project_dir/Phase_07_Character_Development/approved/"
+                ;;
+            "generate_locations")
+                generate_locations "$project_dir"
+                ;;
+            "approve_locations")
+                echo "Please review the generated location files in $project_dir/Phase_08_Locations/drafts/"
+                echo "Edit them as needed, and then move the approved files to $project_dir/Phase_08_Locations/approved/"
+                ;;
             *) echo "Invalid option." ;;
         esac
         read -p "Press Enter to continue..."
     done
 }
-
 generate_extended_synopsis() {
     local project_dir=$1
     echo "--- GENERATING EXTENDED SYNOPSIS (AI) ---"
@@ -262,6 +367,216 @@ generate_extended_synopsis() {
     echo ""
     echo "NEXT STEP: Please review the draft. If you are happy with it, move it to:"
     echo "  $project_dir/Phase_05_Extended_Synopsis/approved/"
+}
+
+generate_goal_to_decision_cycle() {
+    local project_dir=$1
+    echo "--- GENERATING GOAL TO DECISION CYCLE (AI) ---"
+
+    # --- Gather all approved materials ---
+    approved_extended_synopsis=$(cat "$project_dir/Phase_05_Extended_Synopsis/approved"/*)
+    
+    # Create the directory for the new phase
+    mkdir -p "$project_dir/Phase_06_Goal_to_Decision_Cycle/draft" "$project_dir/Phase_06_Goal_to_Decision_Cycle/approved"
+
+    # Read the instructions for this phase
+    goal_to_decision_cycle_instructions=$(cat "Tools/06 - Goal to Decision Cycle.md")
+
+    ai_prompt="You are a master story analyst. Your task is to break down the provided Extended Synopsis into a series of 'Goal to Decision Cycles' for each major scene or sequence, as described in the instructions.
+
+    Follow these instructions precisely:
+    1.  Read and internalize the provided Extended Synopsis.
+    2.  Apply the 'Action Scenes Breakdown' and 'Reaction Scenes Breakdown' framework from the following instructions to each significant scene or sequence in the Extended Synopsis:
+        $goal_to_decision_cycle_instructions
+    3.  For each scene, clearly identify:
+        *   Whether it's an Action Scene or a Reaction Scene.
+        *   For Action Scenes: Goal, Conflict, Disaster.
+        *   For Reaction Scenes: Reaction, Dilemma, Decision.
+    4.  Present the breakdown for each scene clearly, using headings for each scene and subheadings for Goal, Conflict, etc.
+    5.  The output should be a structured list of scenes with their respective Goal to Decision Cycle elements.
+
+    --- APPROVED EXTENDED SYNOPSIS ---
+    $approved_extended_synopsis
+    --- END MATERIALS ---
+
+    Begin generation now. Output only the Goal to Decision Cycle breakdown."
+
+    # Write the prompt to a temporary file
+    tmp_prompt_file=$(mktemp)
+    echo -e "$ai_prompt" > "$tmp_prompt_file"
+
+    # Call the Gemini CLI
+    cat "$tmp_prompt_file" | gemini -m "$GEMINI_MODEL" -p - > "$project_dir/Phase_06_Goal_to_Decision_Cycle/draft/06-goal-to-decision-cycle.txt"
+
+    # Clean up the temporary file
+    rm "$tmp_prompt_file"
+
+    echo "--- GOAL TO DECISION CYCLE GENERATION COMPLETE ---"
+    echo "A draft of the Goal to Decision Cycle has been generated in:"
+    echo "  $project_dir/Phase_06_Goal_to_Decision_Cycle/draft/06-goal-to-decision-cycle.txt"
+    echo ""
+    echo "NEXT STEP: Please review the draft. If you are happy with it, move it to:"
+    echo "  $project_dir/Phase_06_Goal_to_Decision_Cycle/approved/"
+}
+
+generate_character_development() {
+    local project_dir=$1
+    echo "--- GENERATING CHARACTER DEVELOPMENT (AI) ---"
+
+    # --- Gather all approved materials ---
+    approved_extended_synopsis=$(cat "$project_dir/Phase_05_Extended_Synopsis/approved"/*)
+    approved_goal_to_decision_cycle=$(cat "$project_dir/Phase_06_Goal_to_Decision_Cycle/approved"/*)
+    
+    # Create the directory for the new phase
+    mkdir -p "$project_dir/Phase_07_Character_Development/drafts" "$project_dir/Phase_07_Character_Development/approved"
+
+    # Read the instructions for this phase
+    character_development_instructions=$(cat "Tools/07 - Character Development.md")
+
+    ai_prompt="You are a master character developer. Your task is to create detailed character development profiles for the main characters identified in the provided story materials, following the given instructions.
+
+    Follow these instructions precisely:
+    1.  Read and internalize all the provided materials: the approved Extended Synopsis and the approved Goal to Decision Cycle.
+    2.  Identify the main characters from these materials.
+    3.  For each main character, generate a detailed character development profile covering the following aspects as described in the framework:
+        $character_development_instructions
+        *   Voice
+        *   Characterisation
+        *   Questionnaire (answer relevant questions to deepen the character)
+        *   History (key points from their past)
+    4.  CRITICAL: Start each character's development profile with the exact string 'CHARACTER_NAME: ' followed by the character's full name on a single line. This is essential for file naming.
+    5.  Present each character's development profile clearly, with a distinct heading for each character.
+    6.  IMPORTANT: Separate each complete character development profile with the exact string '---CHARACTER-DEVELOPMENT-BREAK---' on its own line.
+
+    --- APPROVED EXTENDED SYNOPSIS ---
+    $approved_extended_synopsis
+
+    --- APPROVED GOAL TO DECISION CYCLE ---
+    $approved_goal_to_decision_cycle
+    --- END MATERIALS ---
+
+    Begin generation now. Output only the character development profiles."
+
+    # Write the prompt to a temporary file
+    tmp_prompt_file=$(mktemp)
+    echo -e "$ai_prompt" > "$tmp_prompt_file"
+
+    # Call the Gemini CLI and pipe the output to awk to split into separate, named files
+    cat "$tmp_prompt_file" | gemini -m "$GEMINI_MODEL" -p - | awk -v dir="$project_dir/Phase_07_Character_Development/drafts" '
+        BEGIN { RS="---CHARACTER-DEVELOPMENT-BREAK---" }
+        {
+            # Trim leading and trailing whitespace portably
+            gsub(/^[ \t\n]+/, "");
+            gsub(/[ \t\n]+$/, "");
+
+            if (length($0) > 10) {
+                # Extract the first line to find the character name
+                first_line = $0;
+                sub(/\n.*/, "", first_line);
+
+                if (sub(/^CHARACTER_NAME: /, "", first_line)) {
+                    char_name = first_line;
+                    gsub(/[^a-zA-Z0-9_ -]/, "", char_name); # Sanitize
+                    gsub(/ /, "_", char_name); # Replace spaces
+                    filename = sprintf("%s/%s.txt", dir, char_name);
+                } else {
+                    # Fallback if the name line is missing
+                    filename = sprintf("%s/character-development-unnamed-%02d.txt", dir, NR);
+                }
+                print $0 > filename;
+            }
+        }
+    '
+
+    # Clean up the temporary file
+    rm "$tmp_prompt_file"
+
+    echo "--- CHARACTER DEVELOPMENT GENERATION COMPLETE ---"
+    echo "Character development profiles have been generated as named files in:"
+    echo "  $project_dir/Phase_07_Character_Development/drafts/"
+    echo ""
+    echo "NEXT STEP: Please review the profiles. Move the files for the characters you want to keep into:"
+    echo "  $project_dir/Phase_07_Character_Development/approved/"
+}
+
+generate_locations() {
+    local project_dir=$1
+    echo "--- GENERATING LOCATIONS (AI) ---"
+
+    # --- Gather all approved materials ---
+    approved_extended_synopsis=$(cat "$project_dir/Phase_05_Extended_Synopsis/approved"/*)
+    approved_goal_to_decision_cycle=$(cat "$project_dir/Phase_06_Goal_to_Decision_Cycle/approved"/*)
+    
+    # Create the directory for the new phase
+    mkdir -p "$project_dir/Phase_08_Locations/drafts" "$project_dir/Phase_08_Locations/approved"
+
+    # Read the instructions for this phase
+    locations_instructions=$(cat "Tools/08 - Locations.md")
+
+    ai_prompt="You are a master world-builder. Your task is to create detailed descriptions for key locations identified in the provided story materials, following the given instructions.
+
+    Follow these instructions precisely:
+    1.  Read and internalize all the provided materials: the approved Extended Synopsis and the approved Goal to Decision Cycle.
+    2.  Identify the main locations from these materials that are crucial to the story.
+    3.  For each main location, generate a detailed description covering the following aspects as described in the framework:
+        $locations_instructions
+        *   Mood and Atmosphere
+        *   Character Development opportunities within the location
+        *   Foreshadowing plot points related to the location
+        *   Sensory details (sight, smell, taste, feel, hear)
+    4.  CRITICAL: Start each location description with the exact string 'LOCATION_NAME: ' followed by the location's full name on a single line. This is essential for file naming.
+    5.  Present each location description clearly, with a distinct heading for each location.
+    6.  IMPORTANT: Separate each complete location description with the exact string '---LOCATION-BREAK---' on its own line.
+
+    --- APPROVED EXTENDED SYNOPSIS ---
+    $approved_extended_synopsis
+
+    --- APPROVED GOAL TO DECISION CYCLE ---
+    $approved_goal_to_decision_cycle
+    --- END MATERIALS ---
+
+    Begin generation now. Output only the location descriptions."
+
+    # Write the prompt to a temporary file
+    tmp_prompt_file=$(mktemp)
+    echo -e "$ai_prompt" > "$tmp_prompt_file"
+
+    # Call the Gemini CLI and pipe the output to awk to split into separate, named files
+    cat "$tmp_prompt_file" | gemini -m "$GEMINI_MODEL" -p - | awk -v dir="$project_dir/Phase_08_Locations/drafts" '
+        BEGIN { RS="---LOCATION-BREAK---" }
+        {
+            # Trim leading and trailing whitespace portably
+            gsub(/^[ \t\n]+/, "");
+            gsub(/[ \t\n]+$/, "");
+
+            if (length($0) > 10) {
+                # Extract the first line to find the location name
+                first_line = $0;
+                sub(/\n.*/, "", first_line);
+
+                if (sub(/^LOCATION_NAME: /, "", first_line)) {
+                    location_name = first_line;
+                    gsub(/[^a-zA-Z0-9_ -]/, "", location_name); # Sanitize
+                    gsub(/ /, "_", location_name); # Replace spaces
+                    filename = sprintf("%s/%s.txt", dir, location_name);
+                } else {
+                    # Fallback if the name line is missing
+                    filename = sprintf("%s/location-unnamed-%02d.txt", dir, NR);
+                }
+                print $0 > filename;
+            }
+        }
+    '
+
+    # Clean up the temporary file
+    rm "$tmp_prompt_file"
+
+    echo "--- LOCATIONS GENERATION COMPLETE ---"
+    echo "Location descriptions have been generated as named files in:"
+    echo "  $project_dir/Phase_08_Locations/drafts/"
+    echo ""
+    echo "NEXT STEP: Please review the descriptions. Move the files for the locations you want to keep into:"
+    echo "  $project_dir/Phase_08_Locations/approved/"
 }
 
 generate_short_synopsis() {
