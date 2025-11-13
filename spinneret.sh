@@ -182,7 +182,52 @@ manage_existing_project() {
             locations_approved=true
         fi
 
-        # This will be expanded as we add more phases
+        advanced_plotting_draft_exists=false
+        if [ -n "$(find "$project_dir/Phase_09_Advanced_Plotting/draft" -type f 2>/dev/null)" ]; then
+            advanced_plotting_draft_exists=true
+        fi
+
+        advanced_plotting_approved=false
+        if [ -n "$(find "$project_dir/Phase_09_Advanced_Plotting/approved" -type f 2>/dev/null)" ]; then
+            advanced_plotting_approved=true
+        fi
+
+        echo "DEBUG: character_development_approved=$character_development_approved"
+        echo "DEBUG: locations_draft_exists=$locations_draft_exists"
+        echo "DEBUG: total_locations_count=$total_locations_count"
+        echo "DEBUG: approved_locations_count=$approved_locations_count"
+        echo "DEBUG: pending_locations_count=$pending_locations_count"
+
+        # Determine current phase based on approved status
+        if $premise_approved; then
+            current_phase="Premise (Approved)"
+        fi
+        if $skeleton_approved; then
+            current_phase="Story Skeleton (Approved)"
+        fi
+        if $character_introductions_approved; then
+            current_phase="Character Introductions (Approved)"
+        fi
+        if $short_synopsis_approved; then
+            current_phase="Short Synopsis (Approved)"
+        fi
+        if $extended_synopsis_approved; then
+            current_phase="Extended Synopsis (Approved)"
+        fi
+        if $goal_to_decision_cycle_approved; then
+            current_phase="Goal to Decision Cycle (Approved)"
+        fi
+        if $character_development_approved; then
+            current_phase="Character Development (Approved)"
+        fi
+        if $locations_approved; then
+            current_phase="Locations (Approved)"
+        fi
+        if $advanced_plotting_approved; then
+            current_phase="Advanced Plotting (Approved)"
+        fi
+
+        # Override current_phase if there's pending work
         if $premise_approved && ! $skeleton_approved; then
             current_phase="Story Skeleton"
         elif $skeleton_approved && [ "$total_char_count" -eq 0 ]; then
@@ -203,6 +248,8 @@ manage_existing_project() {
             current_phase="Locations"
         elif $character_development_approved && [ "$pending_locations_count" -gt 0 ]; then
             current_phase="Locations Pending Approval ($pending_locations_count pending)"
+        elif $locations_approved && ! $advanced_plotting_draft_exists; then
+            current_phase="Advanced Plotting"
         fi
 
         echo "CURRENT PHASE: $current_phase"
@@ -252,6 +299,10 @@ manage_existing_project() {
             echo "  [$project_menu_item_count] Approve Locations ($pending_locations_count pending)"
             project_menu_actions[$project_menu_item_count]="approve_locations"
             project_menu_item_count=$((project_menu_item_count + 1))
+        elif $locations_approved && ! $advanced_plotting_draft_exists; then
+            echo "  [$project_menu_item_count] Generate Advanced Plotting (Phase 9)"
+            project_menu_actions[$project_menu_item_count]="generate_advanced_plotting"
+            project_menu_item_count=$((project_menu_item_count + 1))
         fi
 
         echo "  [$project_menu_item_count] Back to Main Menu"
@@ -299,6 +350,9 @@ manage_existing_project() {
             "approve_locations")
                 echo "Please review the generated location files in $project_dir/Phase_08_Locations/drafts/"
                 echo "Edit them as needed, and then move the approved files to $project_dir/Phase_08_Locations/approved/"
+                ;;
+            "generate_advanced_plotting")
+                generate_advanced_plotting "$project_dir"
                 ;;
             *) echo "Invalid option." ;;
         esac
@@ -577,6 +631,69 @@ generate_locations() {
     echo ""
     echo "NEXT STEP: Please review the descriptions. Move the files for the locations you want to keep into:"
     echo "  $project_dir/Phase_08_Locations/approved/"
+}
+
+generate_advanced_plotting() {
+    local project_dir=$1
+    echo "--- GENERATING ADVANCED PLOTTING (AI) ---"
+
+    # --- Gather all approved materials ---
+    approved_extended_synopsis=$(cat "$project_dir/Phase_05_Extended_Synopsis/approved"/*)
+    approved_goal_to_decision_cycle=$(cat "$project_dir/Phase_06_Goal_to_Decision_Cycle/approved"/*)
+    approved_character_development=$(cat "$project_dir/Phase_07_Character_Development/approved"/*)
+    approved_locations=$(cat "$project_dir/Phase_08_Locations/approved"/*)
+    
+    # Create the directory for the new phase
+    mkdir -p "$project_dir/Phase_09_Advanced_Plotting/draft" "$project_dir/Phase_09_Advanced_Plotting/approved"
+
+    # Read the instructions for this phase
+    advanced_plotting_instructions=$(cat "Tools/09 - Advanced Plotting.md")
+
+    ai_prompt="You are a master plot weaver. Your task is to identify and weave in advanced plot points and threads based on the provided story materials, following the given instructions.
+
+    Follow these instructions precisely:
+    1.  Read and internalize all the provided materials: the approved Extended Synopsis, Goal to Decision Cycle, Character Development, and Locations.
+    2.  Identify opportunities to introduce:
+        *   Character Background reveals (slowly throughout the story)
+        *   Significant Items (tracking their appearance and context)
+        *   Clues (especially for mystery/thriller elements)
+        *   Off-screen events that impact the plot
+    3.  Use the following framework to guide the advanced plotting:
+        $advanced_plotting_instructions
+    4.  Present the advanced plotting as a structured list of plot points and threads, indicating how they connect to existing scenes or characters.
+    5.  The output should be a single, cohesive document outlining these advanced plotting elements.
+
+    --- APPROVED EXTENDED SYNOPSIS ---
+    $approved_extended_synopsis
+
+    --- APPROVED GOAL TO DECISION CYCLE ---
+    $approved_goal_to_decision_cycle
+
+    --- APPROVED CHARACTER DEVELOPMENT ---
+    $approved_character_development
+
+    --- APPROVED LOCATIONS ---
+    $approved_locations
+    --- END MATERIALS ---
+
+    Begin generation now. Output only the advanced plotting details."
+
+    # Write the prompt to a temporary file
+    tmp_prompt_file=$(mktemp)
+    echo -e "$ai_prompt" > "$tmp_prompt_file"
+
+    # Call the Gemini CLI
+    cat "$tmp_prompt_file" | gemini -m "$GEMINI_MODEL" -p - > "$project_dir/Phase_09_Advanced_Plotting/draft/09-advanced-plotting.txt"
+
+    # Clean up the temporary file
+    rm "$tmp_prompt_file"
+
+    echo "--- ADVANCED PLOTTING GENERATION COMPLETE ---"
+    echo "A draft of the advanced plotting has been generated in:"
+    echo "  $project_dir/Phase_09_Advanced_Plotting/draft/09-advanced-plotting.txt"
+    echo ""
+    echo "NEXT STEP: Please review the draft. If you are happy with it, move it to:"
+    echo "  $project_dir/Phase_09_Advanced_Plotting/approved/"
 }
 
 generate_short_synopsis() {
