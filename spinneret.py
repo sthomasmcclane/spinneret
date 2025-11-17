@@ -8,7 +8,7 @@ from typing import Union
 # --- Configuration ---
 # Set the Gemini model to use for all API calls.
 # Examples: "gemini-1.5-pro-latest", "gemini-1.5-flash-latest", "gemini-pro"
-GEMINI_MODEL = "gemini-1.5-flash-latest"
+GEMINI_MODEL = "gemini-2.5-flash"
 
 def clear_screen():
     """Clears the terminal screen."""
