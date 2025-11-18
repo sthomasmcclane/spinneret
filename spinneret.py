@@ -1020,6 +1020,258 @@ def compile_final_draft(project_dir: Path):
     print("--- FINAL DRAFT COMPILED ---")
     print(f"Final draft compiled to: {final_draft_file}")
 
+def compile_first_draft_for_analysis(project_dir: Path) -> str:
+    """Helper function to compile approved first draft scenes into a single text for analysis."""
+    approved_drafts_dir = project_dir / "Phase_12_First_Draft" / "approved"
+    if not approved_drafts_dir.exists() or not any(approved_drafts_dir.glob('*.md')):
+        return ""
+    
+    compiled_content = []
+    for draft_file in sorted(approved_drafts_dir.glob('*.md')):
+        compiled_content.append(draft_file.read_text())
+    
+    return "\n\n---\n\n".join(compiled_content)
+
+def generate_theme_and_variations(project_dir: Path):
+    """Generates theme and variations analysis for the project."""
+    print("--- GENERATING THEME AND VARIATIONS ANALYSIS (AI) ---")
+    phase_dir = project_dir / "Phase_13_Theme_and_Variations"
+    first_draft_approved_dir = project_dir / "Phase_12_First_Draft" / "approved"
+
+    try:
+        if not first_draft_approved_dir.exists() or not any(first_draft_approved_dir.glob('*.md')):
+            print("Error: No approved first draft scenes found.")
+            return
+        
+        compiled_first_draft = compile_first_draft_for_analysis(project_dir)
+        if not compiled_first_draft:
+            print("Error: Could not compile first draft for analysis.")
+            return
+
+        theme_instructions = (Path("Tools") / "13 - Theme and Variations.md").read_text()
+    except FileNotFoundError as e:
+        print(f"Error: Could not find a required file: {e.filename}")
+        return
+
+    (phase_dir / "draft").mkdir(parents=True, exist_ok=True)
+    (phase_dir / "approved").mkdir(parents=True, exist_ok=True)
+
+    prompt = f"""
+You are a master story analyst. Your task is to analyze the provided first draft to identify themes, motifs, time patterns, and weather patterns that can be enhanced and woven throughout the story.
+
+Follow these instructions precisely:
+1.  Read and analyze the provided first draft carefully.
+2.  Use the following framework to guide your analysis:
+{theme_instructions}
+3.  Identify:
+    *   Themes and motifs that appear in the draft (specific or abstract themes like colors, emotions, concepts, etc.)
+    *   Time patterns (time of day, seasons, specific dates mentioned)
+    *   Weather patterns and atmospheric conditions
+    *   Opportunities to strengthen these elements throughout the story
+4.  For each theme/motif identified, provide notes on:
+    *   Where it appears in the story
+    *   How it can be enhanced or used more effectively
+    *   Potential symbolic uses or variations
+5.  Create a comprehensive time and weather tracking document that shows what time/weather is present at each major scene.
+6.  The output should be a structured document that the author can use as reference when revising.
+
+--- FIRST DRAFT ---
+{compiled_first_draft}
+--- END DRAFT ---
+
+Begin generation now. Output only the theme and variations analysis.
+"""
+    output = call_gemini(prompt)
+    if output:
+        draft_file = phase_dir / "draft" / "13-theme-and-variations.txt"
+        draft_file.write_text(output.strip())
+        print("""
+--- THEME AND VARIATIONS ANALYSIS COMPLETE ---""")
+        print("A draft of the theme and variations analysis has been generated in:")
+        print(f"  {draft_file}")
+        print("""
+NEXT STEP: Please review the analysis. If you are happy with it, move it to:""")
+        print(f"  {phase_dir / 'approved'}/")
+
+def generate_second_draft(project_dir: Path):
+    """Generates the second draft scenes for the project."""
+    print("--- GENERATING SECOND DRAFT (AI) ---")
+    phase_dir = project_dir / "Phase_14_Second_Draft"
+    first_draft_approved_dir = project_dir / "Phase_12_First_Draft" / "approved"
+    theme_approved_dir = project_dir / "Phase_13_Theme_and_Variations" / "approved"
+
+    try:
+        if not first_draft_approved_dir.exists() or not any(first_draft_approved_dir.glob('*.md')):
+            print("Error: No approved first draft scenes found.")
+            return
+        
+        compiled_first_draft = compile_first_draft_for_analysis(project_dir)
+        if not compiled_first_draft:
+            print("Error: Could not compile first draft.")
+            return
+
+        theme_notes = ""
+        if theme_approved_dir.exists():
+            theme_files = list(theme_approved_dir.glob('*.txt'))
+            if theme_files:
+                theme_notes = theme_files[0].read_text()
+
+        second_draft_instructions = (Path("Tools") / "14 - Second Draft.md").read_text()
+    except FileNotFoundError as e:
+        print(f"Error: Could not find a required file: {e.filename}")
+        return
+
+    (phase_dir / "draft").mkdir(parents=True, exist_ok=True)
+    (phase_dir / "approved").mkdir(parents=True, exist_ok=True)
+
+    theme_section = ""
+    if theme_notes:
+        theme_section = f"\n--- THEME AND VARIATIONS NOTES ---\n{theme_notes}\n--- END NOTES ---\n"
+    
+    prompt = f"""
+You are a master story editor. Your task is to rewrite the provided first draft into a polished second draft, applying advanced revision techniques to improve the prose, pacing, and overall quality.
+
+Follow these instructions precisely:
+1.  Read the provided first draft carefully, scene by scene.
+2.  Apply the revision techniques described in the following framework:
+{second_draft_instructions}
+3.  For each scene, rewrite it applying:
+    *   The Action >> Reaction Cycle (Action paragraphs with external facts, then Reaction paragraphs with Gut, Instinctive, and Rational responses)
+    *   Elimination of unnecessary adverbs
+    *   Showing instead of telling
+    *   Stronger, more specific verbs
+    *   Theme, time, and weather consistency (refer to theme notes if provided)
+4.  Be ruthless: cut anything that doesn't add to plot, atmosphere, or character development.
+5.  Compress waffly descriptions and restructure clunky sentences.
+6.  Every word should be perfect and purposeful.
+7.  CRITICAL: Start each rewritten scene with a clear, descriptive title (e.g., '## Scene 1: The Dark Alley Encounter').
+8.  IMPORTANT: Separate each complete rewritten scene with the exact string '---SCENE-BREAK---' on its own line.
+
+--- FIRST DRAFT ---
+{compiled_first_draft}
+--- END DRAFT ---
+{theme_section}
+Begin generation now. Output only the second draft scenes.
+"""
+    output = call_gemini(prompt)
+    if not output:
+        return
+
+    scenes = output.split("---SCENE-BREAK---")
+    for i, scene_content in enumerate(scenes):
+        scene_content = scene_content.strip()
+        if len(scene_content) > 10:
+            first_line = scene_content.split('\n', 1)[0]
+            scene_title_match = re.match(r'## Scene [0-9]+: (.*)', first_line)
+            
+            if scene_title_match:
+                scene_title = scene_title_match.group(1).strip()
+                safe_scene_title = re.sub(r'[^a-zA-Z0-9_ -]', '', scene_title).replace(' ', '_')
+                file_path = phase_dir / "draft" / f"{i+1:02d}-{safe_scene_title}.md"
+            else:
+                file_path = phase_dir / "draft" / f"scene-unnamed-{i+1:02d}.md"
+            
+            file_path.write_text(scene_content)
+
+    print("""
+--- SECOND DRAFT GENERATION COMPLETE ---""")
+    print("Second draft scenes have been generated as named files in:")
+    print(f"  {phase_dir / 'draft'}/")
+    print("""
+NEXT STEP: Please review the scenes. Move the files for the scenes you want to keep into:""")
+    print(f"  {phase_dir / 'approved'}/")
+
+def compile_second_draft_for_analysis(project_dir: Path) -> str:
+    """Helper function to compile approved second draft scenes into a single text for analysis."""
+    approved_drafts_dir = project_dir / "Phase_14_Second_Draft" / "approved"
+    if not approved_drafts_dir.exists() or not any(approved_drafts_dir.glob('*.md')):
+        return ""
+    
+    compiled_content = []
+    for draft_file in sorted(approved_drafts_dir.glob('*.md')):
+        compiled_content.append(draft_file.read_text())
+    
+    return "\n\n---\n\n".join(compiled_content)
+
+def generate_final_draft(project_dir: Path):
+    """Generates the final draft scenes for the project."""
+    print("--- GENERATING FINAL DRAFT (AI) ---")
+    phase_dir = project_dir / "Phase_15_Final_Draft"
+    second_draft_approved_dir = project_dir / "Phase_14_Second_Draft" / "approved"
+
+    try:
+        if not second_draft_approved_dir.exists() or not any(second_draft_approved_dir.glob('*.md')):
+            print("Error: No approved second draft scenes found.")
+            return
+        
+        compiled_second_draft = compile_second_draft_for_analysis(project_dir)
+        if not compiled_second_draft:
+            print("Error: Could not compile second draft.")
+            return
+
+        final_draft_instructions = (Path("Tools") / "15 - Final Draft & Editing.md").read_text()
+    except FileNotFoundError as e:
+        print(f"Error: Could not find a required file: {e.filename}")
+        return
+
+    (phase_dir / "draft").mkdir(parents=True, exist_ok=True)
+    (phase_dir / "approved").mkdir(parents=True, exist_ok=True)
+
+    prompt = f"""
+You are a master editor. Your task is to perform a final editing pass on the provided second draft, applying advanced editing techniques to eliminate all remaining issues and polish the prose to publication quality.
+
+Follow these instructions precisely:
+1.  Read the provided second draft carefully, scene by scene.
+2.  Apply the final editing techniques described in the following framework:
+{final_draft_instructions}
+3.  For each scene, perform a final polish pass to:
+    *   Fix overly formal dialogue (add fillers, pauses, interruptions, contractions)
+    *   Eliminate "As you know, Bob" exposition
+    *   Remove over-explanation of characters (show, don't tell)
+    *   Fix dialogue mechanics (use 'said' appropriately, add action beats)
+    *   Improve paragraphing (add whitespace, adjust pace)
+    *   Eliminate repetition and laboring the point
+    *   Apply the 'was' test (replace weak 'was' constructions with stronger verbs, fix passive voice)
+    *   Seek out and eliminate clichés, typos, lazy description, meandering prose
+4.  Be extremely ruthless: every word must earn its place.
+5.  The output should be publication-ready prose.
+6.  CRITICAL: Start each final scene with a clear, descriptive title (e.g., '## Scene 1: The Dark Alley Encounter').
+7.  IMPORTANT: Separate each complete final scene with the exact string '---SCENE-BREAK---' on its own line.
+
+--- SECOND DRAFT ---
+{compiled_second_draft}
+--- END DRAFT ---
+
+Begin generation now. Output only the final draft scenes.
+"""
+    output = call_gemini(prompt)
+    if not output:
+        return
+
+    scenes = output.split("---SCENE-BREAK---")
+    for i, scene_content in enumerate(scenes):
+        scene_content = scene_content.strip()
+        if len(scene_content) > 10:
+            first_line = scene_content.split('\n', 1)[0]
+            scene_title_match = re.match(r'## Scene [0-9]+: (.*)', first_line)
+            
+            if scene_title_match:
+                scene_title = scene_title_match.group(1).strip()
+                safe_scene_title = re.sub(r'[^a-zA-Z0-9_ -]', '', scene_title).replace(' ', '_')
+                file_path = phase_dir / "draft" / f"{i+1:02d}-{safe_scene_title}.md"
+            else:
+                file_path = phase_dir / "draft" / f"scene-unnamed-{i+1:02d}.md"
+            
+            file_path.write_text(scene_content)
+
+    print("""
+--- FINAL DRAFT GENERATION COMPLETE ---""")
+    print("Final draft scenes have been generated as named files in:")
+    print(f"  {phase_dir / 'draft'}/")
+    print("""
+NEXT STEP: Please review the scenes. Move the files for the scenes you want to keep into:""")
+    print(f"  {phase_dir / 'approved'}/")
+
 # The full implementation would have a Python function for each Bash function.
 
 
@@ -1039,8 +1291,8 @@ def get_project_state(project_dir: Path) -> dict:
         "01_Premise", "02_Story_Skeleton", "03_Character_Introductions",
         "04_Short_Synopsis", "05_Extended_Synopsis", "06_Goal_to_Decision_Cycle",
         "07_Character_Development", "08_Locations", "09_Advanced_Plotting",
-        "07_Character_Development", "08_Locations", "09_Advanced_Plotting",
-        "10_Character_Viewpoints", "11_Blocking_a_Rough_Outline", "12_First_Draft"
+        "10_Character_Viewpoints", "11_Blocking_a_Rough_Outline", "12_First_Draft",
+        "13_Theme_and_Variations", "14_Second_Draft", "15_Final_Draft"
     ]
     for phase in phases:
         phase_name = phase.split('_', 1)[1]
@@ -1088,11 +1340,14 @@ def manage_existing_project(project_dir: Path):
             current_phase = "Ready to Generate Blocking Outline (Phase 11)"
         elif state["Blocking_a_Rough_Outline_approved"] and not state["First_Draft_approved"]:
             current_phase = "Ready to Generate First Draft (Phase 12)"
-        elif state["First_Draft_approved"] and not state["final_draft_compiled"]:
-            current_phase = "Ready to Compile Final Draft"
-        # ... more state logic would go here, checking each phase in order
+        elif state["First_Draft_approved"] and not state["Theme_and_Variations_approved"]:
+            current_phase = "Ready to Generate Theme and Variations Analysis (Phase 13)"
+        elif state["Theme_and_Variations_approved"] and not state["Second_Draft_approved"]:
+            current_phase = "Ready to Generate Second Draft (Phase 14)"
+        elif state["Second_Draft_approved"] and not state["Final_Draft_approved"]:
+            current_phase = "Ready to Generate Final Draft (Phase 15)"
         else:
-            current_phase = "First Draft Complete!"
+            current_phase = "Final Draft Complete!"
 
         print(f"CURRENT PHASE: {current_phase}\n")
 
@@ -1144,11 +1399,22 @@ def manage_existing_project(project_dir: Path):
             print(f"  [{item_count}] Generate First Draft (Phase 12)")
             menu_actions[str(item_count)] = lambda: generate_first_draft(project_dir)
             item_count += 1
-        elif state["First_Draft_approved"] and not state["final_draft_compiled"]:
-            print(f"  [{item_count}] Compile Final Draft")
-            menu_actions[str(item_count)] = lambda: compile_final_draft(project_dir)
+        elif state["First_Draft_approved"] and not state["Theme_and_Variations_approved"]:
+            if not state["final_draft_compiled"]:
+                print(f"  [{item_count}] Compile First Draft (Optional)")
+                menu_actions[str(item_count)] = lambda: compile_final_draft(project_dir)
+                item_count += 1
+            print(f"  [{item_count}] Generate Theme and Variations Analysis (Phase 13)")
+            menu_actions[str(item_count)] = lambda: generate_theme_and_variations(project_dir)
             item_count += 1
-        # ... other menu items would be dynamically added here based on state
+        elif state["Theme_and_Variations_approved"] and not state["Second_Draft_approved"]:
+            print(f"  [{item_count}] Generate Second Draft (Phase 14)")
+            menu_actions[str(item_count)] = lambda: generate_second_draft(project_dir)
+            item_count += 1
+        elif state["Second_Draft_approved"] and not state["Final_Draft_approved"]:
+            print(f"  [{item_count}] Generate Final Draft (Phase 15)")
+            menu_actions[str(item_count)] = lambda: generate_final_draft(project_dir)
+            item_count += 1
 
         print("  [b] Back to Main Menu")
         menu_actions['b'] = "back"
