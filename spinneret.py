@@ -61,30 +61,82 @@ def create_new_premise():
     print("Workspace created.")
 
     try:
+        brainstormer_instructions = (Path("Tools") / "Brainstormer.md").read_text()
         premise_instructions = (Path("Tools") / "01 - Premise.md").read_text()
-    except FileNotFoundError:
-        print("Error: Could not find 'Tools/01 - Premise.md'. Make sure it exists.")
+    except FileNotFoundError as e:
+        print(f"Error: Could not find required file. Make sure 'Tools/Brainstormer.md' and 'Tools/01 - Premise.md' exist.")
         return
 
-    prompt = f"""
-You are a master story coach. Your task is to take a user's simple story idea and brainstorm five compelling story premises based on it.
+    # Step 1: Brainstorm and expand the initial idea
+    print("\n--- BRAINSTORMING PHASE ---")
+    brainstorm_prompt = f"""
+{brainstormer_instructions}
+
+--- USER'S INITIAL STORY IDEA ---
+{story_idea}
+--- END OF IDEA ---
+
+Your task: Take the user's initial story idea and provide a comprehensive brainstorming analysis. 
+
+Since this is a single-turn interaction (not a multi-turn conversation), provide a complete brainstorming output that:
+1. Rephrases the core concept to confirm understanding
+2. Identifies the key thematic, metaphorical, and human condition opportunities (fulfilling the Prime Directive)
+3. Organizes ideas under these headings:
+   - **Narrative options**
+   - **Potential expansions of the concept**
+   - **Refinements**
+   - **Potential subversions**
+
+Focus on elevating the idea to literary fiction by identifying:
+- Thematic resonance (identity, loss, power, freedom, love, belief, etc.)
+- Metaphorical potential (how the concept serves as metaphor for real-world issues)
+- The human condition (how this alters inner life, relationships, purpose, fears)
+- Philosophical questions (morality, existence, consciousness)
+
+Be considered, reflective, and intellectually curious. Avoid clichés and tropes. Present ideas that are original, logically connected, elegant, and have high literary potential.
+
+Output your complete brainstorming analysis now.
+"""
+
+    brainstorm_output = call_gemini(brainstorm_prompt)
+    if not brainstorm_output:
+        return
+
+    # Save the brainstormed output
+    brainstorm_file = phase_dir / "drafts" / "00-brainstorming.txt"
+    brainstorm_file.write_text(brainstorm_output)
+    print("Brainstorming analysis saved.")
+
+    # Step 2: Generate premises using both the original idea and brainstormed expansion
+    print("\n--- PREMISE GENERATION PHASE ---")
+    premise_prompt = f"""
+You are a master story coach. Your task is to take a user's story idea (which has been enriched through brainstorming) and generate five compelling story premises based on it.
 
 Follow these instructions precisely:
-1.  Read the user's story idea carefully.
+1.  Read the user's original story idea and the brainstorming analysis carefully.
 2.  Use the following framework to structure your thinking for each premise:
 {premise_instructions}
 3.  Generate five distinct premise options. Each premise must be a single sentence and follow the structure: Situation > Character > Goal > Opponent > Disaster.
-4.  Present the five premises clearly.
-5.  IMPORTANT: Separate each premise with the exact string '---PREMISE-BREAK---' on its own line.
+4.  The premises should incorporate insights from the brainstorming analysis, particularly:
+   - Thematic depth and literary potential
+   - Unique narrative angles and subversions
+   - Human condition exploration
+   - Philosophical questions
+5.  Present the five premises clearly.
+6.  IMPORTANT: Separate each premise with the exact string '---PREMISE-BREAK---' on its own line.
 
---- USER'S STORY IDEA ---
+--- USER'S ORIGINAL STORY IDEA ---
 {story_idea}
 --- END OF IDEA ---
+
+--- BRAINSTORMING ANALYSIS ---
+{brainstorm_output}
+--- END BRAINSTORMING ---
 
 Begin generation now.
 """
 
-    output = call_gemini(prompt)
+    output = call_gemini(premise_prompt)
     if not output:
         return
 
@@ -96,7 +148,7 @@ Begin generation now.
             file_path.write_text(premise)
 
     print("\n--- PREMISE GENERATION COMPLETE ---")
-    print("Five premise options have been generated in:")
+    print("Brainstorming analysis and five premise options have been generated in:")
     print(f"  {phase_dir / 'drafts'}/")
     print("""
 NEXT STEP: Please review the options, choose one, and move it to:""")
