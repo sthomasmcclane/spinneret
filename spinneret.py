@@ -146,10 +146,10 @@ Begin generation now. Output only the story skeleton.
         draft_file.write_text(output.strip())
         print("\n--- SKELETON GENERATION COMPLETE ---")
         print("A draft of the story skeleton has been generated in:")
-    print(f"  {draft_file}")
+        print(f"  {draft_file}")
         print("""
 NEXT STEP: Please review the draft. If you are happy with it, move it to:""")
-    print(f"  {phase_dir / 'approved'}/")
+        print(f"  {phase_dir / 'approved'}/")
 
 # ... other generate functions would go here ...
 
@@ -285,10 +285,10 @@ Begin generation now. Output only the short synopsis.
         print("""
 --- SHORT SYNOPSIS GENERATION COMPLETE ---""")
         print("A draft of the short synopsis has been generated in:")
-    print(f"  {draft_file}")
+        print(f"  {draft_file}")
         print("""
 NEXT STEP: Review the draft. If you are happy with it, move it to:""")
-    print(f"  {phase_dir / 'approved'}/")
+        print(f"  {phase_dir / 'approved'}/")
 
 def generate_extended_synopsis(project_dir: Path):
     """Generates the extended synopsis for the project."""
@@ -361,13 +361,13 @@ Begin generation now. Output only the extended synopsis.
     if output:
         draft_file = phase_dir / "draft" / "05-extended-synopsis.txt"
         draft_file.write_text(output.strip())
-    print("""
+        print("""
 --- EXTENDED SYNOPSIS GENERATION COMPLETE ---""")
-    print("A draft of the extended synopsis has been generated in:")
-    print(f"  {draft_file}")
+        print("A draft of the extended synopsis has been generated in:")
+        print(f"  {draft_file}")
         print("""
 NEXT STEP: Please review the draft. If you are happy with it, move it to:""")
-    print(f"  {phase_dir / 'approved'}/")
+        print(f"  {phase_dir / 'approved'}/")
 
 def generate_goal_to_decision_cycle(project_dir: Path):
     """Generates the Goal to Decision Cycle for the project."""
@@ -414,13 +414,13 @@ Begin generation now. Output only the Goal to Decision Cycle breakdown.
     if output:
         draft_file = phase_dir / "draft" / "06-goal-to-decision-cycle.txt"
         draft_file.write_text(output.strip())
-    print("""
+        print("""
 --- GOAL TO DECISION CYCLE GENERATION COMPLETE ---""")
         print("A draft of the Goal to Decision Cycle has been generated in:")
-    print(f"  {draft_file}")
+        print(f"  {draft_file}")
         print("""
 NEXT STEP: Please review the draft. If you are happy with it, move it to:""")
-    print(f"  {phase_dir / 'approved'}/")
+        print(f"  {phase_dir / 'approved'}/")
 
 def generate_character_development(project_dir: Path):
     """Generates character development profiles for the project."""
@@ -661,10 +661,10 @@ Begin generation now. Output only the advanced plotting details.
         print("""
 --- ADVANCED PLOTTING GENERATION COMPLETE ---""")
         print("A draft of the advanced plotting has been generated in:")
-    print(f"  {draft_file}")
+        print(f"  {draft_file}")
         print("""
 NEXT STEP: Please review the draft. If you are happy with it, move it to:""")
-    print(f"  {phase_dir / 'approved'}/")
+        print(f"  {phase_dir / 'approved'}/")
 
 def generate_character_viewpoints(project_dir: Path):
     """Generates character viewpoint synopses for the project."""
