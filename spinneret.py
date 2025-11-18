@@ -2,44 +2,203 @@
 import os
 import subprocess
 import re
+import time
 from pathlib import Path
-from typing import Union
+from typing import Union, Optional
 
 # --- Configuration ---
-# Set the Gemini model to use for all API calls.
-# Examples: "gemini-1.5-pro-latest", "gemini-1.5-flash-latest", "gemini-pro"
-GEMINI_MODEL = "gemini-2.5-flash"
+# Model selection per phase type
+# Flash models: Faster, cheaper, good for brainstorming and analysis
+# Pro models: Slower, more expensive, better for creative writing and complex tasks
+# Note: Pro is the default model (no -m flag needed). Flash requires explicit -m flag.
+MODEL_CONFIG = {
+    "brainstorming": "gemini-2.5-flash",  # Fast for idea generation
+    "premise": "gemini-2.5-flash",  # Fast for premise generation
+    "planning": "gemini-2.5-flash",  # Fast for planning phases
+    "analysis": "gemini-2.5-flash",  # Fast for analysis
+    "draft": None,  # Use Pro (default) for better creative writing quality
+    "editing": None,  # Use Pro (default) for better editing quality
+}
+
+# Token limits (approximate, conservative estimates)
+# Gemini 2.0 Flash: ~1M tokens context window
+# Using conservative 800K to leave room for output
+MAX_CONTEXT_TOKENS = 800000
+WARNING_THRESHOLD_TOKENS = 600000  # Warn user if approaching limit
+
+# Rough token estimation: ~4 characters per token (conservative)
+CHARS_PER_TOKEN = 4
+
+# Extended thinking levels for complex tasks
+# These keywords in prompts trigger deeper computational thinking
+THINKING_LEVELS = {
+    "standard": "",  # No special thinking instruction
+    "deep": "think harder",  # For moderately complex tasks
+    "ultra": "ultrathink",  # For very complex tasks requiring maximum reasoning
+}
+
+# Which phases should use extended thinking
+EXTENDED_THINKING_PHASES = {
+    "brainstorming": "deep",  # Complex idea generation
+    "premise": "standard",
+    "planning": "standard",
+    "analysis": "deep",  # Complex analysis tasks
+    "draft": "ultra",  # Creative writing needs deep thinking
+    "editing": "deep",  # Editing requires careful analysis
+}
 
 def clear_screen():
     """Clears the terminal screen."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def call_gemini(prompt: str) -> Union[str, None]:
+def estimate_tokens(text: str) -> int:
+    """Estimates token count for a text string."""
+    return len(text) // CHARS_PER_TOKEN
+
+def manage_token_limit(prompt: str, max_tokens: int = MAX_CONTEXT_TOKENS) -> tuple[str, dict]:
+    """
+    Manages token limits by truncating or summarizing if needed.
+    Returns (processed_prompt, info_dict) where info_dict contains:
+    - original_tokens: Original token count
+    - final_tokens: Final token count after processing
+    - was_truncated: Whether truncation occurred
+    - warning: Warning message if applicable
+    """
+    original_tokens = estimate_tokens(prompt)
+    info = {
+        "original_tokens": original_tokens,
+        "final_tokens": original_tokens,
+        "was_truncated": False,
+        "warning": None
+    }
+    
+    if original_tokens > max_tokens:
+        # Truncate from the middle, keeping the beginning (instructions) and end (recent context)
+        # This preserves the most important parts
+        chars_to_keep = max_tokens * CHARS_PER_TOKEN
+        keep_start = chars_to_keep // 2
+        keep_end = chars_to_keep - keep_start
+        
+        truncated = prompt[:keep_start] + "\n\n[... CONTENT TRUNCATED DUE TO LENGTH ...]\n\n" + prompt[-keep_end:]
+        info["final_tokens"] = estimate_tokens(truncated)
+        info["was_truncated"] = True
+        info["warning"] = f"Prompt was very long ({original_tokens:,} tokens). Truncated to {info['final_tokens']:,} tokens to fit model limits."
+        return truncated, info
+    elif original_tokens > WARNING_THRESHOLD_TOKENS:
+        info["warning"] = f"Large prompt detected ({original_tokens:,} tokens). This may take longer to process."
+    
+    return prompt, info
+
+def load_project_gemini_config(project_dir: Path) -> dict:
+    """
+    Loads project-specific GEMINI.md configuration if it exists.
+    Returns a dict with custom instructions that can be prepended to prompts.
+    """
+    gemini_file = project_dir / "GEMINI.md"
+    if gemini_file.exists():
+        try:
+            return {"custom_instructions": gemini_file.read_text()}
+        except Exception:
+            return {}
+    return {}
+
+def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Path] = None, retry_count: int = 2) -> Optional[str]:
     """
     Calls the Gemini CLI with a given prompt via stdin.
+    
+    Args:
+        prompt: The prompt to send to the AI
+        task_type: Type of task (brainstorming, premise, planning, analysis, draft, editing)
+                   Determines which model to use
+        project_dir: Optional project directory for loading project-specific GEMINI.md
+        retry_count: Number of retry attempts on failure
+    
     Returns the output or None if an error occurs.
     """
-    print("--- Calling Gemini AI... ---")
-    try:
-        process = subprocess.run(
-            ['gemini', '-m', GEMINI_MODEL, '-p', '-'],
-            input=prompt,
-            capture_output=True,
-            text=True,
-            check=True
-        )
-        print("--- AI generation complete. ---")
-        return process.stdout
-    except FileNotFoundError:
-        print("\nError: 'gemini' command not found.")
-        print("Please ensure the Gemini CLI is installed and in your system's PATH.")
-        return None
-    except subprocess.CalledProcessError as e:
-        print(f"\nError: Gemini API call failed with exit code {e.returncode}.")
-        print("--- Gemini Stderr ---")
-        print(e.stderr)
-        print("--------------------")
-        return None
+    # Select appropriate model
+    # None means use default (Pro), otherwise use the specified model (Flash)
+    model = MODEL_CONFIG.get(task_type, MODEL_CONFIG["draft"])
+    model_display_name = model if model else "gemini-2.5-pro (default)"
+    
+    # Load project-specific configuration if available
+    project_config = {}
+    if project_dir:
+        project_config = load_project_gemini_config(project_dir)
+    
+    # Add extended thinking instruction if needed
+    thinking_level = EXTENDED_THINKING_PHASES.get(task_type, "standard")
+    thinking_instruction = THINKING_LEVELS.get(thinking_level, "")
+    
+    # Prepend project-specific instructions if they exist
+    if project_config.get("custom_instructions"):
+        prompt = f"{project_config['custom_instructions']}\n\n--- END PROJECT INSTRUCTIONS ---\n\n{prompt}"
+    
+    # Add thinking instruction at the start if needed
+    if thinking_instruction:
+        prompt = f"{thinking_instruction}\n\n{prompt}"
+        print(f"🧠 Using extended thinking mode: {thinking_level}")
+    
+    # Manage token limits
+    processed_prompt, token_info = manage_token_limit(prompt)
+    
+    # Show model and token info to user
+    print(f"--- Calling Gemini AI ({model_display_name}) ---")
+    if token_info["warning"]:
+        print(f"⚠️  {token_info['warning']}")
+    if token_info["original_tokens"] > 0:
+        print(f"📊 Estimated tokens: {token_info['original_tokens']:,}")
+        if token_info["was_truncated"]:
+            print(f"📊 After truncation: {token_info['final_tokens']:,}")
+    
+    # Build command: only include -m flag if model is explicitly specified (not None/default)
+    gemini_cmd = ['gemini', '-p', '-']
+    if model:
+        gemini_cmd.insert(1, '-m')
+        gemini_cmd.insert(2, model)
+    
+    # Retry logic for transient failures
+    last_error = None
+    for attempt in range(retry_count + 1):
+        try:
+            process = subprocess.run(
+                gemini_cmd,
+                input=processed_prompt,
+                capture_output=True,
+                text=True,
+                check=True,
+                timeout=600  # 10 minute timeout for very long generations
+            )
+            print("--- AI generation complete. ---")
+            return process.stdout
+        except FileNotFoundError:
+            print("\nError: 'gemini' command not found.")
+            print("Please ensure the Gemini CLI is installed and in your system's PATH.")
+            return None
+        except subprocess.TimeoutExpired:
+            print(f"\n⚠️  Request timed out after 10 minutes.")
+            if attempt < retry_count:
+                print(f"Retrying... (attempt {attempt + 2}/{retry_count + 1})")
+                continue
+            else:
+                print("Max retries reached. The generation may be too complex or the model is overloaded.")
+                return None
+        except subprocess.CalledProcessError as e:
+            last_error = e
+            if attempt < retry_count:
+                print(f"\n⚠️  API call failed (exit code {e.returncode}). Retrying... (attempt {attempt + 2}/{retry_count + 1})")
+                # Brief delay before retry
+                time.sleep(2)
+                continue
+            else:
+                print(f"\n❌ Error: Gemini API call failed after {retry_count + 1} attempts.")
+                print(f"Exit code: {e.returncode}")
+                if e.stderr:
+                    print("--- Gemini Stderr ---")
+                    print(e.stderr)
+                    print("--------------------")
+                return None
+    
+    return None
 
 def create_new_premise():
     """Guides the user to create a new story premise and workspace."""
@@ -98,7 +257,7 @@ Be considered, reflective, and intellectually curious. Avoid clichés and tropes
 Output your complete brainstorming analysis now.
 """
 
-    brainstorm_output = call_gemini(brainstorm_prompt)
+    brainstorm_output = call_gemini(brainstorm_prompt, task_type="brainstorming", project_dir=project_dir)
     if not brainstorm_output:
         return
 
@@ -136,7 +295,7 @@ Follow these instructions precisely:
 Begin generation now.
 """
 
-    output = call_gemini(premise_prompt)
+    output = call_gemini(premise_prompt, task_type="premise", project_dir=project_dir)
     if not output:
         return
 
@@ -192,7 +351,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the story skeleton.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if output:
         draft_file = phase_dir / "draft" / "02-story-skeleton.txt"
         draft_file.write_text(output.strip())
@@ -242,7 +401,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the character introductions.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if not output:
         return
 
@@ -330,7 +489,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the short synopsis.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if output:
         draft_file = phase_dir / "draft" / "04-short-synopsis.txt"
         draft_file.write_text(output.strip())
@@ -409,7 +568,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the extended synopsis.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if output:
         draft_file = phase_dir / "draft" / "05-extended-synopsis.txt"
         draft_file.write_text(output.strip())
@@ -462,7 +621,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the Goal to Decision Cycle breakdown.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="analysis", project_dir=project_dir)
     if output:
         draft_file = phase_dir / "draft" / "06-goal-to-decision-cycle.txt"
         draft_file.write_text(output.strip())
@@ -527,7 +686,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the character development profiles.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if not output:
         return
 
@@ -608,7 +767,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the location descriptions.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if not output:
         return
 
@@ -706,7 +865,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the advanced plotting details.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if output:
         draft_file = phase_dir / "draft" / "09-advanced-plotting.txt"
         draft_file.write_text(output.strip())
@@ -785,7 +944,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the character viewpoint synopses.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if not output:
         return
 
@@ -886,7 +1045,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the scene blocking outlines.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="planning", project_dir=project_dir)
     if not output:
         return
 
@@ -1022,7 +1181,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the first draft scenes.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="draft", project_dir=project_dir)
     if not output:
         return
 
@@ -1133,7 +1292,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the theme and variations analysis.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="analysis", project_dir=project_dir)
     if output:
         draft_file = phase_dir / "draft" / "13-theme-and-variations.txt"
         draft_file.write_text(output.strip())
@@ -1205,7 +1364,7 @@ Follow these instructions precisely:
 {theme_section}
 Begin generation now. Output only the second draft scenes.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="editing", project_dir=project_dir)
     if not output:
         return
 
@@ -1296,7 +1455,7 @@ Follow these instructions precisely:
 
 Begin generation now. Output only the final draft scenes.
 """
-    output = call_gemini(prompt)
+    output = call_gemini(prompt, task_type="editing", project_dir=project_dir)
     if not output:
         return
 
@@ -1349,7 +1508,15 @@ def get_project_state(project_dir: Path) -> dict:
     for phase in phases:
         phase_name = phase.split('_', 1)[1]
         approved_dir = project_dir / f"Phase_{phase}" / "approved"
-        state[f"{phase_name}_approved"] = any(approved_dir.glob('*'))
+        drafts_dir = project_dir / f"Phase_{phase}" / "drafts"
+        draft_dir = project_dir / f"Phase_{phase}" / "draft"
+        
+        state[f"{phase_name}_approved"] = any(approved_dir.glob('*')) if approved_dir.exists() else False
+        # Check both 'drafts' (plural) and 'draft' (singular) directories
+        state[f"{phase_name}_has_drafts"] = (
+            (drafts_dir.exists() and any(drafts_dir.glob('*'))) or
+            (draft_dir.exists() and any(draft_dir.glob('*')))
+        )
     
     story_name = project_dir.name
     final_draft_file = project_dir / f"{story_name}_Draft_v1.md"
@@ -1357,12 +1524,85 @@ def get_project_state(project_dir: Path) -> dict:
 
     return state
 
+def get_project_status_summary(project_dir: Path) -> str:
+    """Generates a human-readable status summary of the project."""
+    state = get_project_state(project_dir)
+    
+    phase_names = {
+        "Premise": "01. Premise",
+        "Story_Skeleton": "02. Story Skeleton",
+        "Character_Introductions": "03. Character Introductions",
+        "Short_Synopsis": "04. Short Synopsis",
+        "Extended_Synopsis": "05. Extended Synopsis",
+        "Goal_to_Decision_Cycle": "06. Goal to Decision Cycle",
+        "Character_Development": "07. Character Development",
+        "Locations": "08. Locations",
+        "Advanced_Plotting": "09. Advanced Plotting",
+        "Character_Viewpoints": "10. Character Viewpoints",
+        "Blocking_a_Rough_Outline": "11. Blocking Outline",
+        "First_Draft": "12. First Draft",
+        "Theme_and_Variations": "13. Theme & Variations",
+        "Second_Draft": "14. Second Draft",
+        "Final_Draft": "15. Final Draft",
+    }
+    
+    completed = []
+    in_progress = []
+    pending = []
+    
+    for phase_key, phase_label in phase_names.items():
+        if state.get(f"{phase_key}_approved", False):
+            completed.append(phase_label)
+        elif state.get(f"{phase_key}_has_drafts", False):
+            in_progress.append(phase_label)
+        else:
+            pending.append(phase_label)
+    
+    total_phases = len(phase_names)
+    completed_count = len(completed)
+    progress_pct = int((completed_count / total_phases) * 100)
+    
+    summary = f"""
+PROJECT STATUS SUMMARY
+{'=' * 50}
+Progress: {completed_count}/{total_phases} phases complete ({progress_pct}%)
+
+COMPLETED ({completed_count}):
+"""
+    if completed:
+        for phase in completed:
+            summary += f"  ✓ {phase}\n"
+    else:
+        summary += "  (none)\n"
+    
+    if in_progress:
+        summary += f"\nIN PROGRESS ({len(in_progress)}):\n"
+        for phase in in_progress:
+            summary += f"  ○ {phase} (draft available)\n"
+    
+    if pending:
+        summary += f"\nPENDING ({len(pending)}):\n"
+        # Only show first 3 pending to keep it concise
+        for phase in pending[:3]:
+            summary += f"  - {phase}\n"
+        if len(pending) > 3:
+            summary += f"  ... and {len(pending) - 3} more\n"
+    
+    if state.get("final_draft_compiled", False):
+        summary += "\n✓ Final draft compiled\n"
+    
+    return summary
+
 def manage_existing_project(project_dir: Path):
     """Manages the lifecycle of an existing story project."""
     while True:
         clear_screen()
         print(f"MANAGING PROJECT: {project_dir.name}")
         print("-------------------------")
+        
+        # Show project status summary
+        print(get_project_status_summary(project_dir))
+        print("=" * 50)
 
         state = get_project_state(project_dir)
         current_phase = "Initial Premise"
@@ -1490,7 +1730,9 @@ def main_menu():
         clear_screen()
         print("SPINNERET PROJECT MANAGER 🕷️🕸️")
         print("-------------------------")
-        print(f"Using Model: {GEMINI_MODEL}\n")
+        print("Model Configuration: Automatic selection based on task type")
+        print("  - Brainstorming/Planning/Analysis: Fast models")
+        print("  - Draft/Editing: Quality models\n")
 
         print("PROJECTS:")
         project_dirs = [d for d in Path('.').iterdir() if d.is_dir() and not d.name.startswith('.') and d.name != "Tools"]
