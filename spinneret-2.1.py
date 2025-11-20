@@ -257,22 +257,24 @@ def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Pat
         console.print(f"\n[yellow]Please update MODELS in the configuration section to use a valid model name.[/yellow]")
         return None
     except google_exceptions.ResourceExhausted:
-        # Check if we can fall back to an alternative model
+        # Check if we can fall back to an alternative model (only for quota errors)
         if not fallback_used and model_name in MODEL_FALLBACKS:
             fallback_model = MODEL_FALLBACKS[model_name]
             console.print(f"[yellow]⚠ Quota exceeded for {model_name}[/yellow]")
             console.print(f"[yellow]Falling back to {fallback_model}...[/yellow]")
             console.print("[dim]Note: Output quality may differ slightly between models[/dim]\n")
             
-            # Temporarily override the model for this call
-            original_model = MODELS[config["model"]]
+            # Recursively call with fallback model, using a temporary override
+            # We'll pass the fallback model name directly to avoid modifying global state
+            original_models = MODELS.copy()
             MODELS[config["model"]] = fallback_model
             try:
                 result = call_gemini(prompt, task_type, project_dir, fallback_used=True)
                 return result
             finally:
-                # Restore original model
-                MODELS[config["model"]] = original_model
+                # Restore original models
+                MODELS.clear()
+                MODELS.update(original_models)
         
         # If no fallback available or already used fallback, wait and retry
         console.print("[bold red]❌ Error: Quota exceeded (Rate Limit). Waiting 60 seconds...[/bold red]")
