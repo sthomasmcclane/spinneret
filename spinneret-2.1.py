@@ -1055,15 +1055,16 @@ def manage_existing_project(project_dir: Path):
                 else:
                     status_label = "[bold cyan]⭐ READY TO GENERATE[/bold cyan]"
                 
-                menu_options.append((f"Phase {i+1}: {label}", status_label, func))
+                # Store phase number (i+1) with the menu option so numbering matches
+                menu_options.append((i+1, f"Phase {i+1}: {label}", status_label, func))
             
             previous_phase_status = status_code
 
         if not menu_options:
             console.print("[yellow]Phase 1 incomplete.[/yellow]")
         else:
-            for idx, (text, label, func) in enumerate(menu_options):
-                console.print(f"[{idx+1}] {text.ljust(40)} {label}")
+            for phase_num, text, label, func in menu_options:
+                console.print(f"[{phase_num}] {text.ljust(40)} {label}")
 
         console.print("\n[Q] Back to Main Menu")
         
@@ -1073,12 +1074,14 @@ def manage_existing_project(project_dir: Path):
             break
         
         try:
-            idx = int(choice) - 1
-            if 0 <= idx < len(menu_options):
-                _, _, selected_func = menu_options[idx]
-                if selected_func:
-                    selected_func()
-                    Prompt.ask("\nPress Enter to continue...")
+            choice_num = int(choice)
+            # Find the menu option that matches the phase number
+            for phase_num, text, label, func in menu_options:
+                if phase_num == choice_num:
+                    if func:
+                        func()
+                        Prompt.ask("\nPress Enter to continue...")
+                    break
         except ValueError:
             pass
 
@@ -1137,7 +1140,8 @@ def main_menu():
             console.print("[italic dim]No projects found.[/italic dim]")
         else:
             for i, p in enumerate(projects):
-                console.print(f"[{i+1}] {p.name}")
+                project_title = format_project_name(p)
+                console.print(f"[{i+1}] {project_title}")
             
         console.print(f"\n[{len(projects)+1}] New Project")
         console.print("[S] Settings")
