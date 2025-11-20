@@ -6,10 +6,11 @@ import re
 import time
 import shutil
 import warnings
-# Filter out the specific Google API warning about Python 3.9
-warnings.filterwarnings("ignore", message="You are using a Python version")
 from pathlib import Path
 from typing import Union, Optional, List
+
+# Filter out the specific Google API warning about Python 3.9
+warnings.filterwarnings("ignore", message="You are using a Python version")
 
 # --- DEPENDENCY CHECK & AUTO-INSTALL ---
 def ensure_dependencies():
@@ -53,7 +54,7 @@ def ensure_dependencies():
 # Run the check immediately
 ensure_dependencies()
 
-# --- IMPORTS (Now safe to load) ---
+# --- IMPORTS ---
 import google.generativeai as genai
 from google.api_core import exceptions as google_exceptions
 from rich.console import Console
@@ -61,22 +62,33 @@ from rich.markdown import Markdown
 from rich.panel import Panel
 from rich.prompt import Prompt, Confirm
 from rich.status import Status
-from rich.live import Live
 
 # Initialize Rich Console
 console = Console()
 
-# --- CONFIGURATION ---
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
+# All settings are here for easy access. To change settings:
+# 1. Edit values below, OR
+# 2. Use the Settings menu option in the main menu (press 'S')
+# ============================================================================
+
+# API Key: Loaded from environment variable GEMINI_API_KEY
+# If not set, you'll be prompted when the script runs
 API_KEY = os.getenv("GEMINI_API_KEY")
 
-# Model selection
-# Note: Using 'flash' for speed/cost and 'pro' for quality
+# Model Selection: Available Gemini models
+# - "fast": Quick responses, good for planning/analysis
+# - "smart": Higher quality, better for creative writing
 MODELS = {
-    "fast": "gemini-2.0-flash",
-    "smart": "gemini-2.5-pro", # Adjust based on current availability
+    "fast": "gemini-2.5-flash",
+    "smart": "gemini-3.0-pro", # Explicitly named Pro model
 }
 
-# Phase Configuration
+# Phase Configuration: Which model and thinking level for each task type
+# - "model": "fast" or "smart" (references MODELS above)
+# - "thinking": "standard", "deep", or "ultra" (see THINKING_LEVELS below)
 PHASE_CONFIG = {
     "brainstorming": {"model": "fast", "thinking": "deep"},
     "premise":       {"model": "fast", "thinking": "standard"},
@@ -86,15 +98,18 @@ PHASE_CONFIG = {
     "editing":       {"model": "smart", "thinking": "deep"},
 }
 
-# Thinking Instructions
+# Thinking Instructions: Prompts added to AI requests for deeper reasoning
 THINKING_LEVELS = {
-    "standard": "",
+    "standard": "",  # No special instruction
     "deep": "Take a deep breath and think step-by-step about the nuances of this request.",
     "ultra": "Think deeply and comprehensively. Consider multiple angles, subtext, and implications before generating the final output."
 }
 
-MAX_CONTEXT_TOKENS = 800000
-CHARS_PER_TOKEN = 4
+# Token Management: Limits for context window
+MAX_CONTEXT_TOKENS = 800000  # Maximum tokens before truncation
+CHARS_PER_TOKEN = 4  # Rough estimate: 4 characters per token
+
+# --- CORE FUNCTIONS ---
 
 def check_api_key():
     """Checks for API key and guides user if missing."""
@@ -119,8 +134,6 @@ def check_api_key():
     else:
         genai.configure(api_key=API_KEY)
 
-# --- UTILITIES ---
-
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -144,14 +157,33 @@ def load_project_instructions(project_dir: Path) -> str:
         return f"\n\n--- PROJECT SPECIFIC INSTRUCTIONS ---\n{gemini_file.read_text(encoding='utf-8')}\n"
     return ""
 
+def load_style_samples(project_dir: Optional[Path] = None) -> str:
+    """
+    Loads writing style samples for style matching.
+    Checks project-specific STYLE.md first, then falls back to global Tools/Writing_Samples.md
+    Returns empty string if no samples found.
+    """
+    # Check for project-specific style file first
+    if project_dir:
+        project_style = project_dir / "STYLE.md"
+        if project_style.exists():
+            samples = project_style.read_text(encoding='utf-8')
+            return f"\n\n--- WRITING STYLE SAMPLES (Match this style) ---\n{samples}\n"
+    
+    # Fall back to global writing samples
+    global_style = Path("Tools") / "Writing_Samples.md"
+    if global_style.exists():
+        samples = global_style.read_text(encoding='utf-8')
+        return f"\n\n--- WRITING STYLE SAMPLES (Match this style) ---\n{samples}\n"
+    
+    return ""
+
 def get_tool_content(filename: str) -> str:
     try:
         return (Path("Tools") / filename).read_text(encoding='utf-8')
     except FileNotFoundError:
         console.print(f"[bold red]Error:[/bold red] Missing tool file: Tools/{filename}")
         return ""
-
-# --- AI INTERACTION ---
 
 def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Path] = None) -> Optional[str]:
     """Calls Gemini via SDK with streaming and simple text output."""
@@ -162,7 +194,15 @@ def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Pat
     thinking_prompt = THINKING_LEVELS[config["thinking"]]
     
     project_instructions = load_project_instructions(project_dir) if project_dir else ""
-    full_prompt = f"{thinking_prompt}{project_instructions}\n\n{prompt}"
+    
+    # Load style samples for draft and editing tasks
+    style_samples = ""
+    if task_type in ["draft", "editing"]:
+        style_samples = load_style_samples(project_dir)
+        if style_samples:
+            console.print("[dim]📝 Style matching: Active[/dim]")
+    
+    full_prompt = f"{thinking_prompt}{project_instructions}{style_samples}\n\n{prompt}"
     full_prompt = manage_token_limit(full_prompt)
 
     try:
@@ -174,11 +214,10 @@ def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Pat
         # Stream the response
         response_stream = model.generate_content(full_prompt, stream=True)
         
-        # Standard streaming loop (No 'Live' context manager)
-        # This prevents the "multiple copies" artifact on long texts
+        # Standard streaming loop (No 'Live' context manager to avoid duplication artifacts)
         for chunk in response_stream:
             if chunk.text:
-                print(chunk.text, end="", flush=True) # Native print for safety
+                print(chunk.text, end="", flush=True)
                 full_response_text += chunk.text
         
         console.print("\n\n[bold green]✔ Generation Complete[/bold green]\n")
@@ -191,6 +230,62 @@ def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Pat
     except Exception as e:
         console.print(f"[bold red]❌ Error:[/bold red] {e}")
         return None
+
+def review_and_save(content: str, file_path: Path, project_dir: Path):
+    """
+    Interactive review loop with Edit capability.
+    Auto-moves files to 'approved' folder upon approval.
+    """
+    draft_path = file_path
+    
+    # Determine the 'approved' path logic
+    parts = list(draft_path.parts)
+    if 'draft' in parts:
+        parts[parts.index('draft')] = 'approved'
+    elif 'drafts' in parts:
+        parts[parts.index('drafts')] = 'approved'
+    approved_path = Path(*parts)
+
+    while True:
+        console.print(Panel(f"Target: [bold]{draft_path.name}[/bold]", title="Review Output", style="blue"))
+        console.print("[dim][A]pprove (Move to Approved) | [E]dit (Open & Pause) | [R]etry | [Q]uit[/dim]")
+        
+        choice = Prompt.ask("Action", choices=["a", "e", "r", "q"], default="a", show_choices=False)
+
+        if choice.lower() == 'a':
+            # Save draft
+            draft_path.parent.mkdir(parents=True, exist_ok=True)
+            draft_path.write_text(content, encoding='utf-8')
+            
+            # Copy to approved
+            approved_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy(draft_path, approved_path)
+            
+            console.print(f"[bold green]✔ Approved and saved to:[/bold green] {approved_path.name}")
+            return True
+            
+        elif choice.lower() == 'e':
+            # Save current state
+            draft_path.parent.mkdir(parents=True, exist_ok=True)
+            draft_path.write_text(content, encoding='utf-8')
+            
+            console.print(Panel(f"File saved to: {draft_path}\n1. Edit file.\n2. Save.\n3. Press Enter.", title="Paused", style="yellow"))
+            Prompt.ask("Press Enter to reload")
+            
+            try:
+                content = draft_path.read_text(encoding='utf-8')
+                console.print("[green]File reloaded.[/green]")
+            except Exception as e:
+                console.print(f"[red]Error: {e}[/red]")
+                
+        elif choice.lower() == 'r':
+            return False # Retry
+            
+        elif choice.lower() == 'q':
+            draft_path.parent.mkdir(parents=True, exist_ok=True)
+            draft_path.write_text(content, encoding='utf-8')
+            console.print(f"[dim]Draft saved to {draft_path.name}, but not approved.[/dim]")
+            return True # Quit
 
 # --- GENERATORS ---
 
@@ -217,7 +312,6 @@ def generic_generator(project_dir: Path, phase_info: dict):
         
         if not files:
             console.print(f"[red]Missing approved files in {prev_phase}[/red]")
-            # Assuming non-critical if some previous phases optional, but for now strict
             return
 
         content = ""
@@ -341,7 +435,17 @@ def generate_character_introductions(project_dir: Path):
                 count += 1
         console.print(f"[green]Saved {count} character drafts.[/green]")
 
-# --- SPECIFIC GENERATORS (PHASES 5-15) ---
+def generate_short_synopsis(project_dir: Path):
+    generic_generator(project_dir, {
+        "name": "Phase_04_Short_Synopsis",
+        "tool": "04 - The Short Synopsis.md",
+        "inputs": [
+            ("Phase_01_Premise", "*.txt", False),
+            ("Phase_02_Story_Skeleton", "*.txt", False),
+            ("Phase_03_Character_Introductions", "*.txt", True)
+        ],
+        "output_file": "04-short-synopsis.txt"
+    })
 
 def generate_extended_synopsis(project_dir: Path):
     generic_generator(project_dir, {
@@ -619,7 +723,6 @@ def generate_theme_analysis(project_dir: Path):
     })
 
 def generate_second_draft(project_dir: Path):
-    # Logic: Iterate through First Draft scenes and rewrite them
     phase_name = "Phase_14_Second_Draft"
     console.rule(f"[bold]{phase_name}[/bold]")
     
@@ -630,7 +733,6 @@ def generate_second_draft(project_dir: Path):
         console.print("[red]No First Draft scenes found.[/red]")
         return
 
-    # Context
     theme_notes = theme_file.read_text(encoding='utf-8') if theme_file.exists() else "No theme notes."
     instr = get_tool_content("14 - Second Draft.md")
     
@@ -654,14 +756,10 @@ def generate_second_draft(project_dir: Path):
         Rewrite this scene. Retain the filename/title structure.
         """
         
-        # Auto-retry loop for individual scenes
         while True:
             output = call_gemini(prompt, task_type="editing", project_dir=project_dir)
             if output:
-                # Clean up output if it includes markdown code blocks
                 clean_output = output.replace("```markdown", "").replace("```", "")
-                
-                # Review Loop
                 if review_and_save(clean_output, save_dir / scene_file.name, project_dir):
                     break
             else:
@@ -706,22 +804,34 @@ def generate_final_draft(project_dir: Path):
             else:
                 if not Confirm.ask("Generation failed. Retry?"):
                     break
-                    
-# --- DYNAMIC MENU SYSTEM ---
+
+# --- MENU SYSTEM ---
 
 def check_phase_status(project_dir: Path, phase_folder: str) -> str:
     """
     Determines the status of a phase.
-    Returns: 'completed', 'draft', or 'empty'
+    Returns: 'completed', 'in_progress|x/y', 'draft', or 'empty'
     """
     approved_dir = project_dir / phase_folder / "approved"
     draft_dir = project_dir / phase_folder / "draft"
-    drafts_dir = project_dir / phase_folder / "drafts" # Some phases use plural
+    drafts_dir = project_dir / phase_folder / "drafts" 
 
+    # Check Approved Status
     if approved_dir.exists() and any(approved_dir.iterdir()):
+        # SPECIAL LOGIC FOR FIRST DRAFT (Phase 12)
+        if phase_folder == "Phase_12_First_Draft":
+            blocking_dir = project_dir / "Phase_11_Blocking_a_Rough_Outline" / "approved"
+            if blocking_dir.exists():
+                blocking_count = len(list(blocking_dir.glob("*.txt")))
+                draft_count = len(list(approved_dir.glob("*.md")))
+                
+                # If we have fewer drafts than blocking outlines, it's In Progress
+                if draft_count < blocking_count:
+                    return f"in_progress|{draft_count}/{blocking_count}"
+        
         return "completed"
     
-    # Check for drafts (singular or plural folder)
+    # Check Draft Status
     has_draft = (draft_dir.exists() and any(draft_dir.iterdir())) or \
                 (drafts_dir.exists() and any(drafts_dir.iterdir()))
     
@@ -735,7 +845,6 @@ def manage_existing_project(project_dir: Path):
         clear_screen()
         console.print(Panel(f"[bold cyan]Project: {project_dir.name}[/bold cyan]", subtitle="Workflow Manager"))
         
-        # Define the workflow order and functions
         workflow = [
             ("Phase_01_Premise", "Premise", None),
             ("Phase_02_Story_Skeleton", "Story Skeleton", lambda: generate_story_skeleton(project_dir)),
@@ -755,39 +864,41 @@ def manage_existing_project(project_dir: Path):
         ]
 
         menu_options = []
-        previous_phase_status = "completed" # Assume Phase 0 is done to start the chain
+        previous_phase_status = "completed" 
         
-        # Iterate through workflow to build menu
         for i, (phase_folder, label, func) in enumerate(workflow):
-            status = check_phase_status(project_dir, phase_folder)
+            status_raw = check_phase_status(project_dir, phase_folder)
             
-            # Only show Phase 1 if it's missing (unlikely here) or for status context
+            # Handle the special "in_progress|x/y" string
+            if "|" in status_raw:
+                status_code, progress_info = status_raw.split("|")
+            else:
+                status_code = status_raw
+                progress_info = ""
+
             if i == 0: 
-                previous_phase_status = status
+                previous_phase_status = status_code
                 continue
 
-            # Logic: We can only interact with a phase if the PREVIOUS phase is complete
-            # OR if we already have a draft/completion of the current phase.
-            if previous_phase_status == "completed":
-                
-                # Determine Visual Label
-                if status == "completed":
+            # Logic: Unlock if previous is completed OR if current is in_progress/draft/completed
+            is_accessible = (previous_phase_status == "completed") or (status_code in ["completed", "draft", "in_progress"])
+
+            if is_accessible:
+                if status_code == "completed":
                     status_label = "[dim green]✔ Completed[/dim green]"
-                elif status == "draft":
+                elif status_code == "in_progress":
+                    status_label = f"[yellow]↻ In Progress ({progress_info})[/yellow]"
+                elif status_code == "draft":
                     status_label = "[yellow]✎ Draft Waiting[/yellow]"
                 else:
                     status_label = "[bold cyan]⭐ READY TO GENERATE[/bold cyan]"
                 
-                # Add to menu list
-                display_text = f"Phase {i+1}: {label}"
-                menu_options.append((display_text, status_label, func))
+                menu_options.append((f"Phase {i+1}: {label}", status_label, func))
             
-            # Update tracker for next iteration
-            previous_phase_status = status
+            previous_phase_status = status_code
 
-        # Render Menu
         if not menu_options:
-            console.print("[yellow]Phase 1 (Premise) appears incomplete. Please check your files.[/yellow]")
+            console.print("[yellow]Phase 1 incomplete.[/yellow]")
         else:
             for idx, (text, label, func) in enumerate(menu_options):
                 console.print(f"[{idx+1}] {text.ljust(40)} {label}")
@@ -809,6 +920,48 @@ def manage_existing_project(project_dir: Path):
         except ValueError:
             pass
 
+def show_settings():
+    """Display current configuration settings."""
+    clear_screen()
+    console.print(Panel.fit("⚙️  SETTINGS", style="bold cyan"))
+    
+    # API Key status
+    api_status = "[green]✓ Set[/green]" if API_KEY else "[red]✗ Not Set[/red]"
+    console.print(f"\n[bold]API Key:[/bold] {api_status}")
+    if not API_KEY:
+        console.print("[dim]Set GEMINI_API_KEY environment variable or enter when prompted[/dim]")
+    
+    # Models
+    console.print(f"\n[bold]Available Models:[/bold]")
+    for key, model in MODELS.items():
+        console.print(f"  • {key}: [cyan]{model}[/cyan]")
+    
+    # Phase Configuration
+    console.print(f"\n[bold]Phase Configuration:[/bold]")
+    for phase, config in PHASE_CONFIG.items():
+        model_name = MODELS[config["model"]]
+        thinking = config["thinking"]
+        console.print(f"  • {phase:15} → {model_name:20} ({thinking} thinking)")
+    
+    # Style Matching
+    console.print(f"\n[bold]Style Matching:[/bold]")
+    global_style = Path("Tools") / "Writing_Samples.md"
+    if global_style.exists():
+        console.print(f"  • Global samples: [green]✓ Found[/green] (Tools/Writing_Samples.md)")
+        console.print(f"    [dim]Used for draft and editing phases[/dim]")
+    else:
+        console.print(f"  • Global samples: [yellow]✗ Not found[/yellow]")
+        console.print(f"    [dim]Add Tools/Writing_Samples.md to enable style matching[/dim]")
+    console.print(f"  • Project-specific: [dim]Check for STYLE.md in project directory[/dim]")
+    
+    # Token Limits
+    console.print(f"\n[bold]Token Management:[/bold]")
+    console.print(f"  • Max Context: {MAX_CONTEXT_TOKENS:,} tokens")
+    console.print(f"  • Estimate: {CHARS_PER_TOKEN} chars/token")
+    
+    console.print(f"\n[dim]To change settings, edit the CONFIGURATION section at the top of spinneret.py[/dim]")
+    Prompt.ask("\nPress Enter to return")
+
 def main_menu():
     check_api_key()
     
@@ -825,19 +978,24 @@ def main_menu():
                 console.print(f"[{i+1}] {p.name}")
             
         console.print(f"\n[{len(projects)+1}] New Project")
+        console.print("[S] Settings")
         console.print("[Q] Quit")
         
         choice = Prompt.ask("Select")
         
-        if choice.lower() == 'q': break
-        try:
-            idx = int(choice) - 1
-            if idx < len(projects):
-                manage_existing_project(projects[idx])
-            elif idx == len(projects):
-                create_new_premise()
-        except ValueError:
-            pass
+        if choice.lower() == 'q': 
+            break
+        elif choice.lower() == 's':
+            show_settings()
+        else:
+            try:
+                idx = int(choice) - 1
+                if idx < len(projects):
+                    manage_existing_project(projects[idx])
+                elif idx == len(projects):
+                    create_new_premise()
+            except ValueError:
+                pass
 
 if __name__ == "__main__":
     main_menu()
