@@ -83,7 +83,7 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 # - "smart": Higher quality, better for creative writing
 MODELS = {
     "fast": "gemini-2.5-flash",
-    "smart": "gemini-2.5-pro", # Pro model for high-quality output
+    "smart": "gemini-3-pro-preview", # Pro model for high-quality output
 }
 
 # Phase Configuration: Which model and thinking level for each task type
