@@ -83,7 +83,7 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 # - "smart": Higher quality, better for creative writing
 MODELS = {
     "fast": "gemini-2.5-flash",
-    "smart": "gemini-3.0-pro", # Explicitly named Pro model
+    "smart": "gemini-2.5-pro", # Pro model for high-quality output
 }
 
 # Phase Configuration: Which model and thinking level for each task type
@@ -185,6 +185,20 @@ def get_tool_content(filename: str) -> str:
         console.print(f"[bold red]Error:[/bold red] Missing tool file: Tools/{filename}")
         return ""
 
+def list_available_models():
+    """Lists all available Gemini models for debugging."""
+    try:
+        check_api_key()
+        models = genai.list_models()
+        console.print("\n[bold]Available Gemini Models:[/bold]")
+        for model in models:
+            if 'generateContent' in model.supported_generation_methods:
+                console.print(f"  • [cyan]{model.name}[/cyan]")
+        return [model.name for model in models if 'generateContent' in model.supported_generation_methods]
+    except Exception as e:
+        console.print(f"[bold red]Error listing models:[/bold red] {e}")
+        return []
+
 def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Path] = None) -> Optional[str]:
     """Calls Gemini via SDK with streaming and simple text output."""
     check_api_key()
@@ -223,6 +237,12 @@ def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Pat
         console.print("\n\n[bold green]✔ Generation Complete[/bold green]\n")
         return full_response_text
 
+    except google_exceptions.NotFound as e:
+        console.print(f"[bold red]❌ Model Not Found:[/bold red] {model_name}")
+        console.print("[yellow]The model name may be incorrect. Listing available models...[/yellow]")
+        list_available_models()
+        console.print(f"\n[yellow]Please update MODELS in the configuration section to use a valid model name.[/yellow]")
+        return None
     except google_exceptions.ResourceExhausted:
         console.print("[bold red]❌ Error: Quota exceeded (Rate Limit). Waiting 60 seconds...[/bold red]")
         time.sleep(60)
