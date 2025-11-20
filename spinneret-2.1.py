@@ -83,7 +83,7 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 # - "smart": Higher quality, better for creative writing
 MODELS = {
     "fast": "gemini-2.5-flash",
-    "smart": "gemini-3-pro-preview", # Pro model for high-quality output
+    "smart": "gemini-2.5-pro", # Pro model for high-quality output
 }
 
 # Phase Configuration: Which model and thinking level for each task type
@@ -371,6 +371,33 @@ def create_new_premise():
     if project_dir.exists():
         console.print("[red]Project already exists.[/red]")
         return
+
+    # Create project directory structure
+    project_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Create GEMINI.md template
+    gemini_template = """# Style Guidelines
+
+-
+
+-
+
+# Writing Rules
+
+-
+
+-
+
+# World Lore
+
+-
+
+-
+"""
+    gemini_file = project_dir / "GEMINI.md"
+    if not gemini_file.exists():
+        gemini_file.write_text(gemini_template, encoding='utf-8')
+        console.print(f"[green]✓ Created GEMINI.md template[/green]")
 
     phase_dir = project_dir / "Phase_01_Premise"
     (phase_dir / "drafts").mkdir(parents=True, exist_ok=True)
