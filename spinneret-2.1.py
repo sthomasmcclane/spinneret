@@ -83,7 +83,12 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 # - "smart": Higher quality, better for creative writing
 MODELS = {
     "fast": "gemini-2.5-flash",
-    "smart": "gemini-3-pro-preview", # Pro model for high-quality output
+    "smart": "gemini-3-pro-preview", # Latest Pro model for high-quality output
+}
+
+# Fallback models for quota/resource exhaustion
+MODEL_FALLBACKS = {
+    "gemini-3-pro-preview": "gemini-2.5-pro", # Fallback if preview model hits quota limits
 }
 
 # Phase Configuration: Which model and thinking level for each task type
@@ -199,8 +204,16 @@ def list_available_models():
         console.print(f"[bold red]Error listing models:[/bold red] {e}")
         return []
 
-def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Path] = None) -> Optional[str]:
-    """Calls Gemini via SDK with streaming and simple text output."""
+def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Path] = None, fallback_used: bool = False) -> Optional[str]:
+    """
+    Calls Gemini via SDK with streaming and simple text output.
+    
+    Args:
+        prompt: The prompt to send to the model
+        task_type: Type of task (affects model selection)
+        project_dir: Optional project directory for custom instructions
+        fallback_used: Internal flag to prevent infinite fallback loops
+    """
     check_api_key()
     
     config = PHASE_CONFIG.get(task_type, PHASE_CONFIG["draft"])
@@ -244,9 +257,27 @@ def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Pat
         console.print(f"\n[yellow]Please update MODELS in the configuration section to use a valid model name.[/yellow]")
         return None
     except google_exceptions.ResourceExhausted:
+        # Check if we can fall back to an alternative model
+        if not fallback_used and model_name in MODEL_FALLBACKS:
+            fallback_model = MODEL_FALLBACKS[model_name]
+            console.print(f"[yellow]⚠ Quota exceeded for {model_name}[/yellow]")
+            console.print(f"[yellow]Falling back to {fallback_model}...[/yellow]")
+            console.print("[dim]Note: Output quality may differ slightly between models[/dim]\n")
+            
+            # Temporarily override the model for this call
+            original_model = MODELS[config["model"]]
+            MODELS[config["model"]] = fallback_model
+            try:
+                result = call_gemini(prompt, task_type, project_dir, fallback_used=True)
+                return result
+            finally:
+                # Restore original model
+                MODELS[config["model"]] = original_model
+        
+        # If no fallback available or already used fallback, wait and retry
         console.print("[bold red]❌ Error: Quota exceeded (Rate Limit). Waiting 60 seconds...[/bold red]")
         time.sleep(60)
-        return call_gemini(prompt, task_type, project_dir) # Retry
+        return call_gemini(prompt, task_type, project_dir, fallback_used) # Retry
     except Exception as e:
         console.print(f"[bold red]❌ Error:[/bold red] {e}")
         return None
