@@ -1,0 +1,1198 @@
+# Sample 1
+
+It should go without saying that Time Lords should avoid terraforming machines.
+
+Or, to be more specific, it should go without saying that beings created from recombined Time Lord DNA should avoid dying and regenerating while surrounded by the life-giving mist from a third-generation terraforming machine. 
+
+I mean, I know that's not a set of circumstances one would expect to happen often. But it did happen. At least once. 
+
+I don't understand the science of those extraordinary few minutes on Messaline. I doubt anyone ever will. But the sequence of events looked something like what follows.
+
+They called me Jenny. It was a more appealing derivative of 'Generated Anomaly'. I was created in a Progenation machine. The DNA sample used was from a Time Lord who had happened to crash onto Messaline mere moments earlier. 
+
+I was meant to fight and die in a war that, from my perspective, had been raging for generations. But, objectively, had only lasted for seven days before I was born. It's complicated, I know. And believe me, it's a great story. But not one for right now.
+
+I was shot and killed on the very same day I first stepped out of the Progenation machine. Had I not been made from Time Lord DNA, my story, like so many of my brothers and sisters, would be a short and tragic one. 
+
+My last breath drew in the golden glowing mist of a terraforming agent. And as I died, that mist interacted with the energy of Time Lord regeneration.
+
+Perhaps the result was caused by the way my DNA had been recombined. Or perhaps the same thing would happen to any Time Lord in that particular set of circumstances. We'll never know. 
+
+My first breath sent now super-charged parthenogenic mist out into my Universe. But, infused as it was with regeneration energy, it found a way into the Multiverse. And there, amongst countless parallel realities, it did what it was designed to do; create life. 
+
+I felt them all being born (or decanted, or bursting into existence as their physiognomies, societies and realities demanded). And I felt them feel me, their progenitor. Their genesis. And I remembered what my 'father' had told me as I lay dying: "We'll go everywhere." 
+
+And I *was* everywhere now. Everywhere and everywhen, across every dimension in the Multiverse. And where I was, I created life. I was Genesis and I was Everywhere. 
+
+And now, as I streak between the stars in this Universe, I smile as I feel my other selves learn our name; Genesis Everywhere. You can call us Jenny.
+
+# Sample 2
+
+The stadium crowd was loud, waves of raucous noise creating a thick haze in the air. But the crowd was loud at every game and Synodius was used to it. And his viewing box was attached directly to side of the dome which filtered out a lot of the noise and the visual distortion it caused from reaching the pitch.
+
+And while the dome did little to keep the din out of his box he still heard the ball smack into Nina Hale’s chest as she caught it. The displaced air he saw flare around the impact showed the power with which, Jack Mason, the Tumbletown Harlots captain, had thrown it. Hyperadrenals were fairly common in Hyperball, their bursts of titanic strength could be invaluable. But Mason took the game to a new level. Any of his other teammates might have been knocked off their feet by the catch.
+
+Hale secured her grip on the ball and started sprinting across the raised platform she’d positioned herself on. She leapt from the end closest to the dome, leaning her body to one side as she flew. She hit the plexiglass wall feet first and, with only the slightest bend to absorb the impact, began racing along the near vertical surface like some sort of upright gecko.
+
+Synodius could hear the solid thumps of her feet and see the microscopic tremors in the plexiglass around each footfall. He saw her plan \- her current path on the dome would take her around behind the hometown Koil’s Bluff Monks’ goal.
+
+Across the span of the pitch, a good hundred metres, Syn could see the concentration creasing her sweat-beaded brow as she approached the rings and tried to time her shot with their movements.
+
+Syn stole a glance at the goal himself and saw that the blue and yellow rings were converging. If Hale could shoot when they were fully aligned, when their LED rings became green, she’d score double points.
+
+Randomly morphing goals was one of the many gameplay mechanics, along with moving platforms and a shape-shifting ball, designed from the outset to make Hyperball diabolically difficult. It took those with extraordinary skills, Leaps, to play Elziae’s favourite sport. 
+
+Syn watched Hale as she raced along the wall. His job was to watch the play, not the game \- to make sure everything stayed fair and above board. 
+
+Out of the corner of his eye he saw Sloane Thyme, the hometown speedster, start jogging alongside the rounded dome. Then the hyperkinetic’s incredible speed kicked in and he started to climb the surface, the centripetal force generated by his speed sticking him to the vertical surface as surely as Hale’s gravity manipulation.
+
+At a hundred yards across, the pitch was large enough that Syn could track the two gravity-defying players bearing down on each other. Hale tacked to her left, moving lower on the wall, toward the moving platforms that littered the pitch. He suspected that her plan was to step onto one, relying on her Leap to adjust to the direction change faster than her pursuer could.
+
+But then she slipped\! Syn heard her rough exhale of surprise, saw the steam of her heated breath, as her left foot failed to maintain contact with the wall. She began to stumble, arms pinwheeling to help keep her from falling. But after a few ungainly steps she toppled forward, sprawling awkwardly across the wall and losing control of the ball. 
+
+Thyme was a blur as he shot past her, the wayward ball disappearing into the yellow and black streak he left behind. Hale lay still on the wall for a moment before starting to rise. She seemed unhurt by the tumble as she began to make her way, dejectedly, towards the ground.
+
+Syn frowned. An unforced error like that wasn’t like her \- she was as surefooted as a goat. He mulled it over as his eyes sought out the ball carrier and the play continued. Thyme had already shot around behind the Harlots’ goal rings, covering the hundred and fifty or so metres from the intercept point in mere seconds. 
+
+Thyme was now headed away from his target goal, still in possession, heading back the way he had come, on the opposite side of the dome from the intercept point.
+
+Syn wondered how he’d return to the offensive. He couldn’t stop and turn to make his throw, he didn’t have Hale’s gravity control and without the centripetal force generated by his speed, he’d fall. 
+
+He could u-turn and run back towards the goals, but speed like his made it hard to judge the timing of a shot and, if he managed a goal at all, it would likely only be a primary colour.
+
+Syn hadn’t expected him to veer to his left and start to head up the wall. But this is exactly what he did. Syn watched with mounting interest.
+
+But the Monks’ play revealed itself as Thyme neared the top of the dome: Ava Mitchell, the Monks’ teleporting captain appeared in the air beside him and easily caught his gentle pass.
+
+Mitchell then disappeared again, reappearing below, next to the Monks’ goal rings. She lobbed the ball through a purple ring and extended the Monks’ already considerable lead.
+
+The crowd, overwhelmingly rabid Mad Monks supporters, unleashed an ear-splitting cheer and Thyme began his signature victory lap \- a few dozen blazing loops of the dome, each higher up the wall than the last. Mitchell was blinking into and out of sight at various places around the interior of the dome, waving at the fans while freefalling, only to disappear and do it again elsewhere. 
+
+Syn automatically opened his senses and began a sweep of the pitch, scanning for anything that might call the goal into question. He paid particular attention to the patch of wall where Hale had fallen. 
+
+Instantly he smelt something synthetic and alien to the pitch. Years of working in the HBL had taught Syn every sight, scent and sound that went into a game. This was something new.
+
+He focussed and, before long, had spotted the floating molecules of the scent. He followed them back to their source and, saw that the section of the wall where Hale had fallen was smeared with something.
+
+He strode away from the windows and back to his desk. He quickly dialled the officials’ bench, which sat on the far side of the pitch from his own viewing box.
+
+“Hold the game until you hear from me.” He hung up without waiting for a response.
+
+Then he dialled the replay room. He himself didn’t use monitors and video feeds. His naked eyes could see more detail than the highest-resolution cameras, and he found that even the best equipment only hindered his abilities.
+
+“I need a review tape of that fall.” He said brusquely. “No. The Argus.” He said, referring to the ultra-specialised audio-visual system that the HBL routinely installed in every Hyperball stadium. “Have it cued and ready. I’ll be there in two minutes.”
+
+He hung up the phone and was out of his box, striding along the service tunnel within seconds, the frustrated buzz of the bored crowd fading slightly behind him.
+
+# Sample 3
+
+Alex wondered if the flashing lights and discordant noise were intended as a distraction. Or if they somehow served to induce a trance-like state in patrons.
+
+But, so far, he’d found them to be no concern to him. His mind was too sharp, too focussed. He tuned to a different frequency altogether. The clatter of chips as they hit the green felt. The *fwip* of cards being dealt. The clink of ice in drinks. Even the awkward conversation of his tablemates. It was all irrelevant. The lumpy upholstery of the stool beneath him. The dull ache in his back. The pressure building on his bladder. Likewise unimportant.
+
+And none of it as irrelevant as the cards themselves – two face down before him, four face up in the middle. Alex focussed solely on the undercurrent of emotional broadcasts he perceived. The balding man to his left, for example, and his potent mix of hope and conviction. Alex sensed the man's desire for a specific, increasingly improbable, outcome. 
+
+Or the fat man who, when he wasn't craving food, exuded a faint hope for a different pattern. A pattern, Alex sensed, that had already rendered impossible.
+
+Alex marveled that these people could even *find* the casino. How they felt mentally-equipped for statistical warfare escaped him. He lifted his cards again, playing the part, checking his position. The loud desperation of a woman considering relieving herself in her seat distracted him for a moment.
+
+He focussed back on the game. The drunk woman to his right was having inappropriate thoughts about him. He figured it was time to cash out. He pushed his stack into the center. He knew no one else at the table was secure enough in their hands to challenge him. Let them think he had the **6** and **8** he needed to make a straight out of the table cards. Hell, for all he knew, he *did* have them.
+
+As expected, the table folded to a man. The dealer had to nudge the lone woman before she remembered to relinquish her cards. It amused Alex to note that she had as little idea what her pocket cards had been as he did.
+
+He leant forward and pushed his stack further into the table. It met, and wholly overwhelmed the pot. Then he stood and pushed it all towards the dealer across from him. 
+
+“Colour up, please.” He said. The dealer started stacking the pile of chips with practised hands. Within a minute a neat stack of black and purple plaques was slid back to him. Alex scooped them up, aware of the effect his unseated backside was having on the woman beside him.
+
+Wishing the table a hurried “Good luck.”, he turned and moved to a safe distance. He found a vantage from which to eavesdrop on the broadest spread of games. He was looking for another likely mess to slide into. He didn’t notice the gruff, grey-haired man in the scuffed jacket a few dozen feet away. The man who was watching him.
+
+The next was table strategically chosen for the trio of drunken businessmen sitting at one end, raucously paying attention to everything *except* the game before them. Alex slid himself into an empty seat at the other end, and slid a plaque to the dealer, nodding his wish to be dealt into the next hand. 
+
+While he waited, he watched the trio of drunkards fall into a heated, and overloud, discussion of the various biological assets of a nearby hostess. So engrossed were they in their debate, that the dealer had to interrupt them multiple times to return their  focus to the game. Each time, they simply threw in a stack of chips and went back to their boisterous conversation. 
+
+The only other player at the table was a young man, about Alex’s age, with slicked back hair and focussed eyes. Eyes which narrowed when Alex sat down. They took on a steely edge when as Alex appraised the whiskey triplets across the felt.  
+Alex knew the score. The same easy marks that had drawn him to this table had also drawn the other player. Another hustler. Alex had a moment of mild panic, wondering if this other shark possessed the same…heightened…hunting instincts as himself. But then he remembered the rather dim view that establishments like this generally took of people like himself. Few were gifted, or crazy, enough to think they could fleece the house with their unique gifts and not get caught. 
+
+Alex smiled to himself, secure in the knowledge that his particular gift would give him ample warning when someone even *started* to suspect him. And he planned to cash out and scarper long before they could act on that suspicion. The current hand ended. The bottle brothers had all lost spectacularly, and seemed not only to not care, but to barely even notice, having to be prompted, once again, to focus and surrender their cards to the dealer. Alex’s slick-haired competition, unsurprisingly, cleaned up, sending a death stare Alex’s way as he stacked his chips. Alex, for his part, had to pretend to be picking his teeth to stop from giggling. This is where things got interesting. The dealer started the new hand and within seconds two cards had appeared in front of him. He checked them for appearances’ sake. An **8** and the *Suicide King*. Alex let them flap back onto the table and started to *listen*.
+
+The shark was angry. Alex could feel that emotion coming off him in waves, gift or no gift. But he wasn’t too angry to know he had to fold the pocket cards he’d been dealt. Alex didn’t push any further. The details were irrelevant. The Booze Brothers were still raucously discussing just about anything *except* the game. It was hard to get a read on them, since they weren’t actually concentrating on their cards.
+
+Alex figured he could probably just buy the pot, but he wanted the whales on his hook. Alex turned his mind back to the shark \- he’d been playing with them for a while by the looks of it. But instead of seeking out the shark’s feeling about his cards, Alex sought out his feeling about the game itself, skimming for any notion he could use to lure the whales back to the table.
+
+Alex wasn’t a mind reader \- he was what D.E.L.T.A., the *Leap* regulatory body, called an ‘empathic precognitive’. Which was a bureaucratic way of saying he could tell what someone was going to do by reading their emotions. Any human who wasn’t a total sociopath had this ability to a greater or lesser degree, but in Alex it was heightened to a superhuman level. He could have leveraged it into any number of careers, from hostage negotiator to day trader. But Alex liked cards. He liked the game. He liked the environments. He liked the respect and deference he got from other gamblers and some establishments (provided they didn’t suspect him, of course) when he was cleaning house. And, truth be told, he liked the stakes. Not the table odds \- those were nothing to him. It was the personal risk he enjoyed, pitting himself against the best surveillance and gut instincts the house could throw at him. 
+
+The shark was, understandably, content with the status quo. He radiated that contentment clearly, despite his misgivings about Alex’s potential to upset it. So that was of no help. Alex forgot about his own cards as he set his mind to the problem of devising a strategy to to get the whales’ attention back
+
+And then, even as Alex was trying to come up with a ploy, he was dealt a winning hand. Or, more accurately, one of the whales was, but the spike in the man’s excitement felt like a jackpot to Alex. Alex couldn’t, of course, know exactly what cards the man held. But his experience at the table, siphoning emotional data off so many *in*experienced players had taught him to recognise particular patterns. If the sweating buffoon across the table wasn’t holding paired Aces, Alex would eat his own shoe.
+
+Sure enough, and true to a form that *every* novice player adhered to, the whale pushed in big. Not All In, not yet, but a tall stack nonetheless. And, even better, his eyes stayed glued to the table, hungry now for the flop, ignoring his buddies. No doubt, after this wild turn of luck, he’d be expecting the fates to bless him with an unbeatable hand. Maybe a third Ace, or a pair of face cards at least. 
+
+Alex had seen this play out enough times to know what was in the whale’s near future \- a sting of disappointment when the flop yielded nothing, then a quick mental pep talk to reassure himself that his pocket cards were still a mighty hand, and back to elation and big bets.
+
+Unfortunately for Alex, the man’s inexperience also meant that Alex wouldn’t have needed his gift to know what he knew; a poker face did not the whale have. And this fact had not escaped the attention of the shark at the table. Alex could feel the blistering anger coming off the man as he saw that, had he not instinctively folded his cards, he’d have had the chance to really reel in this whale. As it was, he had to watch Alex do it. And he knew it. And he **hated** it.
+
+# Sample 4 (children' s writing)
+
+Starlight twinkled above the busy rail yard. Many coaches and engines milled about and there was excitement in the air.  
+Tonight was race night\!  
+Grease-ball, the racing champion, and his friends Dustin and CB were with the freight cars. Dustin was a gravel hopper and CB was a red caboose,  
+Nearby, the passenger coaches were gossiping amongst themselves. Dinah, the dining car, was Grease-ball’s girlfriend. Carrie the luggage car, was more like a freight truck. And Pearl was a brand-new, first-class, observation coach.  
+On the far side of the yard was Electra, the electric engine, and his repair truck, Wrench. They acted like they were better than the other rolling stock.  
+Then there were the steam engines; Poppa, an old ex-racer, and Rusty, the local shunter. Rusty looked up to Poppa because he wanted to be a racer too. But since he was only meant to move cars around the yard, no one thought he'd be able to run a full race.  
+With them was Belle, an old sleeper car. She'd been Poppa's partner in racing and work for as long as anyone could remember.  
+Suddenly, the rail controller's voice boomed out over the yard:  
+"Attention all engines. Prepare for race time\!"  
+Rusty looked around as engines and cars raced around, getting prepared. He saw Grease-ball and Dinah make their way towards the starting line.  
+Then he saw Pearl. She was watching all the commotion and smiling. Rusty couldn't be sure if she was excited about the race or if she thought everyone is being silly.  
+He rolled over to talk to her.  
+"Ummm, Pearl?" He said.  
+Pearl turned to him, surprised. "Oh, hi Rusty." She said cheerily. "How exciting is this?" She turned back to the yard, still grinning.  
+"Yeah," Rusty said, "It's great. Umm…Pearl, would you like to race tonight." He blurted out. "With me, I mean. Would you like to race with me?"  
+Pearl's head turned back to face Rusty again. "You want to race with me?" She asked, surprised. "I'd love to, but I've never raced before. Surely you want a car who knows what she's doing?" Pearl smiled sweetly at Rusty.  
+"No, Pearl." Rusty responded, "I don't. I want you." Rusty's face fell as he realised what he'd said. "I mean, I'm sure we'll make a great team\!"  
+Pearl was surprised by Rusty's insistence. "I'd hate to slow you down." She said, sounding sad but firm.  
+Rusty sighed as he tried not to show how upset he was.  
+"I understand." He said in a low voice. He rolled slowly away.  
+Rusty didn't know what to do. He had really been hoping Pearl would race with him. He headed back to Poppa and Belle.  
+Poppa took one look at Rusty's sad face and said:  
+"Not to worry, son. There's plenty more cars. Why don't you take Belle, here?"  
+Belle's eyebrows shot up in surprise, but she didn't say anything.  
+Rusty shook his head.  
+"No thanks." He said. Then he looked past Poppa to Belle. "No offense, Belle."  
+"That's fine, dear." Belle replied. But she was glad not to have to race again.  
+"I guess I'll see if I can find someone else." Rusty said and rolled away towards the middle of the yard. The cars that weren't racing were gathering there.  
+He pulled up in front of them and asked:  
+"Does anyone want to race with me tonight?"  
+Rusty looked over the assembled cars, hoping someone would say yes. Then all the trucks started to laugh.  
+Rusty made himself stand tall while they laughed at him. And he noticed that Dustin, the gravel hopper, wasn't laughing.  
+"I'll go with you, Rusty." Dustin said. The cars stopped laughing. The friendly little freight car rolled forward towards Rusty.  
+"But, I've just picked up a fresh load of gravel that I need to deliver in the morning. I hope that's OK."  
+Rusty wasn't thrilled with Dustin volunteering. But he had no other option. He nodded.  
+The two were quickly hitched together, and Rusty made for the race corral. He was surprised to find he had to use nearly all his strength to get Dustin moving. The gravel hopper was heavy\!  
+As the pair headed out of the yard, Electra's mechanic, Wrench, started talking to Pearl. He gestured towards Electra, who was still waiting at the side of the yard.  
+Rusty got to the starting line not long before the marshalls were about to start the race. He was already steaming heavily after towing Dustin to the track. He started having second thoughts about his partner as he rolled into position.  
+At the starting line, Rusty looked left and right. He saw Grease-ball on one side. The diesel engine was smiling confidently. Dinah was hitched behind him.  
+On the other side, was Electra. The electric engine sat silent and still. Rusty was shocked to see Pearl hitched behind him for the race\!  
+Rusty quickly faced forward again, before Pearl saw him looking at her. His mind was aswirl with everything she said about not being ready to race. And here she was, hooked to the strangest engine in the yard.  
+He saw a marshall climbing into the starter's box. He concentrated on building up the steam he'd need to power his pistons and wheels. Higher and higher, he let the pressure build in his boiler.  
+And when the marshall fired his pistol, Rusty forced all that energy into his pistons. He stopped thinking about anything other than getting his heavy partner moving.  
+The two odd racers started to move. Slowly at first, but getting faster every second.  
+Rusty looked ahead but couldn't see Grease-ball or Electra. He knew he couldn't win. But he didn't let that stop him. He kept on applying the pressure and feeling his speed increase.  
+He was going to finish this race, even if he didn't win it. He was going to be the first steamer since Poppa to compete in a race, even if he came in last place.  
+"Sorry, Dustin." He called back to the gravel hopper. "This may take a while."  
+"No, Rusty," Dustin called back. "I'm the one that's sorry. If I weren't so 'eavy, maybe you'd be in with a shot. It's all my fault."  
+Rusty could hear the hurt in Dustin's voice. He made himself think about that and not about coming last as he said, "Never mind that now, Dustin. Let's just finish this race."  
+And he turned his attention back to the track stretching out ahead.  
+The race was over.  
+Grease-ball and Dinah had taken first place, just as everyone expected. Electra, pulling the lightweight Pearl, had come a close second.  
+And, again just as everyone had expected, Rusty and Dustin crossed the line last. But cross the line they did. And by doing so, Rusty became the first steam engine in a long time to finish a big-time race.  
+Rusty and Dustin were so far behind that no one was at the finish line to greet them when they crossed. The two exhausted engines just rolled to a stop, alone, and sat in silence for a few minutes.  
+Then Dustin said; "Well, umm, I'd best be off to the sheds for some sleep. Got a big day tomorrow delivering this load." He tilted his head toward the gravel in his hopper.  
+"Sure, Dustin." Rusty replied. "Have a good run tomorrow."  
+The two engines parted ways, each heading off to be alone with their sadness and guilt.  
+Neither of the two despondent cars had seen Poppa watching from the shadows. He had stayed to see them finish after all\! Once Rusty and Dustin had gone, Poppa headed towards the shed where he and Belle lived. Belle was fast asleep.  
+Poppa pulled up beside her and nudged her awake. She opened her eyes with a snort and a squeak of gas from one of her hoses.  
+Poppa smiled at her. "Well, Ol' Girl." He said. "I think we need to put our racing shoes back on for one more whirl around the track."  
+Belle smiled back. "Do you really think you still have it in you, you Old Pot Belly." She teased him.  
+"I sure do hope so." Poppa said, sounding worried.  
+It wasn't long before the controller's voice bellowed out again over the rail yard.  
+"The previous race is to be re-run. All engines, prepare to race\! Repeat, all engines from race 1, return to the track\!"  
+Sitting alone, Rusty heard the announcement. He returned to the track, curious. What he saw when he rolled to the side of the track made him gasp\!  
+On the starting line was Poppa, with Belle, hitched behind him\!  
+"What are they thinking?\!" Rusty said out loud.  
+He saw Pearl standing not far away with the other passenger coaches. He rolled over and said,  
+"Pearl\! What's going on? Why is Poppa down there on the track? He's in no shape to race\!"  
+Pearl smiled at him.  
+"Oh hi, Rusty. Isn't it great? Poppa said he and Belle had to show everyone what a steamer could do. He had asked be to go find you, to make sure you saw the race." She paused, then smiled at him again. "But I was just so excited that I guess I forgot\!"  
+Rusty shook his head. "We have to stop this\!" He said. "Poppa could get hurt. He's not…" Rusty trailed off as he looked at the other engines on the track.  
+"Who else is racing?" He asked.  
+"Oh, the white one with the red stripes is Hashimoto. CB volunteered to race with him. The one with green, white and red stripes is Espresso. Carrie is racing with him tonight\! They're both from overseas. Isn't it exciting?"  
+Rusty couldn't believe what he was hearing. "No, Poppa is in real danger out there\!"  
+Rusty jumped as the starters' gun went off.  
+Poppa certainly looked like he was working hard. The way Rusty felt like he had worked pulling Dustin. But he was surprised that neither of the newer engines was pulling away. In fact, it seemed like a fairly close race in the early corners.  
+Rusty's fears faded as he watched Poppa hold his own against the foreign engines. Then the fear turned into elation as Poppa started to pull ahead\!  
+To Rusty's jubilant surprise, a lap later, Poppa crossed the finish line first. Rusty saw that Hashimoto and Espresso had stopped in their tracks and seemed to be arguing with the referees. Each was gesturing to their respective partners.  
+Before too long, Rusty saw the officials shake their heads and wave their arms in a criss-cross gesture. Rusty's jaw dropped. Both racers were disqualified\!  
+Poppa was the clear winner and the only one to finish this heat\!  
+"The marshalls didn't believe a word\!" CB exclaimed, jubilant.  
+Grease-ball smiled, but he didn't actually look happy.  
+"So you just had your brake on the whole race?" He asked CB.  
+"Pretty much the whole way, yeah," CB replied. "I mean, I took it off now and then so it wouldn't be too obvious." CB beamed. "I've been doing this for years, Grease-ball. I'm so good that nobody would know."  
+"Hashimoto knew," Grease-ball said firmly. "And he told the marshalls. You're lucky they didn't take him seriously."  
+CB waved the concerns away. "Nah, they'd never believe him. The way he told it, he wouldn't have been able to move at all. I'm way better than that\!"  
+"Hmm." Grease-ball seemed unconvinced. "So what happened with the Italian?" He asked, changing the subject.  
+CB gave a little laugh. "Hah, that was me too\! I convinced Carrie to race fully loaded\! There was no way Espresso would have been able to keep up\!  
+And now, with those two out of the race, you only have to face in the final\! That worn-out old steamer is no match for you. The title's as good as yours\!"  
+CB smiled at Grease-ball. "No need to thank me." He said, holding his hands up as if to wave Grease-ball away. "What are friends for?"  
+Grease-ball was not happy about any of this. He wondered if he'd still be the champ if CB hadn't been sabotaging other racers.  
+Just then, the two of them heard a noise nearby. They looked at each other, alarmed, then went to investigate. As they skirted around a pile of rusty old tracks, they saw Dinah trying to hide.  
+"Ahh, it's just Dinah\!" CB said, relieved. "Nothing to worry about."  
+Grease-ball wasn't convinced.  
+"What did you hear?" He asked her.  
+"Nothin'\!" She said quickly. "I ain't hear nothin'."  
+"You sure?" Grease-ball asked, frowning as he rolled a little closer.  
+"I'm sure." Dinah squeaked. "And, even if I did, I wouldn't say nothin' to the marshalls. You're my engine, Grease-ball. I love you. I wouldn't ever get you in trouble."  
+Grease-ball stared down at her. "You remember that." He said. "And don't forget that you were with me for most of my races. If I get suspended, so do you."  
+Dinah nodded frantically as that fact sunk in. She figured she was every bit as guilty as Grease-ball.  
+"Now get out of here. The men need to talk some more." Grease-ball growled.  
+Dinah had never seen him act this way before. He was scaring her\! She turned on her tracks and rolled away as fast as she could.  
+Grease-ball turned back to CB. "She won't tell." He said.  
+CB nodded emphatically. "Never doubted it for a second, GB". He said.  
+Grease-ball's eyes narrowed. "So, what are we gonna do about Poppa?"  
+"Rusty\! Come quickly\!" Dustin called, excited. "Everyone's having a big meeting about you\!"  
+Rusty looked up from the pile of old sleepers he'd been staring at. "Me?" He asked, surprised.  
+"Yeah. Come on. Come ON\!" Dustin insisted as he started backing up the way he'd come.  
+Rusty's curiosity overcame his sadness, and he followed Dustin towards the main yard.  
+When they arrived, Rusty saw most of the rolling stock gathered in the middle of the yard. As they drew nearer, Rusty could start to make out some of the words being spoken. He heard Belle's distinctive drawl say;  
+"There's no rule against it. He should be allowed."  
+Then Grease-ball's gruff voice said: "There's no rule FOR it either. And unless it's in the rules, it's against them\!"  
+"I agree\!" Espresso's odd accent chimed in.  
+Poppa's deep bass voice sounded next: "It's my spot. I earned it. I get to say if someone else can race in my place. And I say let Rusty run."  
+Rusty stopped outside the circle of cars. They WERE talking about him. Poppa was trying to convince them to let Rusty take his place in the final.  
+Different cars took their turns to speak, each with a reason for why Rusty should race or why he shouldn't. Grease-ball was against it. So was Electra. They still thought Rusty had no place on the track.  
+Dinah kept looking sideways at Grease-ball. But she agreed that Rusty shouldn't race. The other passenger coaches were fine with Rusty racing. They couldn't see what all the fuss was about.  
+Pearl rolled forward and addressed Grease-ball and Electra. She said that if they thought Rusty was no racer, then they had nothing to worry about; he was no threat to them.  
+Rusty wasn't sure if he was happy that Pearl was agruing for him, or mad that she was saying he was no racer.  
+Rusty was even more confused when CB, Grease-ball's closest friend, spoke up.  
+"Let him race." The cheery caboose said. "At least we know how things will play out. I'll race with him."  
+From his position outside the circle, Rusty saw CB give Grease-ball a big wink. Whatever CB meant, it made Grease-ball and Electra change their minds.  
+"Fine. The little shunt can race." Grease-ball said, grumpily.  
+"Yeah, I'll let him race." Electra agreed.  
+A few cheers and a some boos greeted the decision. But there was no further challenges to the plan. Rusty would race in the final\!  
+Rusty lined up beside Grease-ball and Electra. He was excited to be in the final and confident he'll do better this time, pulling CB instead of Dustin.  
+Grease-ball had lined up with Dinah behind him, and Electra was pulling Pearl again.  
+The marshalls call them all to get set. The pistol sounds and the engined are off and racing.  
+Rusty shot off the line\! He looked to either side and realised he was keeping up with the bigger engines as they headed into the first corner.  
+Rusty couldn't keep the smile off his face . CB felt so light and responsive compared to a fully-loaded Dustin\!  
+Rusty found he could keep up with the diesel and electric engines throughout the race. He had to work harder than they did, he was sure. But he was used to working hard.  
+But as the race approached the last corner, Rusty felt CB put on the brakes.  
+"Too soon\!" Rusty called over his shoulder to the caboose. "Loosen up a bit\!".  
+No response came from behind him. The brake stayed on.  
+"CB\!" Rusty shouted. "CB, loosen the brake\!"  
+Grease-ball and Electra pulled ahead, racing through the corner.  
+"CB\!" Rusty wailed. But the brake stayed on even as Rusty forced pressure into his pistons, trying to catch up to the other two.  
+But try as he might, he couldn't overcome the drag from CB's brake. He watched, broken-hearted, as Grease-ball and Electra crossed the finish line together.  
+Trying to hold his head high, Rusty dragged himself and CB past the flags to finish the race. He was so far behind that Electra and Grease-ball were already celebrating, surrounded by their loyal friends.  
+Without a word, CB disconnected and headed over to join Grease-ball. Rusty stopped and sighed. It seemed he'd never win a race.  
+"Maybe I don't have what it takes." He thought.  
+Just then, Poppa and Belle rolled up.  
+"What happened out there?" Poppa asked, looking concerned. "You were doing great until that last corner."  
+Rusty shook his head. "I don't know. I think…" He paused. "I think maybe CB's brake got stuck."  
+Poppa turned to speak to CB, only to find him missing.  
+"Where …?" Poppa started to ask, his eyes narrowed in suspicion.  
+"Over there, with Grease-ball and the other freighters."  
+"Not CB." Poppa said, iron in his voice. "I'm looking for a marshall."  
+"A marshall?" Rusty asks, surprised. "What for?"  
+"For CB, Rusty. He held you back on purpose in that race. He and Grease-ball must've arranged it."  
+"No," Rusty said, shaking his head. "It was just a malfunction or a mistake. I'm sure CB wouldn't do that. He's my friend."  
+"Is he?" Poppa asked. "Is he, really? Why isn't he apologising for costing you a chance at the title? Why is he celebrating with Grease-ball?" Poppa gestured to the group of freight cars.  
+"I…" Rusty started. "I don't know."  
+"Think about it." Poppa said. "In the meantime, I'm going to find a marshall. Someone needs to report those cheaters."  
+And with that, Poppa rolled off into the yard in search of a race official.  
+Across the yard, Dinah and Grease-ball were having a fight.  
+"I can't believe you'd do that again after I caught you the last time," Dinah said. "And definitely not to Rusty. You didn't even think he had a chance against you\!"  
+"It always pays to be sure," Grease-ball said as calmly as if he were talking about the weather.  
+"I don't…" Dinah started. But she was too angry and frustrated to finish. She turned and rolled away as quickly as she could.  
+Grease-ball shrugged and turned back to the celebration behind him.  
+A few moments later, an announcement came over the yard loudspeaker system.  
+"Attention, all trains. Attention, all trains. A re-run of tonight's final race will take place in ten minutes. All competitors must be on the starting line by then. Failure to do so will result in a forfeit."  
+The celebrations around Grease-ball, indeed all movement around the yard, stopped. Everyone was looking up at the speakers in amazement.  
+In the middle of the stunned freighters, Grease-ball hissed, "Dinah."  
+Elsewhere, Rusty was overcome with relief and gratitude. He smiled and whispered, "Poppa."  
+He headed toward the freighters and spied Dustin. The gravel car looked lean and light. He'd not long gotten back from delivering the load he'd been carrying when he and Rusty raced.  
+Rusty smiled and nodded to himself. Then he called out, "Dustin\!" and made his way toward the car.  
+Meanwhile, Dinah was watching Grease-ball speaking to Pearl near the starting line. She knew what they were talking about. Grease-ball had accused her of telling the marshalls. Then he had told her he wasn't going to race with her anymore.  
+When Dinah saw Grease-ball leave, she went to speak with the observatory car.  
+"Pearl, oh Pearl." She whined. "Tell me you're not planning to race with Grease-ball?" She said, her eyes sad and pleading.  
+"Yes. Why not?" Pearl asked, raising an eyebrow.  
+"He's…well he's…." Dinah was surprised to find she couldn't say out loud that Grease-ball was a cheater.  
+"It's OK, Dinah." Pearl said calmly. "I know what I'm doing." She winked at Dinah and rolled away towards the track.  
+Dinah couldn't do anything but watch her go.  
+Elsewhere in the yard, Grease-ball was speaking to CB.  
+"Electra's going to need a new partner. I've got Pearl racing with me. I want you to go and volunteer. I want to win this race." He leaned in close to CB. "No ties this time."  
+CB nodded and smiled. "Gotcha, boss. Leave it to me."  
+And with that, the cheery, cheating caboose rolled away to find Electra.  
+Rusty rolled to the starting line feeling more confident than in his previous race. Dustin was much lighter now, and Rusty felt easily able to put all his power into winning the race.  
+To Rusty's right was Electra, with CB hitched behind him. Rusty was surprised to see the pair ready to race together. He'd thought CB was more likely to be racing with Grease-ball.  
+But Grease-ball, lining up to Rusty's left, had a surprise partner of his own. He had Pearl hitched behind him instead. Rusty looked around for Dinah but couldn't spot her in the crowd. He wondered what had happened to decouple the two.  
+Rusty watched as a marshal raised his starting pistol high.  
+When the shot sounded, echoing across the railyard, the engines were off and racing\!  
+Rusty couldn't believe how much lighter Dustin was and how much faster the two of them could go.  
+They tore along the tracks like lightning. Rusty saw they were already starting to pull away from the two more modern engines. This gave him more hope, and he strained to increase their lead.  
+The rest of the race passed in a blur of speed as Rusty took the corners as fast as he could. He squeezed every bit of power from his boiler on the straights.  
+Rusty was so lost in the thrill of the race that he almost forgot to stop as he crossed the finish line. As he slowed, he realised he hadn't seen the other locomotives since just after the start of the race.  
+He circled back to the finish line in time to see Grease-ball and Electra round the last corner. Both were looking exhausted and labouring to keep their forward motion going.  
+To stunned silence, Grease-ball and Electra crawled across the line. It was hard to say which of them looked more confused and discouraged about it.  
+Once they were beyond the line, both of their coupled cars disconnected. CB decoupled from Electra and made straight for Grease-ball. Pearl disconnected from Grease-ball and rolled away toward the other coaches.  
+Rusty couldn't be sure, but he thought he saw Dinah trying to hide a grin as the observation car approached her.  
+At a junction, Electra doubled back, going the wrong way on Grease-ball's track. The two engines were soon eye-to-eye. Electra started to yell at the diesel locomotive.  
+"I thought we had a deal\!" Electra yelled. "We agreed that CB would hold Rusty and those foreign racers back. I was never a part of that plan\! It was supposed to be fair for you and me\!"  
+Grease-ball stared at Electra. "Yeah, I told CB to slow you down. So what?" Grease-ball said quietly. "I'm the champ," he stopped and looked to where CB was waiting nearby, "as long as CB is in the race." He turned to look at Rusty. "And I still lost this one. Some champ I am."  
+"Yeah, well…" Electra trailed off. He didn't know how to make Grease-ball feel better. He turned and slowly rolled away, his component cars joining him as he went.  
+Rusty rolled towards the group of coach cars. He was excited about winning and wanted to share his excitement with Pearl.  
+"Pearl\! Pearl\!" He yelled to her as he got closer. "Did you see?"  
+Pearl turned to face him and smiled. "No silly\!" She laughed. "I was way back down the track behind Grease-ball, remember?"  
+Rusty stopped and blinked in confusion. "Oh yeah. I guess I'm used to him racing with Dinah."  
+"Well that ain't happenin' again\!" Dinah butted in from the other side of the small group. "That lowlife's been cheatin' out on the track this whole time. No tellin' where else he's been cheatin'."  
+The coaches all laughed and Pearl turned back to Rusty. "But I didn't have to see. I heard. Congratulations, Rusty." She said. "You earned it."  
+Rusty smiled back. "Yeah. Ummm… about that." He said, nervously. "I've never seen Grease-ball lose like that. Did you \-"  
+Rusty was cut-off mid-sentence as Grease-ball came thundering up to the coaches. His sadness seemed to have been replaced by anger.  
+"Pearl\!" He bellowed. "What did you do out there?"  
+"Why Grease-ball," Pearl started, softly, "I don't know what you mean. I don't even have a brake. I'm not a caboose like your little buddy."  
+"I know you don't have a brake\!" Grease-ball yelled. "And I've also been with enough coaches to know what your kind weighs. And you were way harder to pull than you should have been."  
+"Like I said, Grease-ball, I don't know what you're talking about." Pearl replied. And as she did so, the low rumble of heavy items falling sounded from her far side.  
+"What the…?" Grease-ball asked, rolling around Pearl to check what the noise had been.  
+Rusty followed him, curious. Beside Pearl lay a huge pile of luggage. Next to it, Carrie was frantically scooping it up into her empty boxcar.  
+"Sorry," Carrie said, embarrassed. "Must've been a bit too overloaded."  
+Grease-ball stared for a second, before grunting and rolling away.  
+As he left, Pearl winked at Rusty. She gave a little shake and a few smaller pieces of luggage fell from her door. Each was quickly scooped up by Carrie.  
+Rusty gasped as he realised what had happened. Pearl had been full of Carrie's luggage\! She must've weighed nearly as much as a loaded freight truck\!  
+Rusty didn't know whether to laugh or go and report even more cheating during the race. But since Grease-ball started the cheating, Rusty didn't feel bad that he lost because of it.  
+So he just smiled and winked back at Pearl. Then he called out to Dustin, so they could go and collect their trophies.
+
+# Sample 5 (children' s writing)
+
+This is Dott. Dott is a Full Stop, which is a type of punctuation mark. She’s very small, but she has a very important job. Her job is to mark the end of sentences. Without Dott, it would be hard to tell where one sentence ends and another begins. 
+
+Dott loved her job and is very good at it. But she’s a bit of a know-it-all and she can be a bit bossy sometimes. And, because she’s a full stop, she always has to have the last word\!
+
+One day Dott had just finished working through a new page. Dott enjoyed her work. But what she liked best was feeling proud of herself after finishing a page.
+
+But, when she looked back at this page, she wasn’t proud at all. She was frustrated. She saw that there were no other punctuation marks\!
+
+Without proper punctuation, the words would be jumbled nonsense. They wouldn’t make any sense\!
+
+Dott hurried back to the start of the page. She was excited to have more work to do.  She was going to be extra proud of herself for doing all the punctuation on the page\! 
+
+Dott started putting marks where all the missing punctuation should have been.
+
+She made a mark in spots where Oxford the Comma would have. Oxford was always confused about where he should put his mark. 
+
+Dott didn’t know where the other Puncs were, or why they hadn’t made their marks. So she decided that it would be faster if she just did it all herself. She knew the other Puncs' jobs well.
+
+Dott thought she did a better job of his work than he usually did\!
+
+She made marks where Quizz the question mark and Whizz the Exclamation mark, should have been.
+
+The cousins didn’t have as much work to do, so it was easier for Dott to tell where their marks ought to have been. And it was nice to not have Quizz asking her silly questions and Whizz yelling at the top of his voice the whole time\!
+
+Before long, Dott had made a mark in all the places that her fellow punctuation marks ought to have.
+
+She turned to admire her work, but saw the words were even harder to read\! There was punctuation in all the right spots. But it was all Dott’s mark, the only mark she knew how to make. Each one was a full stop\! 
+
+This turned the text into nonsense\! None of the sentences started or ended where they should\! She'd made the situation worse\! 
+
+Dott was sad\! She'd thought she could fix everything, and she'd tried her best. But she hadn't been able to. She was disappointed that she couldn't do it all by herself.
+
+Then she got mad. She was mad at herself for making so many mistakes. And she was mad at her friends for not doing their work in the first place\!
+
+She trudged back to the top of the page, removing her mistakes as she went. Then, she sat down near the start of the words and stared down at the page below her.
+
+She decided that the only way to fix it was to find her friends and get them to all work together as a team.
+
+She stood up, took a quick look around, and marched off in search of the missing punctuation marks.
+
+# Sample 6
+
+In the vast expanse of the cosmos, a battle between the forces of good and evil unfolded. Amidst the countless worlds drowned in despair, a small group fought relentlessly to bring forth the light of freedom; the Star Corps. Leading one of the Corps' more rag-tag teams was the singular Captain Eo.
+
+His spaceship, a vessel of questionable prowess, unleashed a powerful blast that shattered a meteorite on a collision course into fragments. The ship soared through the aftermath, setting a course for a nearby planet. Onboard, the ship's navigators emerged—a peculiar creature known as The Geex, possessing two heads named Idy and Ody.
+
+Ody's voice echoed with a casual assurance, "This planet doesn’t look so dangerous, Idy."
+
+Inquisitively, Idy responded, "Is this it, Ody?"
+
+"We'll see," Ody remarked, his tone contemplative.
+
+"We better find that landing beacon," urged Idy.
+
+"Hey, Hooter, we’re almost there\!" Idy exclaimed, drawing the attention of Hooter, a character with a distinctive trunk who responded with exuberance, "Oh, boy\!"
+
+The cautionary advice came from Major Domo, "Don’t get too close, or you’ll trip their intrusion alarm."
+
+"Yeah, don’t blow it, you guys." added Hooter.
+
+With an air of nonchalance, Ody dismissed the concern, "Relax, there’s no problem."
+
+"No problem," echoed Idy just as an intrusive buzzer blared, and Ody declared, "INTRUSION ALERT\!\!\!"
+
+Instantaneously, the atmosphere shifted to one of battle readiness.
+
+"Battle alert\!" Idy yelled into the ensuing chaos.
+
+"Don’t panic\! That’s what got us into trouble the last time," warned Major Domo.
+
+"It wasn’t our fault. It was Hooter’s fault," Idy pointed out.
+
+"Hooter’s fault," affirmed Ody.
+
+Hooter blew air out of his trunk towards Idy and Ody.
+
+"Oh, Hooter\!" Idy chided, and a whistle punctuated the moment.
+
+Amidst the commotion, Captain Eo, the enigmatic leader, ascended on an elevator platform into the cabin, a beacon of authority and resolve.
+
+Through the ruckus, Minor Domo greeted Captain Eo with a simple, "Good morning, Captain."
+
+Major Domo, however, quickly brought attention to an unwelcome revelation, "It looks like we tripped their intrusion alarm, sir."
+
+The blame was promptly placed on Idy and Ody by Hooter, who declared, "Idy and Ody blew it. They got too close."
+
+With calm authority, Captain Eo made a decisive statement, "We're goin’ in." Major Domo, concerned about the ship's readiness for battle, offered a practical suggestion;
+
+"Sir, the ship is in absolutely no condition to go into battle. I thought we’d begin by cleaning up Hooter’s bunk."
+
+In response, Hooter tossed an empty can across the cabin.
+
+"Hooter\!” Captain Eo chided. “Listen,” He continued to the rest of the crew “Command considers us a bunch of losers. But we’re gonna do it right this time, ’cause we’re the best. If we don’t, we’ll be drummed out of the Corps."
+
+Assurances of commitment followed. Major Domo pledged, "We won’t let you down this time, Captain." 
+
+Ody and Idy echoed, "We’re going to do it right," and "That’s right, we’ll be perfect, sir," respectively. Hooter, in agreement, made a noise and offered a salute.
+
+Captain Eo reciprocated the salute, "OK." However, the spirited  moment was interrupted by Idy's observation, "Captain, there’s something weird out there."
+
+"A patrol ship." Ody added.
+
+Captain Eo affirmed their suspicions, "I thought so. Maybe we can outrun him." The impending danger became imminent as the enemy patrol ship roared by.
+
+"It’s going to ram us\!" Idy exclaimed.
+
+"Duck\!" Ody shouted, and Captain Eo seized control of the ship, commanding:
+
+"Get to your stations\!"
+
+The spacecraft executed a nimble maneuver, flipping underneath the patrol ship, dodging both the vessel and its laser guns. Chaos ensued as Minor Domo was sent flying across the cabin, colliding with Major Domo and leaving a dent in the metallic figure's back. Hooter, too, was thrown onto his bunk.
+
+Undeterred, Captain Eo urged, "Hold on, everybody, hold on\!"
+
+Major Domo reminded them of the mission objective, "We haven’t found the landing beacon yet."
+
+In the midst of the turmoil, the realization that the map was missing prompted a frantic search.
+
+"Who’s got the map?" Idy asked. Ody pointed.
+
+ "Fuzzball."
+
+The small creature known as Fuzzball chirped and identified the culprit, "Hooter has it," pointing in Hooter's direction.
+
+Major Domo reinforced the discovery, "Hooter has it\!"
+
+Captain Eo, exasperated, called out to Hooter, "Hooter\!"
+
+Hooter, slightly abashed, confessed, "I think I ate it\!"
+
+"You ate it\!" Idy and Ody accused in unison as the chase persisted, with Captain Eo's ship drawing near to the planet. A holographic screen flickered to life, displaying the face of Eo’s Commander.
+
+"Captain Eo?\! You down there, Eo?" inquired Commander Bog.
+
+"Commander Bog," acknowledged Captain Eo, his voice resolute.
+
+"Captain Eo, you are late reporting in. Are you having a problem finding our landing beacon?" questioned Commander Bog.
+
+"No, sir. Everything’s under control, sir\!" assured Captain Eo, though the disarray within the ship painted a different picture.
+
+Commander Bog scanned the scene and observed the chaotic state of the ship. "What’s going on?" he inquired.
+
+"We’re having a slight weapons malfunction, sir," explained Captain Eo, attempting to downplay the situation.
+
+Concern etched Commander Bog's features. "Captain Eo, have you engaged in combat against orders?\!" he demanded.
+
+In a playful act of defiance, Hooter hurled something at the screen, obscuring the Commander’s vision.
+
+"I can’t see\! Captain Eo, what’s going on?" Commander Bog asked.
+
+"Woohoo\!" Captain Eo cheered as the ship navigated its way between buildings on the planet, approaching a tunnel.
+
+"We’re going through," declared Idy.
+
+"No\! Idy, the sail’s not in." cautioned Ody.
+
+"Hooter, bring in the sail\!" Captain Eo directed.
+
+"OK," responded Hooter, positioned near the sail.
+
+"It’s right behind you, Hooter," Captain Eo guided.
+
+"I can’t reach it," Hooter admitted.
+
+"What’s going on?" Commander Bog inquired as the yellow substance thrown by Hooter onto his eyes began to slide off.
+
+"Somebody push the red button," Captain Eo suggested.
+
+"Use your trunk, Hooter," recommended Major Domo.
+
+"Come on, Hooter. Stretch\!" urged Idy.
+
+Hooter jumps and hits the button which brings the sail in just in time. Eo’s ship flies right through the tunnel without being hit by the patrol ship’s weapons.
+
+"WOO\!" Captain Eo's resolute command echoed through the vessel, a rallying cry that elicited cheers of relief from the entire crew. Yet, the perilous journey was far from over. With the ship still navigating a labyrinth of tight spaces, tension lingered.
+
+Ody's voice carried a note of concern, "We’re losing power."
+
+Undeterred, Captain Eo barked, "Everybody hold on\!"
+
+A thunderous crash reverberated through the ship, releasing a veil of smoke. Major Domo swiftly illuminated the cabin with a beam of light, inspecting the aftermath. Amidst the wreckage, Captain Eo lay on the floor, covered with small pieces of debris.
+
+"Captain Eo? Captain Eo?\!" Major Domo's anxious call filled the air.
+
+Eo stirred, sitting up to survey the scene. Ody's voice cut through the chaos, "I think we found the beacon. Captain Eo, take a look at this."
+
+Examining the discovery, Captain Eo declared, "The homing beacon. We ran right into it\!"
+
+A collective cheer erupted among the crew.
+
+"Commander Bog\!" Captain Eo hailed.
+
+"Captain Eo?" responded Commander Bog's holographic image.
+
+"Everything’s OK, sir," reassured Captain Eo, as Major Domo chimed in; 
+
+"Right on time."
+
+"And we’ve reached the homing beacon, sir," Captain Eo added.
+
+Commander Bog acknowledged the achievement with a hint of surprise, "Well, so far, so good, Captain Eo. But, I must admit that I am a bit surprised after the mess you made of your last mission. But now that you’ve found the beacon, take the map, find the Supreme Leader, and give her the gift. You do have the map, don’t you?"
+
+Eo turned to his crew, seeking confirmation.
+
+"No problem." asserted Ody.
+
+"No problem, sir." echoed Idy.
+
+"Right here." chimed in Hooter.
+
+Commander Bog's holographic image disappeared, leaving the crew to face a new dilemma.
+
+"Boy, do we have a problem," Hooter remarked.
+
+"We’ll never find the Supreme Leader without a map," Ody lamented.
+
+Captain Eo, in a hushed whisper, rallied his team, "Come on."
+
+The crew left the ship in pursuit of the Supreme Leader, determined to fulfill their mission. They found themselves surrounded by oppressive darkness and smoke. Scrap metal lay all around. 
+
+Hooter sneezed loudly into the eerie silence.
+
+"I couldn’t help it." He said when the crew's frowns chastised him.
+
+"Quiet," commanded Captain Eo, attempting to maintain order. Hooter started to paw through the discarded objects.
+
+"Hooter\!" cautioned Captain Eo, concerned about the noise the tiny creature was making.
+
+"I’m disguising myself." Hooter declared.
+
+Amused, Captain Eo chuckled, "Hooter, listen. Put it back and let’s go."
+
+In response, Hooter blew his trunk and proceeded to place a trash can on his head.
+
+"Don’t be silly," laughed Captain Eo.
+
+"Gotta have a disguise," insisted Hooter, committed to his makeshift concealment.
+
+As they progressed, strange sounds enveloped them, prompting the crew to look around cautiously. Hooter abruptly halted, causing the rest of the crew to collide with him, generating a noise that alerted some nearby guards.
+
+"Shh\!" cautioned Idy and Ody.
+
+"Sorry," apologized Hooter.
+
+Suddenly, the guards emerged from behind piles of metal, swiftly surrounding the outnumbered crew.
+
+"Get them\!" commanded one of the guards.
+
+With no escape route, Captain Eo and the crew reluctantly surrendered, allowing themselves to be led to the dark and grungy lair of the Supreme Leader.
+
+The Supreme Leader, suspended like a spider in its web, exhibited an ominous presence, surrounded by cables and tubes. She relished the sound of her long, sharp fingernails clicking together, casting a menacing aura.
+
+Idy inquired, "Who is it?"
+
+Major Domo responded with a hushed tone, "The Supreme Leader."
+
+Hooter, triumphant, declared, "Hey, I told you I’d find her."
+
+"Silence\! Infidel\!" the Supreme Leader interrupted, dismissing Hooter's jubilation.
+
+"Infidel?" questioned Hooter, perplexed.
+
+"You infect my world with your presence. Turn the others into … trash cans\!" commanded the Supreme Leader.
+
+Undeterred, Hooter retorted, "See you later, trash can\!" as he dashed towards Major Domo.
+
+"And for him\! 100 years of torture in my deepest dungeon," decreed the Supreme Leader, pointing at Captain Eo.
+
+Remaining strong and unmoved, Captain Eo stoically responded, "Your highness, my loyal companions and I accept these punishments."
+
+"We do?" questioned Hooter.
+
+"Of course we do, he’s our captain," asserted Idy.
+
+"Speak for yourself," Hooter honked.
+
+"We have come here uninvited and unannounced." Declared Captain Eo, addressing the looming figure of the Supreme Leader.
+
+"So, then we both admit to your … stupidity\! Why have you come?" Inquired the Supreme Leader.
+
+"To bring a gift, your highness. To someone as beautiful as you." Responded Captain Eo.
+
+"You think me … beautiful?" Asked the Supreme Leader, doubt and suprise in her voice.
+
+"Very beautiful within, your highness, but without a key to unlock it. And that is my gift to you." Captain Eo explained.
+
+"Let me see this gift." demanded the Supreme Leader.
+
+"Not only see, your highness, but hear." Captain Eo smiled.
+
+He gestured to his ear, signalling Minor Domo to initiate the performance and a remarkable transformation unfolded.
+
+Minor Domo seamlessly morphed into a keyboard synthesizer, while Major Domo, with a swift kick, morphed his leg into a guitar. The rest of his metallic form metamorphosed into a complete drum set, expertly played by Idy and Ody.
+
+"Hooter, hurry up\!" Captain Eo urged, shedding his cape and tossing it onto the floor.
+
+"Come on, Hooter." Encouraged Idy.
+
+"Over here." Called Ody.
+
+In his haste, Hooter slipped on Eo’s cape, careening into the keyboard and causing it to topple over, abruptly halting the music.
+
+"Noo\!" Lamented Idy and Ody in unison.
+
+The Supreme Leader, observing the chaos, commanded, "Send in my troops\!"
+
+From beneath where the Supreme Leader hovered, troops emerged, advancing into the scene.
+
+"I got it, I got it\!" Hooter exclaimed, pushing the keyboard back upright.
+
+"Hurry up and fix it, Hooter\!" Captain Eo implored watching the troops advance.
+
+The troops closed in around Eo, brandishing their weapons.
+
+"Send him to my dungeon\!" Declared the Supreme Leader.
+
+"Hooter\!" Captain Eo called out urgently.
+
+With a spark of determination, Hooter swiftly connected two wires, restoring the music. Pressing the keys, he reignited the power of sound, infusing Captain Eo with energy.
+
+With a surge of strength, Eo pushed the guards away with his unique ability to turn sound into energy, transforming them into dancers who seamlessly joined his side. They fell into formation behind him, advancing toward the Supreme Leader.
+
+"Get him\!" the Supreme Leader commanded, witnessing her guards defecting.
+
+Eo harnessed his power to turn the guards into dancers, leading them in a synchronized dance towards the Supreme Leader.
+
+"Woo\!" Captain Eo exclaimed, signalling a series of choreographed moves that seamlessly blended into a performance, culminating in Eo's impassioned singing.
+
+A synthesized voice echoed, "So long, bad times."
+
+With an unwavering resolve, Captain Eo proclaimed, "We’re gonna shake it up, break it up, sharing light brighter than the sun."
+
+The harmonious blend of a synthesized voice and Fuzzball resonated, "Hello, good times."
+
+Energized, Captain Eo declared, "We’re here to stimulate, eliminate, congregate, illuminate."
+
+In unison, the dancers joined the anthem, "We are here to change the world."
+
+Captain Eo, a beacon of leadership, emphasized, "We\! Gonna change the world. We\!"
+
+The rhythmic chant continued, "We are here to change the world. Gonna change the world. Woo\!"
+
+As the group moved to the back of the room, they turned and advanced forward, their every step punctuated by the sound of stomping
+
+Captain Eo asserted, "So do surrender ’cause my power’s deep inside my soul."
+
+In a collective chorus, the dancers reiterated, "We are here to change the world."
+
+Captain Eo intensified, "We\! Gonna change the world. Yeah, yeah."
+
+The mantra reverberated, "We are here to change the world. We\! Gonna change the world. Woo\!"
+
+With purpose, Captain Eo moved closer, ascending a few stairs toward the imposing figure of the Supreme Leader.
+
+The Supreme Leader called, "My whip warriors\!"
+
+Emerging from their cells, the warriors advanced, whips cracking through the air. The dancers, recognizing the impending danger, retreated to the back of the room. Captain Eo attempted to vanquish them with his laser power, but they skillfully deflected the light. The warriors closed in, their whips encircling him. In a nimble spin, Captain Eo broke free, seizing the ends of both whips in a display of unwavering defiance.
+
+In the lair of the Supreme Leader, a sinister command echoed, "Destroy him\!"
+
+Utilizing his laser power, the force coursed through the whips, connecting with the warriors. The concept seemed ingenious, yet it boomeranged against the Supreme Leader. The warriors skillfully deflected the power, redirecting it with precision. The whips dropped from the Supreme Leader's grip, and he hastened towards an open gate. However, just before reaching it, the gate abruptly closed, thwarting his escape. The whip warriors, undeterred, advanced menacingly.
+
+Fuzzball, a quick-thinking companion, soared behind the warriors and cunningly seized the ends of their whips. With nimble efficiency, Fuzzball expertly bound the whips together. Unbeknownst to the warriors, their attempts to strike Captain Eo resulted in a chaotic entanglement. A flicker of worry crossed the Supreme Leader's face as Eo harnessed his power, transforming the warriors into graceful dancers.
+
+In the midst of the unfolding spectacle, Hooter, ever ready, urged, "Let’s go."
+
+Eo, undeterred, liberated prisoners who were confined within the lair's columns, transforming them into additional dancers. As the rhythm of the song continued, Captain Eo exploded into dance.
+
+The Supreme Leader, unable to withstand the transformative melody, covered her ears and emitted a groan.
+
+Captain Eo sung out; 
+
+*“My brothers\! My brothers\! We’re gonna change the world.”*  
+*“Deep down in my fire. Deep down in my soul, baby.”*  
+*”We\! Gonna change the world. Woo\!”*
+
+In a captivating display of power, Captain Eo ascended, hovering gracefully above the ground. With a wave of his hand, he sent sound energy towards the Supreme Leader, transforming her into a vision of beauty.
+
+Simultaneously, her dark and foreboding lair underwent a metamorphosis, evolving into a magnificent palace. Once ominous, the metallic columns adorned with black tubes turned into Grecian-like white columns draped with vines. The backdrop shifted from a gloomy atmosphere to a sunlit day.
+
+As the transformative spectacle unfolded, Captain Eo's voice rang out:
+
+*“Woo\!”*
+
+The dancers erupted in celebration, surrounding the newly transformed Supreme Leader. Eo's crew joined him, following their leader towards the now-open gate as he sung:
+
+*“We’re sending out,*   
+*A major love,*    
+*And this is our,*    
+*Message to you.*    
+*The planets are linin’ up.*    
+*We’re bringin’ brighter days.*    
+*They’re all in line,*   
+*Waitin’ for you.*    
+*Can’t you see?*    
+*You’re just another part of me.*    
+*Woo\! Another part of me”*
+
+Eo's crew made their way toward the gate, and Fuzzball flew a fast lap of the room bidding all its occupants “Bye, bye.”
+
+Captain Eo saluted, and the group made their exit.
+
+*“We’re takin’ over.*    
+*We have the truth.*    
+*This is our mission.*    
+*To see it through.*    
+*Don’t point your finger,*    
+*Not dangerous.*    
+*This is our planet.*    
+*You’re one of us”*
+
+Eo's spaceship appeared, taking off towards another celestial destination.
+
+*“We’re sending out,*  
+*A major love.*  
+*And this is our,*    
+*Message to you.*    
+*The planets are linin’ up,”*  
+    
+Three planets appear in line, then disappear, and a starfield emerges.
+
+*“We’re bringin’ brighter days.*    
+*They’re all in line,*  
+*Waitin’ for you.*  
+*Can’t you see?*    
+*You’re just another part of me.*  
+*Hee, Hee, Woo\!”*
+
+The starship gently faded away as Captain Eo and his newly-redeemed crew set off to find new adventures in the name of the Star Corps.
+
+# Sample 7
+
+My cup of black oblivion sits cooling beside me as I watch her reach out to steady a bottle of water before the hand that knocks it has even made contact.
+
+Her name is Claire. She's sitting in a coffee shop not unlike the one I'm in.
+
+I can't look at her directly; the black of her dress makes me feel dizzy. So instead I look over the shoulder of her clumsy companion, a blonde woman, at the photos she is flipping through.
+
+The photos show a man playing golf. There's a dozen or so. The last few show the same man in a casual bar drinking with some other men.
+
+I can make these details out, easily, despite there being three blocks of city traffic between the two cafes in which we sit.
+
+Leaps, people like me, and like Claire, can do all sorts of wonderous things.
+
+The blonde drops the photos onto the table beside a manila folder and a book bound in black material. She sniffles and I can hear the smile in her voice even as it breaks with emotion.
+
+"Thank you. Thank you so much."
+
+Claire's voice is soft as she replies. "It was my pleasure. This is the best part of the job."
+
+I open my eyes again, trusting that the rest of their conversation will be of little interest to me.
+
+I take a moment to look Claire over again.
+
+Her brown hair makes the skin on my face feel like it's contracting and her bright green eyes make me feel vaguely nauseated. The bottomless black void of her dress is disorienting, the worst colour of all. It gives me vertigo.
+
+She's pale though, and the whiteness of her skin is soothing. So I watch her arms as she gathers the photographs from the table. As she taps them against it to align them on both the vertical and horizontal axes. As she slips them back into the manila folder and slides it across the table to her client.
+
+I watch her hands as they scoop up the heavy-looking book and cradle it gently, yet firmly, against her hip.
+
+I watch her face, careful to avoid the heat radiating from her red lipstick, as she concludes their business together.
+
+They stand, say their goodbyes and part ways. The rush of air over Claire's skin as she walks away wafts her perfume into the breeze and I, like a bloodhound, catch the scent.
+
+It's floral. Not unpleasant. Not overpowering. I don't think the fragrance suits her myself, but she favours it and I've come to associate it with her. This is how Claire Viance smells.
+
+I could track her through the city by that scent alone, but the way she moves is mesmerising, so I open my eyes to watch.
+
+The crowded city street is chaotic; people walking as and where they please, with no thought to order or logic. Different paces, different directions, across any clear path they can find. It hurts my brain to watch it.
+
+And yet Claire cuts through it with ease. She keeps a steady pace, even as she dips this way or that to avoid an absent-minded pedestrian. She reaches crosswalks just as the lights turn in her favour. She sidesteps a wayward ball while simultaneously reaching out to steady the child toddling after it with single-minded determination.
+
+She dances though the chaos. Watching her move through the crowd is like watching a carefully choreographed performance. I forget the myriad discomforts the colours around her set off in my senses and lose myself in her art of movement.
+
+This is why I'm following her. Her unique gift. Her leap. The ability that all but guarantees her success as a private eye.
+
+She sees the future.
+
+At first, I hadn't been sure. It was merely a suspicion put forward by my hunter's instincts. But the more I've watched her over the last weeks, the more sure I've become. Claire Viance is a seer. A mystic. A shaman. Any one of a plethora of tribal epithets that set her apart and raise her up.
+
+She knows what's going to happen before it does. And this knowledge is so natural to her that it informs every everything she does, from her profession to the way she navigates the world around her.
+
+Claire's mesmerising dance ends when she reaches her car, a small, thankfully white, smart car. A battery-powered child's toy that looks like a rollerskate with delusions of grandeur.
+
+She slides herself inside with the same fluid grace with which she does all things. And the 'thunk' of the door is like punctuation. This scene is over. Claire is leaving now. I will rejoin her trail later.
+
+For now, and to avoid looking into the sucking abyss of blackness that is my coffee, I close my eyes again and let the sounds of the city wash over me.
+
+It's not a pleasant experience. The high-pitched whine of a siren feels like knitting needles in my ears.
+
+The bass throb of the busses is a pressure on my chest, trying to force me backwards. The cumulative hum of conversation all around me is like a thousand strangers' hands on my skin.
+
+No part of this experience is pleasant. But then, it isn't supposed to be. My leap; preternaturally acute senses, comes, as all leaps do, with a price. In my case, that price is the orchestra of sensations that accompany the stimuli from my heightened senses.
+
+Synesthesia, it's called.
+
+And as unpleasant as this side-effect can sometimes be, it's a small price to pay to be able to eavesdrop on a conversation five blocks away. Or follow an engaging scent across a city. Or watch the breathtaking grace in Claire Viance's movements through the mad throng of a city street.
+
+And Claire's leap; her prescience, carries amnesia in its wake.
+
+The book gave it away. Her journal. The one from the table.
+
+I could almost laugh if it wasn't so perfectly on brand for the universe to grant someone visions of the future, but rob them of their memory.
+
+But Claire, like me, has found a way to manage.
+
+Without opening my eyes, I grab my cup and down the rest of my coffee. I can taste the fuel used in the fires that roasted the beans and there's a hint of salt from the sweat of the man who sorted them, beneath the acrid taste of deodorant from the barista who wears it too liberally.
+
+I stand and drop some money on the table. It's an odd habit I've picked up from movies and TV. I've never seen anyone else do it in real life. But I like the imagery of it, and, to date, no one has complained.
+
+I make my way between the al-fresco tables congesting the sidewalk and head uptown. If I listen, I can still hear Claire's car buzzing its way uptown toward her office. I can find her there later. For now, I've got another muse to check in on.
+
+# Sample 8
+
+A garden, verdant to the point of overgrowth. A woman sits on an ancient wooden bench. She has a diary open on her lap and a pen in her hand.
+
+She looks up as if remembering something, then slides herself and her possessions to the other end of the bench.
+
+A large bird dropping lands where she had been sitting a moment before. She looks at it, mildly disgusted, then returns her attention to the diary.
+
+*I have already forgotten what I had for breakfast. Perhaps I should try to journal before I eat so I remember if I enjoyed it.*
+
+*I will stay in this glade for a while, in the sunshine and fresh air. I will try to understand the meaning of the grass as it waves and bows to the leaves. I will appreciate the dance the leaves perform.*
+
+She pauses writing and looks around her, basking in the glory of nature. Then she bows her head back to the journal and continues.
+
+*I remember that the sun will shine until after lunch when a storm will blow in. I will sleep during the rain and enjoy the sound it makes against the window of my room.*
+
+*I will awaken refreshed, in the early evening, the smell of the rain lingering in the air. I will get up and go to dinner in the cafeteria; a scone with butter.*
+
+*Tonight, when I return to my bed, I will dream delightful dreams of…*
+
+She smiles, lifting the pen from the page.
+
+*No. No need to commit that to writing.* She thinks. *Some things are best left private.*
+
+Claire caps the pen and closes her diary. She breathes in deeply as she pulls the book close to her chest.
+
+She closes her eyes, tilts her head to the sky and lets the sounds of nature wash over her.
+
+After a few long moments, she opens her eyes, smiling, refreshed, and rises from the bench, making for the large Victorian mansion that can be seen through the trees.
+
+\#\#\#
+
+The gallery is small and industrial. Concrete floors, freestanding walls, no ceiling hiding the rafters. Canvas after canvas of formless colour and chaos.
+
+Abby meanders around the space, not admiring any particular paintings. Just loitering. She looks more at the patrons than the art. She frowns and checks her watch. She wanders a bit more.
+
+Time passes, painfully slowly.
+
+Eventually, the crowd in the room thins. Abby is standing off to one side, no longer even trying to blend in. People pass her without seeming to notice she's there.
+
+She takes one last look around, choosing her moment. No one is nearby, no one is looking in her direction. The security kiosk is empty.
+
+She bounces away from the wall and heads for one painting in particular. Nothing sets this painting apart from the others. As she approaches, she gives a slight twist of her head, concentrating.
+
+When she reaches it, Abby lifts the painting off the wall without hesitation. No alarms sound. She didn't think any would. She takes a step back, hefting it, balancing its weight more comfortably.
+
+Checking over her shoulder, she takes a few more steps backward. Then she pivots and begins to walk towards the exit.
+
+No one exclaims in scandalised surprise. The gallery is as docile as it was five minutes ago. The muzak plays on, oblivious.
+
+Abby makes slow progress across the room. She is clearly trying very hard not to bump into anyone, but the painting is hampering her. She stops now and then to look around it as best she can.
+
+Exasperated, she lowers the painting to the floor and starts to slide it beside her. As she moves it, the frame screeches on the concrete, a sound to wake the dead. Not a single eye turns her way. Abby doesn't seem to care and she continues to drag the screaming painting toward the door.
+
+This method is much faster and she's out the door before long.
+
+Out in the street, the crowds are thicker. Abby stops and her shoulders slump. She looks down at the pavement. It's pitted and cracked. She shrugs and lifts the leading edge of the painting with both hands, dragging it forward into the crowd.
+
+\#\#\#
+
+Claire pulls open the door to her room and makes her way to the dining hall.
+
+She dodges the people milling in the narrow halls with unnatural skill. She slows, skips, stops and sways, past potential obstacles with ease and grace.
+
+She arrives in the dining hall and makes her way towards the serving bench. She's one of the first to arrive for the meal. She passes by the fresh and steaming dishes, her eyes focussed on an empty space ahead. Then, when she's but two steps from the vacant spot, a latex-gloved hand places a dish of pastries into it.
+
+Without breaking stride, Claire scoops up a warm scone. As the butter melts into it, she returns to her dormitory. As she leaves, the rest of the residents begin to shuffle in, drawn by the smell of fresh food.
+
+Back in her room, Claire makes short work of the scone. Before long she hears the other residents as they return from dinner to go about the evening's pursuits.
+
+For her part, Claire is happy to stay cloistered within her room, the door closed and locked. She picks up her favourite book and climbs under the covers of the single cot.
+
+The book is well worn. It's an anthology of short stories curated to lift flagging spirits. Claire's unique mind makes it hard for her to indulge in a long narratives. She always knows the ending while forgetting what she last read. The short story offers her a much more enjoyable experience. While she still knows the outcome before she starts, the tales are short enough that she can usually finish them before details start to fade.
+
+She gets comfortable in bed and begins to read. She is not sleepy, but the act of reading tires her quickly.
+
+She falls asleep well before the call for lights out.
+
+\#\#\#
+
+The bar is a blend of rustic local pub and flashy inner-city nightclub. The two influences clash violently, making the space look haphazard and unwelcoming. The paultry patronage reflects its failure to appeal to either demographic.
+
+Abby enters through a black door set into a bisected corner of the room. The bar runs the full length of the wall on her right side and seating booths run the length of the left. Standing tables float in the space around what is is clearly intended to be a dance floor. The far wall has the DJ booth and doors to the amenities.
+
+Abby walks to the bar and slides onto the stool nearest the hipster bartender. He ignores her until he's finished chopping a lime, then looks up with a raised eyebrow.
+
+"What'll it be?" He asks, wiping his hands on the towel tucked into his belt.
+
+"Scotch." Abby replies. "The good stuff."
+
+The bartender swivels to face the backlit shelves behind him. He reaches toward the top and grabs a bottle by the neck. Then he pivots back, scooping a glass off a drying rack with his free hand.
+
+He pours a generous amount of liquor into the glass, sliding it towards Abby.
+
+She grabs it and raises it to eye-level between them.
+
+"To freedom." She toasts. The barman nods noncommittally.
+
+Abby tosses her head back and downs the drink in one swallow. She smacks the glass down onto the bar and slides it back towards the barman.
+
+He tilts the bottle in her direction, silently asking if she wants another. She shakes her head.
+
+As he turns away towards the shelves, Abby gives a little shake of her head.
+
+As the barman's turn brings him back around to face the bar, his eyes widen when they fall on Abby. He looks from her, to the door, and back to Abby again. Then his professional composure asserts itself.
+
+"What'll it be?" He asks.
+
+"Nothing, love." Abby responds, smiling. "I was just leaving."
+
+She slips off the barstool and walks across the room back to the door. The barman watches her go.
+
+Not until the door closes behind her does he spy the tumbler on the bar with the remnants of a drink pooling in the bottom.
+
+\#\#\#
+
+Abby parks her car under the broad canopy of an old oak tree. The full moon was bright enough that its thick foliage threw faint shade. She knew this tree. Loved it. It had been here and already huge when she was a child. The local kids used to have a swing hanging from one of the branches.
+
+The tree was like an old friend, but it was not why she was here. She looked at the house across the street. It was the house she lived in during the days she'd swung from the old tree.
+
+Lights were on inside. It was still early. She hadn't come far from the bar. She could still taste the scotch on the back of her tongue. But her parents were early risers, and she knew they'd be retiring soon.
+
+She doesn't come here often. Only on nights when the loneliness feels too oppressive. Nights like tonight. The toast she'd made in the bar had been forced and only deepened her ennui.
+
+She knew that being here would not help. She decided to accept the melancholy, hoping to find peace on the other side. She expected to be in tears within minutes.
+
+As if on cue, she saw a figure through one of the upstairs windows; her mother. The tears started to burn her eyes almost immediately and a pressure built in the back of her throat. She tried to swallow past it and the movement caused the tears to overspill her eyelids.
+
+Her mother looked well. Abby was glad for that.
+
+She watched her mother go about the trivial business of making a home ready for sleep. She moved things to their rightful places. She turned off this device or that. She closed windows and checked locks.
+
+Then her father appeared downstairs, emerging from the rear of the building. Despite her grief, Abby smiled, assuming he'd been in the den, writing. He liked to spend his evenings at his typewriter. She'd watched for his name on a novel ever since she fell out of the family.
+
+He looked happy. His face held the tranquillity of a fulfilled soul. Abby's tears fell thicker and faster.
+
+She watched as her parents completed their nighttime rituals. She realised she was cold. Her body alone was not enough to warm even this small space.
+
+Only once all the lights were out did she start the engine and pull away from the curb.
+
+\#\#\#
+
+The lamp creates a small pond of light in the corner of the room. The rest of the room is in darkness. Within the circle of light, Claire sits hunched over, scribbling in her diary. The scratching of pen on paper is clearly audible in the stillness.
+
+*The dream was so real. The colours and the sounds were so lifelike.*
+
+*I was on a street I didn't recognise. A faceless crowd surrounded me. Standing opposite me was a blonde woman.*
+
+*Hers was the only face I could see. She was beautiful.*
+
+*She was dressed in a stylish red cover-all. She wore practical red flats.*
+
+*In her hand was a book; a plain black hardcover. I realised it was my diary. She had a look of triumph in her haunted eyes.*
+
+*Then, as I watched, the book dissolved in her hand. Her look of triumph was replaced by one of frustration and anger.*
+
+*Then the scene around us changed and we were in a hospital. The woman was asleep in the room's bed. Her right leg was heavily bandaged and elevated by a traction sling.*
+
+*She opened her eyes and looked at me. In a coarse voice, she asked: "Do you see me? No one sees me. Do you remember me? No one remembers me."*
+
+*I opened my eyes then, the dream had run its course. I realised I remembered it. Actually remembered it. Something from the unknowable past. I remember her. I can recall her face completely. I can see each feature that contributed to the alluring whole.*
+
+*And I am writing it down because I don't know how long I'll remember this vision from the past.*
+
+Claire stops writing, puts down the pen and closes the diary. Then she turns to gaze at the impenetrable darkness pressed against the window. She watches it until the bleaching of the sky heralds the coming of the new day.
+
+\#\#\#
+
+Claire opens her eyes. She lifts her head from the table and looks around the space in which she finds herself. It's a small, functional room. It isn't overly opulent, but has all the required necessities.
+
+She's sitting at a small table, in one of two matching chairs. The table is positioned against the wall that has the only visible door. On the far side of the door is a short bench holding up a microwave and kettle. Below the bench is a small refrigerator.
+
+To her left, against one side wall, is an entertainment unit. Across from it, against the other wall, is a single bed. There is no couch.
+
+Claire returns her attention to the table at which she sits. There is a black hardcover book. Upon the book is a silver pen. These are the most intriguing items among the room's meagre catalogue so she reaches for them.
+
+Inside the front cover is a handwritten note:
+
+*To Claire of tomorrow,*
+
+*This diary is your life. Carry it with you and do not lose it. You are not an amnesiac, but you will not remember things that happen to you.*
+
+*You are a Leap. You have a unique and powerful gift. But nature demands balance in all things and a gift like yours must be tempered by a curse.*
+
+*Your gift is to see the future. Your curse is to forget the past.*
+
+*Use this diary every morning to record the coming day. Read it as needed. Be diligent; the world expects you to remember and life will be hard if you don't.*
+
+*Read some entries and you will understand. Then remember today and write it down.*
+
+*Yours truly.*
+
+*Claire from yesterday.*
+
+Claire reads this page twice. As cryptic as it is, it resonates with her. She has no recollection of this room, yet she recognises items here and there as hers. She has clearly been here long enough to unpack some belongings.
+
+She does as the odd letter suggests and flips forward to a random page, reading the entry. It details a day in the life of a … private eye. She's an investigator?
+
+She reads on, already knowing what she's about to read, but also knowing she must read it anyway. She has a memory of doing so. Therefore she must create that memory.
+
+The entry is written in the future tense. Each line describes an event, in detail, that will occur during the course of that day.
+
+She finishes the entry and reads some more. Each is the same; a forecast for the coming day.
+
+Then, as she riffles forward, she finds herself at the end of the filled pages.
+
+She stares at the blank page, knowing that she must write today's entry. And even as she considers it, the events of the day reveal themselves in her mind. They cascade over themselves in a kaleidoscope of images. And when the avalanche is over, she knows what the day ahead of her will hold.
+
+Using the silver pen that was with the diary, she begins to write.
+
+*Today I will get distracted while writing in this journal.*
+
+*As I sit and reflect on what I have written, a stranger will enter my room. They will ignore me as if I am of no consequence as they make their way into my space.*
+
+Claire stops writing and re-reads her last two sentences.
+
+*Someone will enter my room today?* She thinks, perturbed.
+
+*A stranger? But I know her name is Abby.*
+
+She knows this, she realises, because she will have a conversation with this woman later in the day. She can't be sure if she's ever met the woman before. But the woman will, begrudgingly, offer her name to Claire. So perhaps they have never met. Or she is aware of Claire's unique memory.
+
+Claire looks forward to finding out.
+
+\#\#\#
+
+The sun shines on the many greens and assorted colours of the city's botanical gardens. People mill here and there but the place is largely unoccupied.
+
+Abby sits alone on a bench, watching two men approach. They're dressed in suits and aren't in the gardens for the view. They stride along the path without looking at the sights or people around them.
+
+They pass the bench that Abby is on. She flips them the middle finger, holding the gesture high, impossible for them to miss. They don't react. They don't even glance in her direction.
+
+Beyond the bench, set back away from the path is a caretaker's shed. The two men stop near it and finally take a look around. Satisfied, they step off the path and approach the shed.
+
+They ignore Abby completely.
+
+The shed has been left unlocked and one enters. The other stays outside, assuming an at-ease guarding stance. The pose looks natural on him.
+
+A moment later, the first man reappears. He's carrying a large, flat, wooden box, the kind used to transport framed art. To most people, the box would be awkward and cumbersome. But the man carrying it is large enough to tuck it under one arm.
+
+They rejoin the path and walk back the way they came. They pass Abby's bench again, but this time it's empty.
+
+\#\#\#
+
+Abby let herself into her apartment to the sound of her land line ringing. She raced to get to the phone because, as far as she knew, no one had this number.
+
+The caller ID was blank. So whoever was calling was protecting their own anonymity while invading hers. She picked up the handset with a fury.
+
+"Who is this?" she growled. "How did you get this number?"
+
+Silence stretched over the line for a good few seconds before the caller spoke:
+
+"I need something…liberated. And I hear you're the best in the business." He said, in a slightly bemused tone.
+
+A smile spread across Abby's face. It was nice to be known by reputation.
+
+She swallowed the pride in her voice and said: "What do you need and where is it?"
+
+"The item is currently at a remote and exclusive mental health retreat." The voice said. "Visitors are not usually allowed in."
+
+"That won't be a problem." Abby assured.
+
+"I didn't think so. The item in question is always…always…in the physical possession of its owner. It never gets locked away out of sight, it does not get left unattended."
+
+"Again, not an issue." Abby said.
+
+"It might be." The caller replied. "Because this time, the owner may well know you're coming."
+
+Abby smiled again. "Knowing I'm coming and being able to stop me are different things. Others have tried."
+
+"Understand this; I'm not talking about a general warning that a thief is targetting them. I mean the mark could know the exact minute, and method, of your arrival. They could very well be waiting for you to arrive."
+
+Abby bluffed her way through the rest of the conversation while terms were set. But all the while she considered the warning that the mark might know the exact moment she'd strike.
+
+She was not in the habit of broadcasting her plan to anyone, let alone them mark themselves.
+
+She wondered if the client was being hyperbolic. She discounted this notion quickly. There was no reason to over-exagerate the difficulties.
+
+She was the one you called to do the impossible. And to make it look easy. If he knew enough about her to find her unlisted number, he knew that she was nigh impossible to thwart.
+
+\#\#\#
+
+Abby swung the door open slowly. Her leap would ensure no one was aware of her presence. But she felt it was always better to try and minimise the disturbance and avoid the attention at all.
+
+She slipped into the room. She noticed the woman, a mousy brown-haired, woman sitting at the small table.
+
+She ignored her and looked around the room. She had been told that the owner of the diary she was here for kept it about her person at all times.
+
+Abby smiled. The fact that the woman was here actually increased Abby's chances of success. Oddly, though, Abby noticed that the woman seemed to be looking directly at her.
+
+Abby was about to dismiss it as her imagination when the woman spoke, steady but terse and tense.
+
+"Can I ask what you think you're doing here?"
+
+Abby froze. Her skin began to prickle as goosebumps broke out across her body. Her mind was enveloped in the deafening buzz of panic. She had no idea how to react to this.
+
+The voice came again, an edge creeping in now.
+
+"I asked you what you thought you were doing here?"
+
+Abby risked a look. The slightest of head turns to see the owner of the voice.
+
+The woman was definitely looking at Abby. And she was expecting an answer to her question.
+
+Almost as a reflex, Abby flipped the mental tigger to her leap. Perhaps she'd forgotten it, although she didn't really believe it.
+
+The woman didn't so much as blink. Her eyes stayed on Abby.
+
+Abby had never done much research on the rare group of humans to which she belonged; the Leaps. She regretted that complacency now.
+
+She knew that the rare and unique abilities manifested in the early teen years. She knew each 'leap' had a 'hitch', a kind of counterbalance. She knew little beyond that and even that little bit only from personal experience.
+
+And now, faced with the idea that her leap had ceased working, her brain simply shut down.
+
+And she ran.
+
+\#\#\#
+
+Claire watches the woman race from the room and wonders if she should give chase. But she knows how these events will play out. There is a better way.
+
+She calmly leaves her dormitory, closing and locking the door behind her. Then turns and walks down the hallway. She can hear the intruder's thumping footfalls fading in the opposite direction.
+
+She follows a series of unobtrusive signs to the infirmary. News of the commotion has spread and there are a curious people in the hallways. Claire must constantly stop, swerve, slow or sidestep to avoid collisions.
+
+She reaches the nurse's station. A wooden bench sits in the hallway opposite the door and serves as the waiting area. Claire sits down. This part of the wing is quieter than the more central corridors, but there is still some commotion. Not enough, however, to obscure the sounds of her uninvited visitor's approach.
+
+The blonde woman is no longer running. She isn't ambulant at all. She's being carried by some burly staff members. Her head has fallen back and is lolling with the jolting motions made by her bearers.
+
+As the group draws nearer, Claire knows what she will see. The woman's leg has been badly broken in an accident during her flight from Claire's room. The thighbone is protruding from the flesh above her knee. Blood soaks her pants and coats the hands that clutched at the wound.
+
+The woman's face, Claire sees as they draw even, is ashen. Whether from shock or blood loss, Claire cannot tell.
+
