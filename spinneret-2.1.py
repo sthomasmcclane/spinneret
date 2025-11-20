@@ -139,6 +139,12 @@ def check_api_key():
     else:
         genai.configure(api_key=API_KEY)
 
+def format_project_name(project_dir: Path) -> str:
+    """Converts project folder name (with underscores) to a readable title."""
+    name = project_dir.name.replace('_', ' ')
+    # Convert to title case (capitalizes first letter of each word)
+    return name.title()
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -284,10 +290,21 @@ def call_gemini(prompt: str, task_type: str = "draft", project_dir: Optional[Pat
         console.print(f"[bold red]❌ Error:[/bold red] {e}")
         return None
 
-def review_and_save(content: str, file_path: Path, project_dir: Path):
+def review_and_save(content: str, file_path: Path, project_dir: Path, auto_approve: bool = False):
     """
     Interactive review loop with Edit capability.
     Auto-moves files to 'approved' folder upon approval.
+    
+    Args:
+        content: The content to review
+        file_path: Path where the draft should be saved
+        project_dir: Project directory
+        auto_approve: If True, automatically approve without prompting
+    
+    Returns:
+        True: Continue (approved or quit)
+        False: Retry
+        "approve_all": Approve this and all remaining items
     """
     draft_path = file_path
     
@@ -299,11 +316,20 @@ def review_and_save(content: str, file_path: Path, project_dir: Path):
         parts[parts.index('drafts')] = 'approved'
     approved_path = Path(*parts)
 
+    # Auto-approve mode (for "approve all" functionality)
+    if auto_approve:
+        draft_path.parent.mkdir(parents=True, exist_ok=True)
+        draft_path.write_text(content, encoding='utf-8')
+        approved_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(draft_path, approved_path)
+        console.print(f"[dim]✔ Auto-approved: {approved_path.name}[/dim]")
+        return True
+
     while True:
         console.print(Panel(f"Target: [bold]{draft_path.name}[/bold]", title="Review Output", style="blue"))
-        console.print("[dim][A]pprove (Move to Approved) | [E]dit (Open & Pause) | [R]etry | [Q]uit[/dim]")
+        console.print("[dim][A]pprove | [X] Approve All Remaining | [E]dit | [R]etry | [Q]uit[/dim]")
         
-        choice = Prompt.ask("Action", choices=["a", "e", "r", "q"], default="a", show_choices=False)
+        choice = Prompt.ask("Action", choices=["a", "x", "e", "r", "q"], default="a", show_choices=False)
 
         if choice.lower() == 'a':
             # Save draft
@@ -316,6 +342,19 @@ def review_and_save(content: str, file_path: Path, project_dir: Path):
             
             console.print(f"[bold green]✔ Approved and saved to:[/bold green] {approved_path.name}")
             return True
+            
+        elif choice.lower() == 'x':
+            # Approve this and all remaining
+            draft_path.parent.mkdir(parents=True, exist_ok=True)
+            draft_path.write_text(content, encoding='utf-8')
+            
+            # Copy to approved
+            approved_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy(draft_path, approved_path)
+            
+            console.print(f"[bold green]✔ Approved: {approved_path.name}[/bold green]")
+            console.print("[yellow]⚠ Approve All mode activated - remaining scenes will be auto-approved[/yellow]")
+            return "approve_all"
             
         elif choice.lower() == 'e':
             # Save current state
@@ -746,6 +785,9 @@ def generate_first_draft(project_dir: Path):
 
     console.print(f"[green]Found {len(blocking_files)} scenes to generate.[/green]\n")
 
+    # Flag to track if user selected "Approve All"
+    auto_approve_all = False
+
     # ITERATIVE GENERATION LOOP
     for i, blocking_file in enumerate(blocking_files):
         scene_title = blocking_file.stem # e.g. "01-The_Inciting_Incident"
@@ -784,8 +826,17 @@ def generate_first_draft(project_dir: Path):
                 output_filename = f"{blocking_file.stem}.md"
                 save_path = save_dir / output_filename
                 
-                # Enter Review Loop
-                if review_and_save(clean_output, save_path, project_dir):
+                # Enter Review Loop (or auto-approve if flag is set)
+                if auto_approve_all:
+                    result = review_and_save(clean_output, save_path, project_dir, auto_approve=True)
+                else:
+                    result = review_and_save(clean_output, save_path, project_dir)
+                
+                if result == "approve_all":
+                    # User selected "Approve All" - set flag and continue
+                    auto_approve_all = True
+                    break # Move to next scene
+                elif result is True:
                     break # Move to next scene
                 # If review_and_save returns False (Retry), the loop restarts for this scene
             else:
@@ -822,9 +873,12 @@ def generate_second_draft(project_dir: Path):
 
     files = sorted(draft_dir.glob("*.md"))
     
+    # Flag to track if user selected "Approve All"
+    auto_approve_all = False
+    
     for i, scene_file in enumerate(files):
         scene_text = scene_file.read_text(encoding='utf-8')
-        console.print(f"[cyan]Rewriting {scene_file.name}...[/cyan]")
+        console.print(f"[cyan]Rewriting {scene_file.name} ({i+1}/{len(files)})...[/cyan]")
         
         prompt = f"""
         {instr}
@@ -840,8 +894,20 @@ def generate_second_draft(project_dir: Path):
             output = call_gemini(prompt, task_type="editing", project_dir=project_dir)
             if output:
                 clean_output = output.replace("```markdown", "").replace("```", "")
-                if review_and_save(clean_output, save_dir / scene_file.name, project_dir):
-                    break
+                
+                # Enter Review Loop (or auto-approve if flag is set)
+                if auto_approve_all:
+                    result = review_and_save(clean_output, save_dir / scene_file.name, project_dir, auto_approve=True)
+                else:
+                    result = review_and_save(clean_output, save_dir / scene_file.name, project_dir)
+                
+                if result == "approve_all":
+                    # User selected "Approve All" - set flag and continue
+                    auto_approve_all = True
+                    break # Move to next scene
+                elif result is True:
+                    break # Move to next scene
+                # If review_and_save returns False (Retry), the loop restarts for this scene
             else:
                 if not Confirm.ask("Generation failed. Retry?"):
                     break
@@ -863,9 +929,12 @@ def generate_final_draft(project_dir: Path):
 
     files = sorted(draft_dir.glob("*.md"))
     
+    # Flag to track if user selected "Approve All"
+    auto_approve_all = False
+    
     for i, scene_file in enumerate(files):
         scene_text = scene_file.read_text(encoding='utf-8')
-        console.print(f"[cyan]Polishing {scene_file.name}...[/cyan]")
+        console.print(f"[cyan]Polishing {scene_file.name} ({i+1}/{len(files)})...[/cyan]")
         
         prompt = f"""
         {instr}
@@ -879,8 +948,20 @@ def generate_final_draft(project_dir: Path):
             output = call_gemini(prompt, task_type="editing", project_dir=project_dir)
             if output:
                 clean_output = output.replace("```markdown", "").replace("```", "")
-                if review_and_save(clean_output, save_dir / scene_file.name, project_dir):
-                    break
+                
+                # Enter Review Loop (or auto-approve if flag is set)
+                if auto_approve_all:
+                    result = review_and_save(clean_output, save_dir / scene_file.name, project_dir, auto_approve=True)
+                else:
+                    result = review_and_save(clean_output, save_dir / scene_file.name, project_dir)
+                
+                if result == "approve_all":
+                    # User selected "Approve All" - set flag and continue
+                    auto_approve_all = True
+                    break # Move to next scene
+                elif result is True:
+                    break # Move to next scene
+                # If review_and_save returns False (Retry), the loop restarts for this scene
             else:
                 if not Confirm.ask("Generation failed. Retry?"):
                     break
@@ -923,7 +1004,8 @@ def check_phase_status(project_dir: Path, phase_folder: str) -> str:
 def manage_existing_project(project_dir: Path):
     while True:
         clear_screen()
-        console.print(Panel(f"[bold cyan]Project: {project_dir.name}[/bold cyan]", subtitle="Workflow Manager"))
+        project_title = format_project_name(project_dir)
+        console.print(Panel(f"[bold cyan]Project: {project_title}[/bold cyan]", subtitle="Workflow Manager"))
         
         workflow = [
             ("Phase_01_Premise", "Premise", None),
