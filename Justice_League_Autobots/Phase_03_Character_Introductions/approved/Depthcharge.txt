@@ -1,0 +1,16 @@
+CHARACTER_NAME: Depthcharge
+### Layer One: The gameshow introduction.
+A battle-hardened, solitary sea-hunter who cares for nothing but the hunt and the destruction of the Decepticon "scum."
+
+### Layer Two: breaking down the introduction, and expanding.
+**Battle-hardened:** How does it manifest? His chassis is scarred and weathered. He is blunt, rude, and has no interest in human culture or diplomacy. He only cares about results.
+**Solitary sea-hunter:** Why is he so distant? He lost his entire unit to the Decepticon bounty hunter Rampage. He prefers to work alone, viewing attachments as a liability—until he meets Aquaman.
+**Cybertronian Manta-Ray:** How does this show? His vehicle mode is a sleek, predatory submersible that mimics Earth’s manta ray. It is silent and deadly, built for the crushing pressures of the deep.
+**Lone Wolf:** How does it affect him? He is the only bot who can stand up to Aquaman’s ego. They bond over their shared love for the "predatory" nature of the ocean. Depthcharge provides Arthur with the "teeth" needed to kill Decepticons that are too large for sharks or krakens to handle.
+
+### Layer Three: Basic Info and story role.
+*   **Designation:** Depthcharge
+*   **Rank:** Naval Combat Specialist / Bounty Hunter
+*   **What motivates this character?** Vengeance for his fallen comrades and the complete eradication of the Decepticon presence on Earth.
+*   **Single sentence summary of character's role in story:** Depthcharge serves as Aquaman’s underwater scout and heavy-artillery hunter.
+*   **Single paragraph summary of the character's role in story:** Depthcharge is the "Deep-Sea Assassin." He operates almost entirely in the dark, using his EMP-mines to disable Decepticon sub-bases. His role is to ensure the Decepticons cannot use the ocean as a "safe haven." He and Arthur share a telepathic/electronic link that allows them to move through the water as a single, multi-ton predator, striking from the silt before the enemy even knows they’re being tracked.

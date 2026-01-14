@@ -1,0 +1,16 @@
+CHARACTER_NAME: Arcee (Triplets)
+### Layer One: The gameshow introduction.
+A lethal, hive-mind tactical unit consisting of three swift motorcycle bodies sharing a single, razor-sharp consciousness.
+
+### Layer Two: breaking down the introduction, and expanding.
+**Hive-mind:** How does it manifest? The three bikes (Arcee, Chromia, Elita-One) move with perfect synchronization. They complete each other's sentences and often "swarm" a target simultaneously.
+**Tactical Unit:** Why motorcycles? They are built for speed and infiltration. They can go where Optimus or Prowl cannot—through doorways, up stairs, and across tightropes.
+**Razor-sharp consciousness:** How does this show? They are cold, efficient, and highly protective of Catwoman. They share Selina’s pragmatic, "do whatever it takes" attitude.
+**Ducati Superbikes:** How does it affect them? They are the sleekest, most agile bots on the team. They partner with Catwoman because they share her "feline" grace. They act as her getaway vehicles, her eyes, and her backup in any heist.
+
+### Layer Three: Basic Info and story role.
+*   **Designation:** Arcee (Hive-Mind)
+*   **Rank:** Scout / Infiltration Specialist
+*   **What motivates this character?** The protection of their "pack" and the precision execution of every mission.
+*   **Single sentence summary of character's role in story:** The Arcee Triplets act as Catwoman’s swift, multi-bodied tactical support for urban infiltration.
+*   **Single paragraph summary of the character's role in story:** The "Sisters" are the team's "Ghost Unit." They are instrumental in the infiltration of LexCorp, moving through the ventilation shafts and security tunnels that the larger bots can't access. Their role is to provide Selina with a 360-degree tactical view of any vault or laboratory. In the final battle, they combine into a single, multi-limbed "Predator" form that allows Selina to scale the side of the Joker’s giant war-machine, proving that in this war, size isn't as important as speed and precision.

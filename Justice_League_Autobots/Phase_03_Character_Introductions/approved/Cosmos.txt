@@ -1,0 +1,16 @@
+CHARACTER_NAME: Cosmos
+### Layer One: The gameshow introduction.
+A lonely, eccentric communications expert who has spent too much time in orbit watching Earth’s television broadcasts.
+
+### Layer Two: breaking down the introduction, and expanding.
+**Lonely and Eccentric:** How does it manifest? He talks to himself, quotes old movies, and has a desperate need for friendship. He is easily distracted by shiny objects and "interesting" radio signals.
+**Communications expert:** Why is he so vital? He can hack into any satellite in the solar system. He is the Autobots' primary link to their off-world allies and their best defense against Soundwave’s signal warfare.
+**Silver Saucer:** How does this show? He looks like a 1950s UFO. He is small and round compared to other Autobots, but he is incredibly fast in a vacuum.
+**Pop-culture obsessed:** How does it affect him? He views the Justice League as "Season 1" of a great show and is constantly trying to figure out the "plot." He and Hal Jordan have a "buddy-comedy" dynamic that provides the much-needed levity during the darkest parts of the war.
+
+### Layer Three: Basic Info and story role.
+*   **Designation:** Cosmos
+*   **Rank:** Orbital Reconnaissance / Communications
+*   **What motivates this character?** Being part of a team and finally having someone to talk to after decades of silence.
+*   **Single sentence summary of character's role in story:** Cosmos serves as Green Lantern’s space-faring partner and the team’s global communications link.
+*   **Single paragraph summary of the character's role in story:** Cosmos is the "Satellite Hub." He spends the war in high-Earth orbit, acting as the eyes and ears for the League. He is the one who detects the Decepticon reinforcements arriving from Saturn, and his role is to shield the League’s comms from Soundwave’s interference. Despite his quirkiness, his ability to "jam" Megatron's long-range targeting systems is what saves the JLA Satellite from destruction.

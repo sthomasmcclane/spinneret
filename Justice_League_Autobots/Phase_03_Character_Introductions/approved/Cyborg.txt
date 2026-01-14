@@ -1,0 +1,15 @@
+CHARACTER_NAME: Cyborg
+### Layer One: The gameshow introduction.
+A technological savant constantly upgrading his cybernetic body, always searching for his place in the world.
+
+### Layer Two: breaking down the introduction, and expanding.
+**Technological savant:** What does this mean? He possesses an inherent understanding of and can interface with almost any technology, from Earth-based systems to alien constructs. He can reverse-engineer, analyze, and manipulate complex data streams and mechanical systems with extraordinary ease, often at a subconscious level.
+**Constantly upgrading his cybernetic body:** How does he do this? He incorporates new technological components, refines his existing systems, and explores novel functionalities for his cybernetics. Why? To become more effective in combat and support, to overcome perceived limitations of his original human form, and perhaps to feel more in control of his existence after his involuntary transformation.
+**Always searching for his place in the world:** Why? His transformation into Cyborg was traumatic and largely involuntary, leaving him feeling alienated from both humanity and even from other heroes. He struggles deeply with his identity – is he primarily man or machine? Is he a hero, a weapon, or something else entirely? He seeks acceptance, understanding, and a clear purpose that reconciles his dual nature.
+
+### Layer Three: Basic Info and story role.
+*   **Full Name:** Victor Stone
+*   **Age:** Mid-20s
+*   **What motivates this character?** His desire to protect humanity, his drive to prove his worth despite his transformation, and his constant quest for knowledge and self-improvement, particularly regarding technology and its ethical application.
+*   **Single sentence summary of character's role in story:** Cyborg serves as the Justice League's primary tech expert, learning to interface with and counter Cybertronian technology.
+*   **Single paragraph summary of the character's role in story:** Victor Stone's unique cybernetic physiology and unparalleled technological acumen make him indispensable when facing the alien threat of Megatron. He is able to quickly grasp the intricate principles of Cybertronian technology, working closely with Ratchet to understand its vulnerabilities, energy signatures, and potential counter-measures. His ability to process alien data, integrate new technological principles, and adapt his own systems makes him a key "student" to the Autobots. He helps to analyze Megatron's unexpected Earth-based modifications and is crucial for developing the tools and technological solutions required for the final confrontation.

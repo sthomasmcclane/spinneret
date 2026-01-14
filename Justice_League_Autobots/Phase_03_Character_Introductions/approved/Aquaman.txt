@@ -1,0 +1,16 @@
+CHARACTER_NAME: Aquaman
+### Layer One: The gameshow introduction.
+The King of Atlantis and protector of the oceans, who wields the power of the tides and commands all marine life.
+
+### Layer Two: breaking down the introduction, and expanding.
+**King of Atlantis:** How does it manifest? He is regal, authoritative, and often arrogant. He views surface-world problems as secondary to the safety of his kingdom. He speaks with the weight of a monarch and doesn't take orders well.
+**Protector of the oceans:** Why is he so territorial? He has seen the surface world pollute and damage his home for decades. This makes him naturally distrustful of LexCorp and any alien technology that might leak into the sea.
+**Command over marine life:** How does this show? He uses telepathy to coordinate with sea creatures. In this story, he treats Depthcharge as a "Great Predator" of the deep, forming a bond based on mutual predatory respect.
+**Regal and Arrogant:** How does it affect him? He initially views the Transformers as "clunky surface trash." It takes the silent, efficient lethality of Depthcharge to earn his respect. Together, they form an isolationist unit that keeps the war from reaching the ocean floor.
+
+### Layer Three: Basic Info and story role.
+*   **Full Name:** Arthur Curry
+*   **Age:** Late 30s
+*   **What motivates this character?** The preservation of Atlantis and his duty to keep the balance between the two worlds he inhabits.
+*   **Single sentence summary of character's role in story:** Aquaman secures the ocean front, utilizing Depthcharge to hunt submerged Decepticon units.
+*   **Single paragraph summary of the character's role in story:** Arthur is the League’s "Deep-Sea Enforcer." While the war rages in the cities, he and Depthcharge are engaged in a silent, terrifying game of cat-and-mouse with Decepticon subs in the Mariana Trench. He uses Depthcharge’s sonar to map out the Joker’s underwater supply lines, effectively cutting off Megatron’s access to raw materials found on the sea floor. His presence ensures the Decepticons have no place to hide in the 70% of the world covered by water.

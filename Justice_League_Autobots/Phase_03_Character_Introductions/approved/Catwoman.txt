@@ -1,0 +1,16 @@
+CHARACTER_NAME: Catwoman
+### Layer One: The gameshow introduction.
+A master thief and world-class gymnast who walks the fine line between villainy and heroism, always looking for the next big score.
+
+### Layer Two: breaking down the introduction, and expanding.
+**Master Thief:** How does it manifest? She is stealthy, observant, and highly intelligent. She views every situation as a "job" to be cased. She is motivated by luxury and survival, though she has a secret soft spot for the underdog.
+**World-class gymnast:** Why is this her style? She relies on agility, speed, and reflexes rather than brute strength. This makes her the perfect partner for the Arcee Triplets, as they share a fluid, kinetic movement style.
+**Moral Ambiguity:** How does this show? She is often the one willing to do the "dirty work" or the infiltration that Batman won't sanction. She is comfortable in the shadows and knows how to talk to the Decepticon "underworld."
+**Stealthy and Nimble:** How does it affect her? She acts as the team's scout and saboteur. While the heavy hitters draw fire, she and the Arcee bikes are slipping through laser grids and air vents to disable the Joker's tech from the inside.
+
+### Layer Three: Basic Info and story role.
+*   **Full Name:** Selina Kyle
+*   **Age:** Early 30s
+*   **What motivates this character?** Personal freedom, high-end shiny objects, and an addictive thrill for the chase.
+*   **Single sentence summary of character's role in story:** Catwoman provides the League with "deniable" infiltration and precision sabotage alongside the Arcee Triplets.
+*   **Single paragraph summary of the character's role in story:** Selina is the wildcard of the alliance. She uses the Arcee Triplets to navigate Gotham’s narrowest alleys and rooftop ledges, providing the team with intelligence that even Batman’s satellites can't catch. Her role is to steal back the Cybertronian components Lex Luthor is using to empower Megatron. She is instrumental in the heist to retrieve the Allspark fragment from the Joker’s clutches, using her "cat-like" reflexes—and her bikes’ hive-mind—to outmaneuver Soundwave’s surveillance.
